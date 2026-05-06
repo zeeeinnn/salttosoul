@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Salt to Soul Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --night:  #2E1A0E; --palm:   #5A3020;
+    --salt:   #F2EDE4; --shore:  #E0D8C8;
+    --terra:  #B85C38; --gold:   #C98840;
+    --blush:  #D4855A; --sage:   #C09050;
+    --atoll:  #9A5030; --pandan: #D4BC8A;
+    --fern:   #4D6538;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--night); color: var(--salt); font-family: 'Josefin Sans', sans-serif; font-weight: 300; line-height: 1.7; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 80px 20px;
+    background: var(--night); position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 65% 35%, rgba(122,138,82,.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 75%, rgba(184,92,56,.07) 0%, transparent 50%);
+  }
+  .hero img { width: 200px; height: 200px; position: relative; }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif; font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: .38em;
+    color: var(--salt); margin-top: 28px; position: relative;
+  }
+  .hero-rule { width: 36px; height: 1px; background: var(--sage); opacity: .6; margin: 18px auto; position: relative; }
+  .hero-tag { font-size: 1.12rem; letter-spacing: .18em; color: var(--sage); position: relative; }
+  .hero-sub { font-size: .72rem; letter-spacing: .16em; color: var(--shore); opacity: .6; margin-top: 20px; position: relative; }
+
+  /* ── LAYOUT ── */
+  .section { padding: 90px 48px; max-width: 1100px; margin: 0 auto; }
+  .full { padding: 90px 48px; }
+  .full-inner { max-width: 1100px; margin: 0 auto; }
+  .divider { height: 1px; background: linear-gradient(to right, transparent, var(--palm), transparent); }
+  .bg-salt { background: var(--salt); color: var(--night); }
+  .bg-terra { background: var(--terra); }
+  .bg-palm { background: var(--palm); }
+
+  .label { font-size: .88rem; letter-spacing: .22em; color: var(--pandan); text-transform: uppercase; margin-bottom: 8px; font-weight: 300; }
+  .bg-salt .label { color: var(--atoll); }
+  .bg-terra .label { color: var(--shore); }
+
+  .title {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,4.5vw,3.6rem);
+    font-weight: 700; line-height: 1.15; margin-bottom: 48px;
+  }
+  .bg-salt .title { color: var(--night); }
+  .bg-terra .title { color: var(--salt); }
+
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+  .about-text { font-size: .82rem; letter-spacing: .04em; color: var(--shore); line-height: 2; }
+
+  /* ── COLOUR PALETTE ── */
+  .palette { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 18px; }
+  .swatch { border-radius: 10px; overflow: hidden; }
+  .swatch-color { height: 90px; }
+  .swatch-info { padding: 10px 13px; background: var(--shore); }
+  .swatch-name { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--atoll); display: block; }
+  .swatch-hex { font-family: 'Cormorant Garamond', serif; font-size: .95rem; color: var(--night); display: block; margin-top: 2px; }
+
+  /* ── TYPOGRAPHY ── */
+  .type-block { border-left: 2px solid var(--sage); padding-left: 28px; margin-bottom: 52px; }
+  .bg-salt .type-block { border-color: var(--atoll); }
+  .type-label { font-size: .6rem; letter-spacing: .25em; color: var(--sage); text-transform: uppercase; margin-bottom: 10px; }
+  .bg-salt .type-label { color: var(--atoll); }
+  .type-display { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem,6vw,5rem); font-weight: 700; letter-spacing: .1em; line-height: 1; }
+  .type-italic { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,5vw,3.8rem); font-weight: 300; font-style: italic; }
+  .type-body { font-size: 1rem; letter-spacing: .05em; line-height: 1.9; color: var(--shore); max-width: 480px; margin-top: 10px; }
+  .bg-salt .type-body { color: var(--palm); }
+  .type-sub { font-size: .65rem; letter-spacing: .26em; text-transform: uppercase; color: var(--sage); margin-top: 10px; }
+  .bg-salt .type-sub { color: var(--atoll); }
+
+  /* ── BRANDING ICONS ── */
+  .icons-strip {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 52px;
+  }
+  .icon-slot {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 24px 12px 24px;
+    border-radius: 14px;
+  }
+  .icon-slot img { width: 78%; max-width: 110px; aspect-ratio: 1; display: block; object-fit: contain; }
+  .icon-name {
+    font-size: .72rem; letter-spacing: .2em; text-transform: uppercase;
+    color: #F2EDE4; margin-top: 14px; text-align: center; font-weight: 400;
+  }
+  .icon-desc {
+    font-size: .72rem; letter-spacing: .03em; color: rgba(242,237,228,0.9);
+    line-height: 1.7; text-align: center; margin-top: 8px; max-width: 140px;
+    padding: 0 8px;
+  }
+  .icon-row-label {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--shore); opacity: .5;
+    text-align: right; margin-bottom: 32px;
+  }
+
+  /* ── LOGOS ── */
+  .logo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .logo-card {
+    border-radius: 14px; overflow: hidden; padding: 28px 24px 20px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .logo-card img { max-width: 100%; height: auto; }
+  .logo-card object { width: 100%; display: block; }
+  .logo-card-label { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; opacity: .55; text-align: center; }
+
+  /* ── ICON VARIANTS ── */
+  .icon-variants { display: flex; flex-wrap: nowrap; gap: 16px; justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; }
+  .icon-v { border-radius: 12px; overflow: hidden; width: 120px; display: flex; flex-direction: column; align-items: center; padding: 18px 12px 10px; }
+  .icon-v img { width: 80%; aspect-ratio: 1; display: block; object-fit: contain; }
+  .icon-v-label { font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; opacity: .8; text-align: center; padding: 10px 0 0; }
+
+  /* ── INSTAGRAM ── */
+  .insta-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+  .insta-mockup {
+    border-radius: 22px; background: var(--night); border: 1px solid var(--palm);
+    padding: 20px; max-width: 360px;
+  }
+  .insta-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .insta-avatar { width: 48px; height: 48px; border-radius: 50%; overflow: hidden; border: 2px solid var(--sage); }
+  .insta-avatar img { width: 100%; height: 100%; object-fit: contain; }
+  .insta-handle { font-size: .78rem; letter-spacing: .1em; color: var(--salt); }
+  .insta-bio { font-size: .6rem; color: var(--sage); letter-spacing: .1em; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+  .cell {
+    aspect-ratio: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 10px;
+  }
+  .cell img { width: 38px; height: 38px; }
+  .photo-cell { padding: 0 !important; overflow: hidden; position: relative; }
+  .photo-fill { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cell-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .75rem; color: var(--salt); text-align: center; line-height: 1.4; }
+  .cell-tag { font-size: .5rem; letter-spacing: .15em; text-transform: uppercase; opacity: .7; text-align: center; }
+
+  /* ── VOICE ── */
+  .pillars { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 22px; }
+  .pillar { padding: 26px; border: 1px solid var(--palm); border-radius: 10px; border-top: 3px solid var(--sage); }
+  .bg-salt .pillar { border-color: var(--shore); border-top-color: var(--atoll); }
+  .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; margin-bottom: 8px; }
+  .bg-salt .pillar-title { color: var(--night); }
+  .pillar-body { font-size: .72rem; letter-spacing: .03em; line-height: 1.8; color: var(--shore); }
+  .bg-salt .pillar-body { color: var(--palm); }
+
+  /* ── CAPTIONS ── */
+  .captions { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 48px; }
+  .caption-card { background: var(--palm); border-radius: 10px; padding: 22px 26px; border-left: 3px solid var(--sage); }
+  .caption-ctx { font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage); margin-bottom: 10px; }
+  .caption-body { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .98rem; color: var(--salt); line-height: 1.7; }
+  .caption-tags { font-size: .6rem; color: var(--pandan); margin-top: 10px; opacity: .7; letter-spacing: .03em; }
+
+  /* ── FOOTER ── */
+  footer { text-align: center; padding: 60px; border-top: 1px solid var(--palm); }
+  footer img { width: 56px; height: 56px; opacity: .7; margin-bottom: 16px; }
+  .footer-name { font-size: .6rem; letter-spacing: .22em; color: var(--sage); opacity: .6; text-transform: uppercase; }
+  .footer-tag { font-size: .56rem; letter-spacing: .15em; color: var(--palm); margin-top: 6px; }
+
+  /* ── HIGHLIGHT COVERS ── */
+  .highlight-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-top: 28px; }
+  .highlight-item { display: flex; flex-direction: column; align-items: center; gap: 9px; }
+  .highlight-circle { width: 82px; height: 82px; border-radius: 50%; overflow: hidden; border: 2px solid var(--gold); }
+  .highlight-circle img { width: 100%; height: 100%; display: block; object-fit: cover; }
+  .highlight-label { font-size: .48rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+
+  /* ── USAGE RULES ── */
+  .usage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 40px; }
+  .usage-col-head { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: .14em; margin-bottom: 22px; }
+  .usage-item { display: flex; align-items: flex-start; gap: 11px; margin-bottom: 14px; font-size: .74rem; letter-spacing: .04em; line-height: 1.75; color: var(--shore); }
+  .usage-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+
+  /* ── CONTENT RHYTHM ── */
+  .rhythm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: start; margin-top: 40px; }
+  .rhythm-section-label { font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--pandan); margin-bottom: 14px; }
+  .rhythm-cell { height: 76px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .rhythm-type { font-size: .42rem; letter-spacing: .18em; text-transform: uppercase; opacity: .65; text-align: center; margin-top: 5px; }
+  .category-list { display: flex; flex-direction: column; gap: 16px; }
+  .cat-item { display: flex; align-items: flex-start; gap: 13px; }
+  .cat-dot { width: 4px; min-height: 46px; border-radius: 3px; flex-shrink: 0; margin-top: 3px; }
+  .cat-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 600; color: var(--salt); line-height: 1.2; margin-bottom: 3px; }
+  .cat-desc { font-size: .64rem; letter-spacing: .05em; color: var(--pandan); line-height: 1.65; }
+  .rhythm-card { background: rgba(46,26,14,.45); border-radius: 10px; padding: 16px 18px; }
+  .rhythm-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: var(--salt); margin-bottom: 6px; }
+  .rhythm-card-body { font-size: .64rem; letter-spacing: .05em; color: var(--pandan); line-height: 1.7; }
+
+  @media (max-width: 700px) {
+    .section, .full { padding: 60px 24px; }
+    .about-grid, .insta-layout, .captions, .usage-grid, .rhythm-grid { grid-template-columns: 1fr; }
+    .icons-strip { grid-template-columns: repeat(2, 1fr); }
+    .logo-grid { grid-template-columns: 1fr; }
+    .logo-card { padding: 24px 16px; }
+    .icon-variants { flex-wrap: nowrap; overflow-x: auto; gap: 12px; }
+    .icon-v { min-width: 100px; }
+    .palette { grid-template-columns: repeat(2, 1fr); }
+    .hero-name { letter-spacing: .18em; }
+    .highlight-row { gap: 14px; }
+    .highlight-circle { width: 64px; height: 64px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── HERO ─────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <img src="./icon/icon-toni-whole.png" alt="Salt to Soul"/>
+  <div class="hero-name">SALT TO SOUL</div>
+  <div class="hero-rule"></div>
+  <div class="hero-tag">a journey from doing to being</div>
+  <div class="hero-sub">brand identity · salttosoul.mv · 2026</div>
+</section>
+
+<!-- ─── ABOUT ────────────────────────────────────────────────────────────── -->
+<div class="divider"></div>
+<div class="section">
+  <div class="label">The Brand</div>
+  <div class="title">Rooted in salt.<br/>Rising toward soul.</div>
+  <div class="about-grid">
+    <p class="about-text">
+      Drawing inspiration from Zey's grounded, nature-forward personality and 15 years in the Maldivian hospitality industry, we developed a brand identity that reflects her authentic transformation from the pace of luxury resort life to the stillness of the yoga mat. The design embraces her holistic vision and the deep connection she carries between body, breath, and the island world she comes from.
+    </p>
+    <p class="about-text">
+      The result is a brand that feels both ancient and intimate approachable in its warmth, unhurried in its tone, and unmistakably Maldivian in its roots. Every element is crafted to speak to anyone who has ever felt the pull between doing and being, and chosen, finally, to pause.
+    </p>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── COLOUR PALETTE ───────────────────────────────────────────────────── -->
+<div class="full bg-salt">
+<div class="full-inner">
+  <div class="label">The Palette</div>
+  <div class="title">Colour drawn from earth, sun, and salt.</div>
+
+  <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin:32px 0 14px;border-left:2px solid var(--terra);padding-left:12px;">Primary</div>
+  <div class="palette" style="margin-bottom:32px;">
+    <div class="swatch"><div class="swatch-color" style="background:#2E1A0E;"></div><div class="swatch-info"><span class="swatch-name">Coconut Night</span><span class="swatch-hex">#2E1A0E</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F2EDE4;border:1px solid #ddd5c4;"></div><div class="swatch-info"><span class="swatch-name">Sea Salt</span><span class="swatch-hex">#F2EDE4</span></div></div>
+  </div>
+
+  <div style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin-bottom:14px;border-left:2px solid var(--terra);padding-left:12px;">Warm Accents</div>
+  <div class="palette" style="margin-bottom:32px;">
+    <div class="swatch"><div class="swatch-color" style="background:#B85C38;"></div><div class="swatch-info"><span class="swatch-name">Terracotta Dusk</span><span class="swatch-hex">#B85C38</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C98840;"></div><div class="swatch-info"><span class="swatch-name">Sunset Amber</span><span class="swatch-hex">#C98840</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D4855A;"></div><div class="swatch-info"><span class="swatch-name">Blush Horizon</span><span class="swatch-hex">#D4855A</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#C09050;"></div><div class="swatch-info"><span class="swatch-name">Clay Rose</span><span class="swatch-hex">#C09050</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#D4BC8A;"></div><div class="swatch-info"><span class="swatch-name">Lagoon Sand</span><span class="swatch-hex">#D4BC8A</span></div></div>
+  </div>
+
+  <div style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin-bottom:14px;border-left:2px solid var(--terra);padding-left:12px;">Earth Accents</div>
+  <div class="palette" style="margin-bottom:32px;">
+    <div class="swatch"><div class="swatch-color" style="background:#5A3020;"></div><div class="swatch-info"><span class="swatch-name">Driftwood</span><span class="swatch-hex">#5A3020</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#9A5030;"></div><div class="swatch-info"><span class="swatch-name">Warm Clay</span><span class="swatch-hex">#9A5030</span></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#4D6538;"></div><div class="swatch-info"><span class="swatch-name">Coconut Palm</span><span class="swatch-hex">#4D6538</span></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ─── TYPOGRAPHY ───────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="label">Typography</div>
+  <div class="title">Two voices one language.</div>
+  <div class="type-block">
+    <div class="type-label">Display Cormorant Garamond</div>
+    <div class="type-display">SALT TO SOUL</div>
+    <div class="type-italic">from doing to being</div>
+    <div class="type-sub">Headings · Logo wordmark · Pull quotes · Section titles</div>
+  </div>
+  <div class="type-block">
+    <div class="type-label">Body Josefin Sans</div>
+    <div class="type-body" style="color:var(--shore);">Fifteen years under the Maldivian sun greeting guests, holding space, pouring everything outward. Then one morning, the tide turned inward. This is what that looks like.</div>
+    <div class="type-sub">Body copy · Captions · Taglines · Labels</div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── BRANDING ICONS ───────────────────────────────────────────────────── -->
+<div class="full bg-palm">
+<div class="full-inner">
+  <div class="label" style="color:var(--pandan);opacity:.9;">Branding Icons</div>
+  <div class="title" style="color:var(--salt);">The symbols that carry the story.</div>
+  <p style="font-size:.8rem;letter-spacing:.04em;color:var(--pandan);opacity:.85;line-height:1.9;max-width:680px;margin-bottom:52px;">
+    Six symbols drawn from Zey's practice each one a different shade of the same journey. Grounding, wholeness, surrender, movement, strength, and stillness. Use them across posts, highlights, and branded content.
+  </p>
+
+  <div class="icons-strip">
+    <div class="icon-slot" style="background:#C09050;">
+      <img src="./icon/icon-toni-nature.png" alt="Nature"/>
+      <div class="icon-name">Nature</div>
+      <div class="icon-desc">The ground beneath your feet. Where practice begins in the body, in the breath, in belonging.</div>
+    </div>
+    <div class="icon-slot" style="background:#2E1A0E;">
+      <img src="./icon/icon-toni-whole.png" alt="Whole"/>
+      <div class="icon-name">Whole</div>
+      <div class="icon-desc">The spiral that holds it all. Salt and soul, breath and being an eternal, unbroken return to yourself.</div>
+    </div>
+    <div class="icon-slot" style="background:#B85C38;">
+      <img src="./icon/icon-toni-childspose.png" alt="Child's Pose"/>
+      <div class="icon-name">Child's Pose</div>
+      <div class="icon-desc">The first surrender. Forehead to earth, breath to ground where you return when everything else falls away.</div>
+    </div>
+    <div class="icon-slot" style="background:#9A5030;">
+      <img src="./icon/icon-toni-movement.png" alt="Movement"/>
+      <div class="icon-name">Movement</div>
+      <div class="icon-desc">A body in motion is a soul in conversation. Every pose is a question. Every breath, the answer.</div>
+    </div>
+    <div class="icon-slot" style="background:#C98840;">
+      <img src="./icon/icon-toni-downdog.png" alt="Down-ward Dog"/>
+      <div class="icon-name">Down-ward Dog</div>
+      <div class="icon-desc">The foundation pose. Where strength meets length and the body becomes its own teacher.</div>
+    </div>
+    <div class="icon-slot" style="background:#D4855A;">
+      <img src="./icon/icon-toni-meditation.png" alt="Meditation"/>
+      <div class="icon-name">Meditation</div>
+      <div class="icon-desc">The art of arriving. Stillness that isn't empty it's full of everything that matters most.</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── THE MARK ─────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="label">The Mark</div>
+  <div class="title">The icon, in every light.</div>
+  <p style="font-size:.8rem;letter-spacing:.04em;color:var(--shore);line-height:1.9;max-width:560px;margin-bottom:40px;">
+    Use the icon alone for your Instagram profile picture, story highlight covers, and watermarks. The spiral and yin-yang are always rendered as a single fluid mark never separate.
+  </p>
+  <div class="icon-variants">
+    <div class="icon-v" style="background:#C98840;">
+      <img src="./icon/icon-toni-whole.png" alt="primary"/>
+      <div class="icon-v-label" style="color:var(--night);">Primary</div>
+    </div>
+    <div class="icon-v" style="background:#B85C38;">
+      <img src="./icon/icon-toni-whole.png" alt="sunset" style="background:#B85C38;"/>
+      <div class="icon-v-label" style="color:var(--salt);">Sunset</div>
+    </div>
+    <div class="icon-v" style="background:#4D6538;">
+      <img src="./icon/icon-toni-whole.png" alt="fern" style="background:#4D6538;"/>
+      <div class="icon-v-label" style="color:var(--salt);">Fern</div>
+    </div>
+    <div class="icon-v" style="background:#D4855A;">
+      <img src="./icon/icon-toni-whole.png" alt="blush" style="background:#D4855A;"/>
+      <div class="icon-v-label" style="color:var(--salt);">Blush</div>
+    </div>
+    <div class="icon-v" style="background:#5A3020;">
+      <img src="./icon/icon-toni-whole.png" alt="driftwood" style="background:#5A3020;"/>
+      <div class="icon-v-label" style="color:var(--pandan);">Driftwood</div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── LOGOS ────────────────────────────────────────────────────────────── -->
+<div class="full bg-salt" style="background:var(--shore);">
+<div class="full-inner">
+  <div class="label">The Logo</div>
+  <div class="title">Mark and name, together.</div>
+    <div class="logo-grid">
+    <div class="logo-card" style="background:var(--night);border:1px solid var(--palm);">
+      <object type="image/svg+xml" data="./logo/logo-stacked-dark.svg" style="width:100%;aspect-ratio:200/260;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--pandan);">Stacked Primary</div>
+    </div>
+    <div class="logo-card" style="background:var(--salt);border:1px solid var(--shore);">
+      <object type="image/svg+xml" data="./logo/logo-stacked-light.svg" style="width:100%;aspect-ratio:200/260;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--atoll);">Stacked Light</div>
+    </div>
+    <div class="logo-card" style="background:var(--terra);">
+      <object type="image/svg+xml" data="./logo/logo-stacked-sunset.svg" style="width:100%;aspect-ratio:200/260;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--shore);">Stacked Sunset</div>
+    </div>
+    <div class="logo-card" style="background:var(--night);border:1px solid var(--palm);">
+      <object type="image/svg+xml" data="./logo/logo-horizontal-dark.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--pandan);">Horizontal Primary</div>
+    </div>
+    <div class="logo-card" style="background:var(--salt);border:1px solid var(--shore);">
+      <object type="image/svg+xml" data="./logo/logo-horizontal-light.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--atoll);">Horizontal Light</div>
+    </div>
+    <div class="logo-card" style="background:var(--terra);">
+      <object type="image/svg+xml" data="./logo/logo-horizontal-sunset.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--shore);">Horizontal Sunset</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── HIGHLIGHT COVERS ─────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="label">Story Highlights</div>
+  <div class="title">Profile covers six marks, six moods.</div>
+  <p style="font-size:.8rem;letter-spacing:.04em;color:var(--shore);line-height:1.9;max-width:580px;margin-bottom:6px;">One cover per brand icon. Upload these as your Instagram highlight covers they make the profile feel complete from day one. Files are in <span style="color:var(--pandan);font-family:'Cormorant Garamond',serif;font-style:italic;">brand/highlight/</span></p>
+  <p style="font-size:.64rem;letter-spacing:.08em;color:var(--shore);opacity:.5;margin-bottom:36px;">Open each SVG in a browser · take a screenshot · save to phone · set as highlight cover in Instagram Stories</p>
+  <div style="background:#101010;border-radius:16px;padding:24px 28px;display:inline-block;">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+      <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);flex-shrink:0;background:#2E1A0E;">
+        <img src="./icon/icon-toni-whole.png" style="width:100%;height:100%;object-fit:contain;"/>
+      </div>
+      <div>
+        <div style="font-size:.76rem;letter-spacing:.08em;color:#fff;font-weight:400;">salttosoul.mv</div>
+        <div style="font-size:.56rem;color:rgba(255,255,255,.45);margin-top:3px;letter-spacing:.06em;">a journey from doing to being</div>
+      </div>
+    </div>
+    <div class="highlight-row">
+      <div class="highlight-item"><div class="highlight-circle"><img src="./highlight/highlight-nature.svg"/></div><span class="highlight-label">bali</span></div>
+      <div class="highlight-item"><div class="highlight-circle"><img src="./highlight/highlight-childspose.svg"/></div><span class="highlight-label">practice</span></div>
+      <div class="highlight-item"><div class="highlight-circle"><img src="./highlight/highlight-movement.svg"/></div><span class="highlight-label">flow</span></div>
+      <div class="highlight-item"><div class="highlight-circle"><img src="./highlight/highlight-downdog.svg"/></div><span class="highlight-label">breathwork</span></div>
+      <div class="highlight-item"><div class="highlight-circle"><img src="./highlight/highlight-meditation.svg"/></div><span class="highlight-label">about</span></div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── USAGE RULES ────────────────────────────────────────────────────────── -->
+<div class="section">
+  <div class="label">Usage Rules</div>
+  <div class="title">Do and don't.</div>
+  <div class="usage-grid">
+    <div>
+      <div class="usage-col-head" style="color:var(--fern);">Do</div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fern);"></div><span>Use the mark on approved brand backgrounds only Coconut Night, Terracotta, Blush, Fern, or Driftwood</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fern);"></div><span>Keep clear space around the logo equal to the height of the spiral mark on all sides</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fern);"></div><span>Use the full mark as one unit the spiral and centre are always together, never separated</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fern);"></div><span>Use Cormorant Garamond for all headlines and display text, Josefin Sans for body</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--fern);"></div><span>Use photography that feels quiet, honest, and naturally lit real moments over posed ones</span></div>
+    </div>
+    <div>
+      <div class="usage-col-head" style="color:var(--terra);">Don't</div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--terra);"></div><span>Don't stretch, rotate, skew, or distort the mark in any direction</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--terra);"></div><span>Don't place the logo on busy photography or against low-contrast backgrounds</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--terra);"></div><span>Don't add drop shadows, glows, outlines, or graphic effects to the mark</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--terra);"></div><span>Don't use off-brand colours or swap in other typefaces the warmth of the palette is deliberate</span></div>
+      <div class="usage-item"><div class="usage-dot" style="background:var(--terra);"></div><span>Don't recreate or redraw the icons always use the original files from this kit</span></div>
+    </div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── SOCIAL MEDIA ─────────────────────────────────────────────────────── -->
+<div class="full bg-palm">
+<div class="full-inner">
+  <div class="label" style="color:var(--pandan);">Social Presence</div>
+  <div class="title" style="color:var(--salt);">The grid what it feels like.</div>
+  <div class="insta-layout">
+    <div>
+      <p style="font-size:.8rem;letter-spacing:.04em;color:var(--pandan);line-height:1.9;margin-bottom:30px;">
+        Alternate honest photography with branded colour-block posts. Use the icon and brand symbols as content pieces. Every post should feel like a quiet breath unhurried, warm, real.
+      </p>
+      <div class="insta-mockup">
+        <div class="insta-header">
+          <div class="insta-avatar" style="background:#2E1A0E;"><img src="./icon/icon-toni-whole.png" alt="profile"/></div>
+          <div>
+            <div class="insta-handle">salttosoul.mv</div>
+            <div class="insta-bio">a journey from doing to being</div>
+          </div>
+        </div>
+        <div class="grid-3">
+          <div class="cell" style="background:#C09050;">
+            <img src="./icon/icon-toni-nature.png" alt="nature"/>
+          </div>
+          <div class="cell" style="background:linear-gradient(135deg,var(--palm),var(--night));"><span class="cell-text">day one,<br/>bali</span></div>
+          <div class="cell" style="background:var(--terra);">
+            <span class="cell-text" style="font-size:.82rem;">"you are<br/>already<br/>whole"</span>
+          </div>
+          <div class="cell" style="background:linear-gradient(135deg,var(--atoll),var(--night));"><span class="cell-text">morning<br/>practice</span></div>
+          <div class="cell" style="background:#C98840;">
+            <img src="./icon/icon-toni-downdog.png" alt="downdog"/>
+          </div>
+          <div class="cell" style="background:linear-gradient(135deg,var(--terra),var(--gold));"><span class="cell-text">sunrise<br/>savasana</span></div>
+          <div class="cell" style="background:var(--blush);">
+            <span class="cell-tag" style="color:var(--night);">from<br/>doing<br/>to<br/>being</span>
+          </div>
+          <div class="cell" style="background:linear-gradient(135deg,var(--palm),var(--atoll));"><span class="cell-text">the<br/>practice</span></div>
+          <div class="cell" style="background:#D4855A;">
+            <img src="./icon/icon-toni-meditation.png" alt="meditation"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="label" style="color:var(--pandan);margin-bottom:20px;">Post Colour Templates</div>
+      <p style="font-size:.72rem;color:var(--pandan);letter-spacing:.04em;line-height:1.8;margin-bottom:24px;">Rotate through these backgrounds for your icon and quote posts. Each colour carries its own feeling.</p>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#2E1A0E;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Coconut Night grounding, depth</span></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#B85C38;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Terracotta Dusk warmth, courage</span></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#5A3020;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Driftwood warmth, restoration</span></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#C98840;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Sunset Amber joy, light</span></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#D4855A;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Blush Horizon softness, release</span></div>
+        <div style="display:flex;align-items:center;gap:14px;"><div style="width:42px;height:42px;border-radius:8px;background:#9A5030;flex-shrink:0;border:1.5px solid rgba(255,255,255,0.2);"></div><span style="font-size:.68rem;letter-spacing:.08em;color:var(--pandan);">Warm Clay depth, grounding</span></div>
+      </div>
+
+      <div class="label" style="color:var(--pandan);margin-top:40px;margin-bottom:16px;">Icon Posts use any of the six marks</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <img src="./icon/icon-toni-nature.png" alt="nature" style="width:56px;height:56px;border-radius:8px;background:#C09050;"/>
+        <img src="./icon/icon-toni-whole.png" alt="whole" style="width:56px;height:56px;border-radius:8px;background:#2E1A0E;"/>
+        <img src="./icon/icon-toni-childspose.png" alt="childspose" style="width:56px;height:56px;border-radius:8px;background:#B85C38;"/>
+        <img src="./icon/icon-toni-movement.png" alt="movement" style="width:56px;height:56px;border-radius:8px;background:#9A5030;"/>
+        <img src="./icon/icon-toni-downdog.png" alt="downdog" style="width:56px;height:56px;border-radius:8px;background:#C98840;"/>
+        <img src="./icon/icon-toni-meditation.png" alt="meditation" style="width:56px;height:56px;border-radius:8px;background:#D4855A;"/>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── VOICE & TONE ──────────────────────────────────────────────────────── -->
+<div class="full bg-salt">
+<div class="full-inner">
+  <div class="label">Voice & Tone</div>
+  <div class="title">How Salt to Soul speaks.</div>
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-title">Grounded</div>
+      <div class="pillar-body">No toxic positivity. Acknowledge the hard parts that's exactly where the trust is built. Speak to the whole person, not the highlight reel.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Intimate</div>
+      <div class="pillar-body">Speak to one person, not a crowd. Write as if you're sharing something quietly over tea. Not announcing. Just telling.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Maldivian</div>
+      <div class="pillar-body">This is rooted in where you come from the ocean, the warmth, the light. That specificity is your advantage. Own it completely.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Unhurried</div>
+      <div class="pillar-body">The brand breathes slowly. Short sentences. White space. Silence between the words. Resist the urge to fill every moment with content.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Honest</div>
+      <div class="pillar-body">Share the real the doubt before the breakthrough, the sore body, the homesick mornings in Bali. Authenticity earns the people who will show up.</div>
+    </div>
+    <div class="pillar">
+      <div class="pillar-title">Inviting</div>
+      <div class="pillar-body">Every post leaves room for the reader. A question. An open door. This brand isn't a performance it's a conversation.</div>
+    </div>
+  </div>
+
+  <div class="captions">
+    <div class="caption-card">
+      <div class="caption-ctx">Day 1 in Bali Arrival</div>
+      <div class="caption-body">"I landed with an overpacked bag and an underexplained feeling in my chest. Somewhere between the rice fields and the first breath of something I couldn't name I knew I was exactly where I was supposed to be."</div>
+      <div class="caption-tags">#salttosoul #bali2026 #yogateachertraining #maldivian</div>
+    </div>
+    <div class="caption-card">
+      <div class="caption-ctx">Hard practice day</div>
+      <div class="caption-body">"Today my body said no in seven different ways. I stayed anyway. That's the practice not the perfect pose. The choice to show up again."</div>
+      <div class="caption-tags">#salttosoul #theprocess #doing2being #yogatraining</div>
+    </div>
+    <div class="caption-card">
+      <div class="caption-ctx">Quiet reflection Week 2</div>
+      <div class="caption-body">"I used to think rest was a reward. Now I think it might be the work."</div>
+      <div class="caption-tags">#salttosoul #restoration #yogaphilosophy #slowdown</div>
+    </div>
+    <div class="caption-card">
+      <div class="caption-ctx">Coming home Final post</div>
+      <div class="caption-body">"A month ago I came here to learn how to teach. I'm going home knowing the teaching was always in me. See you back in the Maldives. ♡"</div>
+      <div class="caption-tags">#salttosoul #comingHome #maldives #yogateacher</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ─── CONTENT RHYTHM ───────────────────────────────────────────────────── -->
+<div class="full bg-palm">
+<div class="full-inner">
+  <div class="label" style="color:var(--pandan);">Content Strategy</div>
+  <div class="title" style="color:var(--salt);">What to post, and when.</div>
+  <div class="rhythm-grid">
+    <div>
+      <div class="rhythm-section-label">The 9-post rhythm</div>
+      <p style="font-size:.74rem;letter-spacing:.04em;color:var(--shore);line-height:1.9;margin-bottom:20px;">For every 9 feed posts, rotate through these types to keep the grid balanced and visually varied.</p>
+      <div class="grid-3" style="max-width:234px;border-radius:8px;overflow:hidden;">
+        <div class="rhythm-cell" style="background:var(--terra);"><span class="cell-text">colour<br/>block</span><span class="rhythm-type">branded</span></div>
+        <div class="rhythm-cell" style="background:linear-gradient(135deg,var(--palm),var(--night));"><span class="cell-text">photo</span><span class="rhythm-type">honest</span></div>
+        <div class="rhythm-cell" style="background:var(--fern);"><span class="cell-text">icon<br/>post</span><span class="rhythm-type">mark</span></div>
+        <div class="rhythm-cell" style="background:linear-gradient(135deg,var(--night),var(--palm));"><span class="cell-text">photo</span><span class="rhythm-type">honest</span></div>
+        <div class="rhythm-cell" style="background:var(--gold);"><span class="cell-text">quote</span><span class="rhythm-type">words</span></div>
+        <div class="rhythm-cell" style="background:linear-gradient(135deg,var(--palm),var(--night));"><span class="cell-text">photo</span><span class="rhythm-type">honest</span></div>
+        <div class="rhythm-cell" style="background:var(--blush);"><span class="cell-text">colour<br/>block</span><span class="rhythm-type">branded</span></div>
+        <div class="rhythm-cell" style="background:linear-gradient(135deg,var(--night),var(--atoll));"><span class="cell-text">photo</span><span class="rhythm-type">honest</span></div>
+        <div class="rhythm-cell" style="background:var(--atoll);"><span class="cell-text">icon<br/>post</span><span class="rhythm-type">mark</span></div>
+      </div>
+      <p style="font-size:.6rem;letter-spacing:.06em;color:var(--shore);opacity:.55;margin-top:14px;">3 colour/icon · 3 honest photo · 2 quote · 1 reel</p>
+    </div>
+    <div>
+      <div class="rhythm-section-label" style="margin-bottom:20px;">Content categories</div>
+      <div class="category-list">
+        <div class="cat-item">
+          <div class="cat-dot" style="background:var(--terra);"></div>
+          <div><div class="cat-name">The Journey</div><div class="cat-desc">Raw moments from Bali arrivals, breakthroughs, the hard days. Builds the trust that turns followers into clients.</div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-dot" style="background:var(--fern);"></div>
+          <div><div class="cat-name">The Practice</div><div class="cat-desc">Yoga, breathwork, meditation. Teach something small a cue, a pose, one breath technique. Show the expertise.</div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-dot" style="background:var(--gold);"></div>
+          <div><div class="cat-name">The Words</div><div class="cat-desc">Quotes that found you, a reflection, one line that hit differently. Use the quote post template from this kit.</div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-dot" style="background:var(--blush);"></div>
+          <div><div class="cat-name">The Place</div><div class="cat-desc">Bali the light, the temple, the rice field at 6am. Let people feel where you are and why it matters.</div></div>
+        </div>
+        <div class="cat-item">
+          <div class="cat-dot" style="background:var(--pandan);"></div>
+          <div><div class="cat-name">The Return</div><div class="cat-desc">From week 3 onward tease what's coming. Classes, sessions, dates. Build the waitlist before you land.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:52px;">
+    <div class="rhythm-section-label" style="margin-bottom:18px;">Bali posting cadence</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;">
+      <div class="rhythm-card">
+        <div class="rhythm-card-title">Stories</div>
+        <div class="rhythm-card-body">Daily one or two. Morning practice, a training moment, a thought before bed. Low effort, high connection.</div>
+      </div>
+      <div class="rhythm-card">
+        <div class="rhythm-card-title">Feed Posts</div>
+        <div class="rhythm-card-body">3–4 per week. Quality over frequency. If it doesn't feel right for the brand, save it for a story instead.</div>
+      </div>
+      <div class="rhythm-card">
+        <div class="rhythm-card-title">Reels</div>
+        <div class="rhythm-card-body">Once a week if possible. Candid clips from practice or Bali life. Genuine always beats polished.</div>
+      </div>
+      <div class="rhythm-card">
+        <div class="rhythm-card-title">The Waitlist</div>
+        <div class="rhythm-card-body">Start teasing return classes by week 3. Ask people to DM "classes" to be first to know when you're back.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="divider"></div>
+
+<!-- ─── FOOTER ───────────────────────────────────────────────────────────── -->
+<footer>
+  <div><img src="./icon/icon-toni-whole.png" alt="Salt to Soul" style="background:var(--night);border-radius:50%;"/></div>
+  <div class="footer-name">Salt to Soul · salttosoul.mv</div>
+  <div class="footer-tag">a journey from doing to being</div>
+</footer>
+
+</body>
+</html>
