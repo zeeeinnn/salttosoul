@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="400" height="400">
-  <rect width="100" height="100" fill="#D4A247"/>
-  <g fill="none" stroke="#182415" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- lemniscate / infinity loop -->
-    <path d="M 50,50 C 56,34 76,29 76,50 C 76,71 56,66 50,50 C 44,34 24,29 24,50 C 24,71 44,66 50,50"/>
-  </g>
-</svg>
