@@ -107,6 +107,7 @@
     line-height: 1.7; text-align: center; margin-top: 8px; max-width: 140px;
     padding: 0 8px;
   }
+
   .icon-row-label {
     font-family: 'Cormorant Garamond', serif; font-style: italic;
     font-size: 1.1rem; color: var(--shore); opacity: .5;
@@ -248,17 +249,24 @@
   <div class="label">The Palette</div>
   <div class="title">Colour drawn from earth, sun, and salt.</div>
 
-  <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin:32px 0 14px;border-left:2px solid var(--terra);padding-left:12px;">Primary</div>
-  <div class="palette" style="margin-bottom:32px;">
+  <div style="font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin:32px 0 14px;border-left:2px solid var(--blush);padding-left:12px;">Primary</div>
+  <div class="palette" style="margin-bottom:16px;">
+    <div class="swatch" style="outline:2px solid #D4855A;outline-offset:3px;border-radius:12px;">
+      <div class="swatch-color" style="background:#D4855A;"></div>
+      <div class="swatch-info" style="background:#D4855A;">
+        <span class="swatch-name" style="color:rgba(46,26,14,.75);">Blush Horizon</span>
+        <span class="swatch-hex" style="color:#2E1A0E;">#D4855A</span>
+      </div>
+    </div>
     <div class="swatch"><div class="swatch-color" style="background:#2E1A0E;"></div><div class="swatch-info"><span class="swatch-name">Coconut Night</span><span class="swatch-hex">#2E1A0E</span></div></div>
     <div class="swatch"><div class="swatch-color" style="background:#F2EDE4;border:1px solid #ddd5c4;"></div><div class="swatch-info"><span class="swatch-name">Sea Salt</span><span class="swatch-hex">#F2EDE4</span></div></div>
   </div>
+  <div style="font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blush);margin-bottom:32px;padding-left:2px;opacity:.85;">★ Blush Horizon is the main brand colour — use it as the hero background across logos, posts, and profile</div>
 
   <div style="font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--night);margin-bottom:14px;border-left:2px solid var(--terra);padding-left:12px;">Warm Accents</div>
   <div class="palette" style="margin-bottom:32px;">
     <div class="swatch"><div class="swatch-color" style="background:#B85C38;"></div><div class="swatch-info"><span class="swatch-name">Terracotta Dusk</span><span class="swatch-hex">#B85C38</span></div></div>
     <div class="swatch"><div class="swatch-color" style="background:#C98840;"></div><div class="swatch-info"><span class="swatch-name">Sunset Amber</span><span class="swatch-hex">#C98840</span></div></div>
-    <div class="swatch"><div class="swatch-color" style="background:#D4855A;"></div><div class="swatch-info"><span class="swatch-name">Blush Horizon</span><span class="swatch-hex">#D4855A</span></div></div>
     <div class="swatch"><div class="swatch-color" style="background:#C09050;"></div><div class="swatch-info"><span class="swatch-name">Clay Rose</span><span class="swatch-hex">#C09050</span></div></div>
     <div class="swatch"><div class="swatch-color" style="background:#D4BC8A;"></div><div class="swatch-info"><span class="swatch-name">Lagoon Sand</span><span class="swatch-hex">#D4BC8A</span></div></div>
   </div>
@@ -302,32 +310,32 @@
   <div class="icons-strip">
     <div class="icon-slot" style="background:#C09050;">
       <img src="./icon/icon-toni-nature.png" alt="Nature"/>
-      <div class="icon-name">Nature</div>
+<div class="icon-name">Nature</div>
       <div class="icon-desc">The ground beneath your feet. Where practice begins in the body, in the breath, in belonging.</div>
     </div>
     <div class="icon-slot" style="background:#2E1A0E;">
       <img src="./icon/icon-toni-whole.png" alt="Whole"/>
-      <div class="icon-name">Whole</div>
+<div class="icon-name">Whole</div>
       <div class="icon-desc">The spiral that holds it all. Salt and soul, breath and being an eternal, unbroken return to yourself.</div>
     </div>
     <div class="icon-slot" style="background:#B85C38;">
       <img src="./icon/icon-toni-childspose.png" alt="Child's Pose"/>
-      <div class="icon-name">Child's Pose</div>
+<div class="icon-name">Child's Pose</div>
       <div class="icon-desc">The first surrender. Forehead to earth, breath to ground where you return when everything else falls away.</div>
     </div>
     <div class="icon-slot" style="background:#9A5030;">
       <img src="./icon/icon-toni-movement.png" alt="Movement"/>
-      <div class="icon-name">Movement</div>
+<div class="icon-name">Movement</div>
       <div class="icon-desc">A body in motion is a soul in conversation. Every pose is a question. Every breath, the answer.</div>
     </div>
     <div class="icon-slot" style="background:#C98840;">
       <img src="./icon/icon-toni-downdog.png" alt="Down-ward Dog"/>
-      <div class="icon-name">Down-ward Dog</div>
+<div class="icon-name">Down-ward Dog</div>
       <div class="icon-desc">The foundation pose. Where strength meets length and the body becomes its own teacher.</div>
     </div>
     <div class="icon-slot" style="background:#D4855A;">
       <img src="./icon/icon-toni-meditation.png" alt="Meditation"/>
-      <div class="icon-name">Meditation</div>
+<div class="icon-name">Meditation</div>
       <div class="icon-desc">The art of arriving. Stillness that isn't empty it's full of everything that matters most.</div>
     </div>
   </div>
@@ -342,25 +350,42 @@
     Use the icon alone for your Instagram profile picture, story highlight covers, and watermarks. The spiral and yin-yang are always rendered as a single fluid mark never separate.
   </p>
   <div class="icon-variants">
-    <div class="icon-v" style="background:#C98840;">
-      <img src="./icon/icon-toni-whole.png" alt="primary"/>
-      <div class="icon-v-label" style="color:var(--night);">Primary</div>
+    <div class="icon-v" style="background:#D4855A;outline:2px solid #D4855A;outline-offset:4px;">
+      <img src="./icon/icon-toni-whole.png" alt="blush primary"/>
+      <div class="icon-v-label" style="color:var(--night);">Blush · Primary</div>
+    </div>
+    <div class="icon-v" style="background:#2E1A0E;">
+      <img src="./icon/icon-toni-whole.png" alt="night"/>
+      <div class="icon-v-label" style="color:var(--pandan);">Night</div>
     </div>
     <div class="icon-v" style="background:#B85C38;">
-      <img src="./icon/icon-toni-whole.png" alt="sunset" style="background:#B85C38;"/>
+      <img src="./icon/icon-toni-whole.png" alt="sunset"/>
       <div class="icon-v-label" style="color:var(--salt);">Sunset</div>
     </div>
     <div class="icon-v" style="background:#4D6538;">
-      <img src="./icon/icon-toni-whole.png" alt="fern" style="background:#4D6538;"/>
+      <img src="./icon/icon-toni-whole.png" alt="fern"/>
       <div class="icon-v-label" style="color:var(--salt);">Fern</div>
     </div>
-    <div class="icon-v" style="background:#D4855A;">
-      <img src="./icon/icon-toni-whole.png" alt="blush" style="background:#D4855A;"/>
-      <div class="icon-v-label" style="color:var(--salt);">Blush</div>
-    </div>
     <div class="icon-v" style="background:#5A3020;">
-      <img src="./icon/icon-toni-whole.png" alt="driftwood" style="background:#5A3020;"/>
+      <img src="./icon/icon-toni-whole.png" alt="driftwood"/>
       <div class="icon-v-label" style="color:var(--pandan);">Driftwood</div>
+    </div>
+  </div>
+
+  <!-- Instagram Profile Picture -->
+  <div style="margin-top:52px;">
+    <div class="label" style="margin-bottom:12px;">Instagram Profile Picture</div>
+    <p style="font-size:.8rem;letter-spacing:.04em;color:var(--shore);line-height:1.9;max-width:560px;margin-bottom:28px;">
+      The blush profile picture, sized 500×500. Save <span style="color:var(--pandan);font-family:'Cormorant Garamond',serif;font-style:italic;">brand/icon/icon-profile-blush.svg</span> — open it in a browser, screenshot, and upload to Instagram.
+    </p>
+    <div style="display:flex;align-items:center;gap:36px;flex-wrap:wrap;">
+      <div style="width:160px;height:160px;border-radius:50%;overflow:hidden;border:3px solid #D4855A;flex-shrink:0;">
+        <img src="./icon/icon-profile-blush.svg" style="width:100%;height:100%;object-fit:cover;" alt="Instagram profile picture — Blush"/>
+      </div>
+      <div>
+        <div style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--blush);margin-bottom:8px;">Profile Picture · Blush Horizon</div>
+        <div style="font-size:.72rem;color:var(--shore);line-height:1.8;letter-spacing:.03em;">500 × 500 px · SVG<br/>File: <span style="color:var(--pandan);">icon-profile-blush.svg</span></div>
+      </div>
     </div>
   </div>
 </div>
@@ -384,6 +409,10 @@
       <object type="image/svg+xml" data="./logo/logo-stacked-sunset.svg" style="width:100%;aspect-ratio:200/260;display:block;"></object>
       <div class="logo-card-label" style="color:var(--shore);">Stacked Sunset</div>
     </div>
+    <div class="logo-card" style="background:var(--blush);outline:2px solid var(--blush);outline-offset:3px;">
+      <object type="image/svg+xml" data="./logo/logo-stacked-blush.svg" style="width:100%;aspect-ratio:200/260;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--night);">Stacked Blush ★</div>
+    </div>
     <div class="logo-card" style="background:var(--night);border:1px solid var(--palm);">
       <object type="image/svg+xml" data="./logo/logo-horizontal-dark.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
       <div class="logo-card-label" style="color:var(--pandan);">Horizontal Primary</div>
@@ -395,6 +424,10 @@
     <div class="logo-card" style="background:var(--terra);">
       <object type="image/svg+xml" data="./logo/logo-horizontal-sunset.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
       <div class="logo-card-label" style="color:var(--shore);">Horizontal Sunset</div>
+    </div>
+    <div class="logo-card" style="background:var(--blush);outline:2px solid var(--blush);outline-offset:3px;">
+      <object type="image/svg+xml" data="./logo/logo-horizontal-blush.svg" style="width:100%;aspect-ratio:280/100;display:block;"></object>
+      <div class="logo-card-label" style="color:var(--night);">Horizontal Blush ★</div>
     </div>
   </div>
 </div>
@@ -408,7 +441,7 @@
   <p style="font-size:.64rem;letter-spacing:.08em;color:var(--shore);opacity:.5;margin-bottom:36px;">Open each SVG in a browser · take a screenshot · save to phone · set as highlight cover in Instagram Stories</p>
   <div style="background:#101010;border-radius:16px;padding:24px 28px;display:inline-block;">
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
-      <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;border:2px solid var(--gold);flex-shrink:0;background:#2E1A0E;">
+      <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;border:2px solid var(--blush);flex-shrink:0;background:#D4855A;">
         <img src="./icon/icon-toni-whole.png" style="width:100%;height:100%;object-fit:contain;"/>
       </div>
       <div>
@@ -464,7 +497,7 @@
       </p>
       <div class="insta-mockup">
         <div class="insta-header">
-          <div class="insta-avatar" style="background:#2E1A0E;"><img src="./icon/icon-toni-whole.png" alt="profile"/></div>
+          <div class="insta-avatar" style="background:#D4855A;"><img src="./icon/icon-toni-whole.png" alt="profile"/></div>
           <div>
             <div class="insta-handle">salttosoul.mv</div>
             <div class="insta-bio">a journey from doing to being</div>

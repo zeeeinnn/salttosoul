@@ -41,7 +41,7 @@
     border-bottom: 1px solid rgba(212,188,138,.07);
   }
   .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .nav-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--night); overflow: hidden; flex-shrink: 0; }
+  .nav-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--blush); overflow: hidden; flex-shrink: 0; }
   .nav-mark img { width: 100%; height: 100%; object-fit: contain; }
   .nav-name { font-family: 'Cormorant Garamond', serif; font-size: .88rem; font-weight: 600; letter-spacing: .24em; color: var(--salt); text-transform: uppercase; }
   .nav-cta {
@@ -69,7 +69,7 @@
   }
   .hero-mark {
     width: 150px; height: 150px; border-radius: 50%;
-    background: var(--night);
+    background: var(--blush);
     border: 1px solid rgba(212,188,138,.22);
     overflow: hidden; position: relative; margin-bottom: 38px;
     animation: float 7s ease-in-out infinite;
@@ -106,28 +106,36 @@
   /* ─── STORY ─── */
   .story { background: var(--salt); color: var(--night); padding: 110px 48px; }
   .story-inner { max-width: 860px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.7fr; gap: 68px; align-items: start; }
-  .s-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--atoll); margin-bottom: 14px; }
-  .s-name { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; line-height: 1.05; color: var(--night); margin-bottom: 22px; }
-  .s-attr { font-size: .78rem; letter-spacing: .1em; color: var(--atoll); line-height: 2; }
-  .s-body p { font-size: .88rem; letter-spacing: .03em; line-height: 1.95; color: var(--palm); margin-bottom: 22px; }
+  .s-photo { width: 100%; border-radius: 14px; overflow: hidden; margin-top: 28px; aspect-ratio: 3/4; box-shadow: 0 0 0 3px var(--blush), 0 12px 40px rgba(212,133,90,.3); }
+  .s-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .s-cert { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--atoll); margin-top: 12px; opacity: .75; }
+  .s-label { font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: var(--atoll); margin-bottom: 14px; }
+  .s-name { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 700; line-height: 1.05; color: var(--night); margin-bottom: 22px; }
+  .s-attr { font-size: .92rem; letter-spacing: .1em; color: var(--atoll); line-height: 2; }
+  .s-body p { font-size: 1rem; letter-spacing: .02em; line-height: 2; color: var(--palm); margin-bottom: 24px; }
   .s-body p:last-child { margin-bottom: 0; }
   .s-pull {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-style: italic;
     color: var(--terra); line-height: 1.55;
     border-left: 2px solid var(--terra); padding-left: 22px;
     margin: 30px 0;
   }
 
   /* ─── BALI ─── */
-  .bali { background: var(--terra); padding: 110px 48px; text-align: center; position: relative; overflow: hidden; }
-  .bali::before {
-    content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% -10%, rgba(212,188,138,.18) 0%, transparent 60%);
+  .bali { background: var(--palm); overflow: hidden; }
+  .bali-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
+  .bali-photo { position: relative; overflow: hidden; }
+  .bali-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .bali-content { padding: 90px 64px; display: flex; flex-direction: column; justify-content: center; text-align: left; }
+  .bali-inner { position: relative; z-index: 1; }
+  @media (max-width: 740px) {
+    .bali-split { grid-template-columns: 1fr; }
+    .bali-photo { height: 360px; }
+    .bali-content { padding: 60px 24px; text-align: center; }
   }
-  .bali-inner { max-width: 620px; margin: 0 auto; position: relative; }
   .b-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--shore); opacity: .7; margin-bottom: 20px; }
   .b-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.9rem, 5vw, 3rem); font-weight: 700; line-height: 1.18; color: var(--salt); margin-bottom: 28px; }
-  .b-body { font-size: .84rem; letter-spacing: .04em; line-height: 1.95; color: var(--shore); margin-bottom: 44px; }
+  .b-body { font-size: .96rem; letter-spacing: .03em; line-height: 2; color: var(--shore); margin-bottom: 44px; }
   .b-cta {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
@@ -143,7 +151,7 @@
   .offerings-inner { max-width: 960px; margin: 0 auto; }
   .o-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--pandan); margin-bottom: 14px; }
   .o-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4.5vw, 2.9rem); font-weight: 700; line-height: 1.2; color: var(--salt); margin-bottom: 14px; }
-  .o-sub { font-size: .78rem; letter-spacing: .05em; color: var(--shore); opacity: .55; margin-bottom: 54px; max-width: 480px; }
+  .o-sub { font-size: .9rem; letter-spacing: .04em; color: var(--shore); opacity: .65; margin-bottom: 54px; max-width: 480px; }
   .o-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
   .o-card {
     background: rgba(90,48,32,.25);
@@ -153,8 +161,8 @@
   .o-card:hover { border-color: rgba(212,188,138,.3); transform: translateY(-3px); }
   .o-icon { width: 44px; height: 44px; border-radius: 50%; margin-bottom: 22px; overflow: hidden; }
   .o-icon img { width: 100%; height: 100%; object-fit: contain; }
-  .o-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--salt); margin-bottom: 10px; }
-  .o-card-body { font-size: .7rem; letter-spacing: .04em; line-height: 1.85; color: var(--pandan); }
+  .o-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--salt); margin-bottom: 10px; }
+  .o-card-body { font-size: .86rem; letter-spacing: .03em; line-height: 1.9; color: var(--pandan); }
   .o-note { margin-top: 38px; font-size: .62rem; letter-spacing: .1em; color: var(--shore); opacity: .38; text-align: center; }
 
   /* ─── ISLANDS ─── */
@@ -168,7 +176,7 @@
   .waitlist-inner { max-width: 560px; margin: 0 auto; }
   .w-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--pandan); margin-bottom: 20px; }
   .w-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; line-height: 1.15; color: var(--salt); margin-bottom: 18px; }
-  .w-body { font-size: .8rem; letter-spacing: .04em; color: var(--shore); line-height: 1.95; margin-bottom: 44px; }
+  .w-body { font-size: .95rem; letter-spacing: .03em; color: var(--shore); line-height: 2; margin-bottom: 44px; }
   .w-form { display: flex; flex-direction: column; gap: 12px; }
   .w-row { display: flex; gap: 10px; }
   .w-input {
@@ -195,6 +203,20 @@
     font-size: .78rem; letter-spacing: .05em; color: var(--salt); line-height: 1.8;
   }
 
+  .w-or { display: flex; align-items: center; gap: 14px; margin: 28px 0 20px; }
+  .w-or::before, .w-or::after { content: ''; flex: 1; height: 1px; background: rgba(242,237,228,.12); }
+  .w-or span { font-size: .56rem; letter-spacing: .18em; text-transform: uppercase; color: var(--shore); opacity: .45; }
+  .w-wa {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 13px 28px; border-radius: 8px; text-decoration: none;
+    font-family: 'Josefin Sans', sans-serif; font-size: .7rem; font-weight: 300;
+    letter-spacing: .14em; text-transform: uppercase;
+    background: rgba(37,211,102,.12); border: 1px solid rgba(37,211,102,.3);
+    color: #7ddba3; transition: background .2s, transform .2s;
+  }
+  .w-wa:hover { background: rgba(37,211,102,.2); transform: translateY(-1px); }
+  .w-wa svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; }
+
   /* ─── IG STRIP ─── */
   .ig-strip {
     background: var(--night); border-top: 1px solid rgba(212,188,138,.08);
@@ -202,7 +224,7 @@
     display: flex; align-items: center; justify-content: center; gap: 36px;
     flex-wrap: wrap; text-align: center;
   }
-  .ig-text { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--shore); letter-spacing: .03em; }
+  .ig-text { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--shore); letter-spacing: .03em; }
   .ig-link {
     display: inline-flex; align-items: center; gap: 9px;
     font-size: .62rem; letter-spacing: .2em; text-transform: uppercase;
@@ -218,7 +240,7 @@
     background: var(--night); padding: 58px 48px 40px;
     display: flex; flex-direction: column; align-items: center; text-align: center;
   }
-  .f-mark { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; opacity: .65; margin-bottom: 18px; background: var(--night); }
+  .f-mark { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; opacity: .65; margin-bottom: 18px; background: var(--blush); }
   .f-mark img { width: 100%; height: 100%; object-fit: contain; }
   .f-name { font-size: .56rem; letter-spacing: .26em; color: var(--sage); text-transform: uppercase; margin-bottom: 6px; }
   .f-tag { font-size: .52rem; letter-spacing: .15em; color: var(--palm); margin-bottom: 28px; }
@@ -282,66 +304,67 @@
       <div class="s-label">Hi, I'm</div>
       <h2 class="s-name">Zey</h2>
       <div class="s-attr">
-        Yoga Teacher in Training<br/>
+        200-Hour Vinyasa Yoga Teacher<br/>
+        YogaUnion Bali · Ubud · 25 May 2026<br/>
+        Yoga Alliance RYT 200 Certified<br/>
         Maldivian, through and through
       </div>
+      <div class="s-photo">
+        <img src="./photos/zeyba-certified.jpg" alt="Zeyba Ismail, 200H Vinyasa Yoga Teacher certification, Bali"/>
+      </div>
+      <div class="s-cert">Yoga Alliance RYT 200 · YogaUnion Bali</div>
     </div>
     <div class="s-body">
-      <p>Fifteen years in the Maldivian hospitality industry. The sea was always there, glistening outside every window, and it never got old. A life that looked beautiful from the outside, and often was. But something inside grew quieter and quieter.</p>
-      <div class="s-pull">"The sea was always teaching me stillness. I just took a long time to listen."</div>
-      <p>One day the tide turned inward. Yoga found me not as a trend, but as a thread back to myself. I followed it through breathwork, meditation, and eventually a decision that surprised everyone who knew me: I quit. I booked a flight to Bali.</p>
-      <p>Salt to Soul is what came next. A practice rooted in island life the warmth of the Maldivian sun, the rhythm of the ocean, the kind of stillness that doesn't ask you to go anywhere at all.</p>
+      <p>Ten years in the Maldivian hospitality industry taught me how to care for others, move through pressure with grace, and find beauty in small moments. The sea was always there, glistening everywhere I looked. Always moving, always returning to itself. Like a dance.</p>
+      <div class="s-pull">The sea was always teaching me stillness. I just took a long time to listen.</div>
+      <p>Life brought me to places I never expected. The people I met and the experiences that shaped me slowly brought me closer to myself. Over time I learned to appreciate solitude, protect my peace, and find beauty in simply being.</p>
+      <p>Yoga came to me as a return. To breath, to softness, to a quiet kind of strength. What began with movement became something deeper. Meditation, healing, and self-inquiry. Eventually a decision that surprised everyone who knew me. I quit. And that path led me to Bali.</p>
+      <p>Salt to Soul grew from there. Rooted in island life, shaped by the warmth of the Maldivian sun and the rhythm of the ocean. The belief that healing is about becoming more yourself.</p>
     </div>
   </div>
 </section>
 
 <!-- ─── BALI ─── -->
 <section class="bali">
-  <div class="bali-inner">
-    <div class="b-label">Right now May 2026</div>
-    <h2 class="b-title">I'm in Bali,<br/>becoming a teacher.</h2>
-    <p class="b-body">I'm one month into my yoga teacher training on the island. Early mornings on the mat, long afternoons in study, the kind of days that change you in ways you can't fully explain yet. I'm documenting every part of it. Come follow along.</p>
-    <a href="https://instagram.com/salttosoul.mv" target="_blank" class="b-cta">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-      Follow the journey on Instagram
-    </a>
+  <div class="bali-split">
+    <div class="bali-photo">
+      <img src="./photos/bali-study.jpg" alt="Zeyba's study station at YogaUnion Bali"/>
+    </div>
+    <div class="bali-content">
+      <div class="bali-inner">
+        <div class="b-label">Bali · 2026</div>
+        <h2 class="b-title">Some leaps you just<br/>have to take.</h2>
+        <p class="b-body">One month of early mornings on the mat, long afternoons in study, and the kind of days that change you in ways you can't fully explain. I completed my 200H Vinyasa Teacher Training with Yoga Union and I'm back home. And I can't wait to share it.</p>
+        <a href="https://instagram.com/salttosoul.mv" target="_blank" class="b-cta">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          Follow the journey on Instagram
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ─── OFFERINGS ─── -->
 <section class="offerings">
   <div class="offerings-inner">
-    <div class="o-label">Coming to the Maldives</div>
-    <h2 class="o-title">Yoga, meditation and the kind of stillness you've been looking for.</h2>
+    <div class="o-label">Coming to you</div>
+    <h2 class="o-title">Yoga, dance, and the kind of stillness you've been looking for.</h2>
     <p class="o-sub">Launching soon. Intimate sessions rooted in the islands I grew up in.</p>
-    <div class="o-grid">
+    <div class="o-grid" style="grid-template-columns: repeat(2, 1fr);">
       <div class="o-card">
         <div class="o-icon" style="background:#B85C38;"><img src="./brand/icon/icon-toni-childspose.png" alt="yoga"/></div>
         <div class="o-card-name">Yoga Sessions</div>
-        <div class="o-card-body">Small-group and private sessions beginner-friendly, deeply rooted in alignment and breath. For people who have never been on a mat and people who've been on one for years.</div>
+        <div class="o-card-body">Small-group and private sessions, beginner-friendly and rooted in alignment and breath. For people who have never been on a mat and people who've been on one for years. Includes sunset and sunrise sessions timed to the golden hour, and full moon gatherings once a month under the open sky.</div>
       </div>
       <div class="o-card">
-        <div class="o-icon" style="background:#C98840;"><img src="./brand/icon/icon-toni-downdog.png" alt="sunset yoga"/></div>
-        <div class="o-card-name">Sunset Yoga</div>
-        <div class="o-card-body">Terrace sessions timed to the golden hour. Moving through the practice as the sky burns orange above the city — stillness found in the most unexpected place.</div>
-      </div>
-      <div class="o-card">
-        <div class="o-icon" style="background:#5A3020;"><img src="./brand/icon/icon-toni-meditation.png" alt="full moon yoga"/></div>
-        <div class="o-card-name">Full Moon Yoga</div>
-        <div class="o-card-body">Once-a-month gatherings under the open sky. A slower, more restorative practice — breathwork, meditation, and stillness guided by the rhythm of the lunar cycle.</div>
+        <div class="o-icon" style="background:#D4855A;"><img src="./brand/icon/icon-toni-movement.png" alt="dance meditation"/></div>
+        <div class="o-card-name">Dance Meditation</div>
+        <div class="o-card-body">This is about feeling. About moving in a way that is entirely your own. Letting the body speak. Letting emotion move through you instead of staying stored inside you. The session begins gently, builds into free movement, then guides you back into stillness. Come as you are. All you need is a willingness to feel.</div>
       </div>
     </div>
     <p class="o-note">Exact dates and booking details coming soon. Join the waitlist to be first.</p>
   </div>
 </section>
-
-<!-- ─── ISLANDS QUOTE ─── -->
-<div class="islands">
-  <div class="islands-inner">
-    <p class="islands-title">"There is a particular kind of peace that only the Maldivian sea gives you. Salt in the air, light on the water, and the sudden, quiet understanding that you have everything you need."</p>
-    <p class="islands-body">Beach days, glistening reefs, the kind of mornings that exist nowhere else on earth. The islands have always been part of the practice.</p>
-  </div>
-</div>
 
 <!-- ─── WAITLIST ─── -->
 <section class="waitlist" id="waitlist">
@@ -374,6 +397,16 @@
       </div>
       <p class="w-note">No spam. Just one message when classes open.</p>
     </form>
+
+    <div class="w-or"><span>or</span></div>
+    <a href="https://wa.me/9609118110?text=Hi%20Zeyba!%20I%27d%20love%20to%20know%20more%20about%20your%20sessions." target="_blank" class="w-wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Message on WhatsApp
+    </a>
+    <a href="https://instagram.com/salttosoul.mv" target="_blank" class="w-wa" style="margin-top:10px; background:rgba(212,133,90,.1); border-color:rgba(212,133,90,.3); color:var(--blush);">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      DM on Instagram
+    </a>
 
     <div class="w-success" id="join-success">
       You're on the list thank you.<br/>
