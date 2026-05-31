@@ -128,6 +128,8 @@
   .bali-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 600px; }
   .bali-photo { position: relative; overflow: hidden; }
   .bali-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .bali-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 4px; height: 100%; }
+  .bali-collage img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   .bali-content { padding: 90px 64px; display: flex; flex-direction: column; justify-content: center; text-align: left; }
   .bali-inner { position: relative; z-index: 1; }
   @media (max-width: 740px) {
@@ -330,7 +332,12 @@
 <section class="bali">
   <div class="bali-split">
     <div class="bali-photo">
-      <img src="./photos/bali-study.jpg" alt="Zeyba's study station at YogaUnion Bali"/>
+      <div class="bali-collage">
+        <img src="./photos/IMG_8171.jpg" alt="Morning meditation in the open shala at YogaUnion Bali"/>
+        <img src="./photos/IMG_8405.jpg" alt="Vinyasa class and pose study, YogaUnion Bali"/>
+        <img src="./photos/IMG_8481.jpg" alt="The shala and training manual, YogaUnion Bali"/>
+        <img src="./photos/IMG_7175.jpg" alt="YogaUnion Bali tote, notebook and water bottle"/>
+      </div>
     </div>
     <div class="bali-content">
       <div class="bali-inner">
