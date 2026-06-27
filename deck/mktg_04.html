@@ -3,34 +3,33 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 50% 80%,#3A1A08 0%,#130804 70%);font-family:'Josefin Sans',sans-serif;}
-.slide{width:100%;height:100%;padding:56px 90px;display:flex;flex-direction:column;justify-content:space-between;}
-.top{display:flex;flex-direction:column;gap:10px;}
+.slide{width:100%;height:100%;padding:48px 90px;display:flex;flex-direction:column;justify-content:space-between;}
+.top{display:flex;flex-direction:column;gap:8px;flex-shrink:0;}
 .eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#D4BC8A;font-weight:200;}
-h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#F2EDE4;line-height:1.15;}
+h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:#F2EDE4;line-height:1.15;}
 h2 em{color:#D4855A;font-style:italic;font-weight:300;}
 
-.mid{display:flex;gap:20px;flex:1;align-items:center;}
+.mid{display:flex;gap:16px;flex:1;align-items:stretch;margin:16px 0 14px;}
 
 .card{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(212,188,138,0.1);
-  border-radius:16px;padding:30px 28px;display:flex;flex-direction:column;justify-content:space-between;height:280px;}
-.card-icon{width:44px;height:44px;object-fit:contain;opacity:0.85;margin-bottom:2px;}
-.card-eyebrow{font-size:8.5px;letter-spacing:0.28em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:10px;}
-.card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#F2EDE4;margin-bottom:12px;}
-.card-text{font-size:12px;letter-spacing:0.03em;color:#F2EDE4;line-height:1.78;font-weight:200;flex:1;}
-.card-badge{font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:#D4BC8A;opacity:0.75;font-weight:200;margin-top:14px;}
+  border-radius:16px;padding:22px 20px;display:flex;flex-direction:column;overflow:hidden;}
+.card-icon{width:36px;height:36px;object-fit:contain;opacity:0.85;margin-bottom:6px;flex-shrink:0;}
+.card-eyebrow{font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:8px;flex-shrink:0;}
+.card-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#F2EDE4;margin-bottom:8px;flex-shrink:0;}
+.card-text{font-size:11px;letter-spacing:0.02em;color:#F2EDE4;line-height:1.72;font-weight:200;text-align:justify;flex:1;overflow:hidden;}
+.card-badge{font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#D4BC8A;opacity:0.75;font-weight:200;margin-top:10px;flex-shrink:0;}
 
-/* Accent card */
 .card-accent{background:rgba(212,188,138,0.06);border-color:rgba(212,188,138,0.22);}
 
-.bottom{display:flex;gap:20px;}
+.bottom{display:flex;gap:16px;flex-shrink:0;}
 .mini{flex:1;background:rgba(255,255,255,0.03);border:1px solid rgba(212,188,138,0.08);
-  border-radius:12px;padding:18px 22px;display:flex;gap:16px;align-items:flex-start;}
-.mini-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:rgba(212,188,138,0.35);line-height:1;}
-.mini-body{}
-.mini-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#F2EDE4;margin-bottom:5px;}
-.mini-text{font-size:11px;letter-spacing:0.03em;color:#F2EDE4;line-height:1.65;font-weight:200;}
+  border-radius:12px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;overflow:hidden;}
+.mini-num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:rgba(212,188,138,0.35);line-height:1;flex-shrink:0;}
+.mini-body{overflow:hidden;}
+.mini-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#F2EDE4;margin-bottom:4px;}
+.mini-text{font-size:10.5px;letter-spacing:0.02em;color:#F2EDE4;line-height:1.65;font-weight:200;text-align:justify;}
 
-.bot{font-size:9px;letter-spacing:0.28em;color:#F2EDE4;text-transform:lowercase;opacity:0.4;}
+.bot{font-size:9px;letter-spacing:0.28em;color:#F2EDE4;text-transform:lowercase;opacity:0.4;flex-shrink:0;}
 </style></head>
 <body><div class="slide">
   <div class="top">
@@ -41,42 +40,34 @@ h2 em{color:#D4855A;font-style:italic;font-weight:300;}
   <div class="mid">
 
     <div class="card card-accent">
-      <div>
-        <img class="card-icon" src="icon_run.png" alt=""/>
-        <div class="card-eyebrow">Quarterly</div>
-        <div class="card-title">Bring a Friend Week</div>
-        <div class="card-text">Any student brings someone new — the friend comes free. The student gets a class credit. Run four times a year. Every time, 10–12 new people try the class. Most stay.</div>
-      </div>
-      <div class="card-badge">Runs quarterly · costs nothing · fills the next cohort</div>
+      <img class="card-icon" src="icon_run.png" alt=""/>
+      <div class="card-eyebrow">Quarterly</div>
+      <div class="card-title">Bring a Friend Week</div>
+      <div class="card-text">Any student brings someone new — the friend comes free. The student gets a class credit. Run four times a year. Every time, 10–12 new people try the class. Most stay.</div>
+      <div class="card-badge">Quarterly · costs nothing · fills the next cohort</div>
     </div>
 
     <div class="card">
-      <div>
-        <img class="card-icon" src="icon_dance.png" alt=""/>
-        <div class="card-eyebrow">Tourists + visitors</div>
-        <div class="card-title">Girls Trip Drop-In</div>
-        <div class="card-text">"Added to the itinerary — sunrise yoga with Zey." Single session, DM to book, no commitment. Every visitor who comes becomes a story that travels home. That story finds its way back to Malé.</div>
-      </div>
+      <img class="card-icon" src="icon_dance.png" alt=""/>
+      <div class="card-eyebrow">Tourists + visitors</div>
+      <div class="card-title">Girls Trip Drop-In</div>
+      <div class="card-text">"Added to the itinerary — sunrise yoga with Zey." Single session, DM to book, no commitment. Every visitor becomes a story that travels home — and finds its way back to Malé.</div>
       <div class="card-badge">No subscription · premium one-off rate</div>
     </div>
 
     <div class="card">
-      <div>
-        <img class="card-icon" src="icon_nature.png" alt=""/>
-        <div class="card-eyebrow">January series</div>
-        <div class="card-title">New Year, New Nervous System</div>
-        <div class="card-text">Not "new year new you." That's tired. This is: <em>"Stop being so wired."</em> 4-week January bundle. Sells as a package. People are desperate for this after December chaos. Highest conversion month of the year.</div>
-      </div>
-      <div class="card-badge">4 weeks · sell as a bundle · biggest month</div>
+      <img class="card-icon" src="icon_nature.png" alt=""/>
+      <div class="card-eyebrow">January series</div>
+      <div class="card-title">New Year, New Nervous System</div>
+      <div class="card-text">Not "new year new you." This is: <em>"Stop being so wired."</em> 4-week January bundle sold as a package. People are desperate for this after December. Highest conversion month of the year.</div>
+      <div class="card-badge">4 weeks · bundle · biggest month</div>
     </div>
 
     <div class="card">
-      <div>
-        <img class="card-icon" src="icon_pose.png" alt=""/>
-        <div class="card-eyebrow">Corporate wellness</div>
-        <div class="card-title">Office Team Sessions</div>
-        <div class="card-text">"One hour. No emails. Just breath." Target offices and businesses in Malé. They come to the terrace or she brings the session to them. 10–20 people. Positions her as a professional, not just a creator.</div>
-      </div>
+      <img class="card-icon" src="icon_pose.png" alt=""/>
+      <div class="card-eyebrow">Corporate wellness</div>
+      <div class="card-title">Office Team Sessions</div>
+      <div class="card-text">"One hour. No emails. Just breath." Target offices in Malé. They come to the terrace or she brings the session to them. 10–20 people. Positions her as a professional, not just a creator.</div>
       <div class="card-badge">10–20 people · invoice-able · B2B</div>
     </div>
 
@@ -87,7 +78,7 @@ h2 em{color:#D4855A;font-style:italic;font-weight:300;}
       <div class="mini-num">↑</div>
       <div class="mini-body">
         <div class="mini-title">Waitlist psychology</div>
-        <div class="mini-text">Never show empty spots. Always show scarcity. "2 spots left" posts outperform "class is open" every time. The waitlist is the ad.</div>
+        <div class="mini-text">Never show empty spots. Always show scarcity. "2 spots left" outperforms "class is open" every time. The waitlist is the ad.</div>
       </div>
     </div>
     <div class="mini">

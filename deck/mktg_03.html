@@ -3,23 +3,23 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 75% 30%,#3D1A08 0%,#130804 78%);font-family:'Josefin Sans',sans-serif;}
-.slide{width:100%;height:100%;padding:56px 90px;display:flex;gap:60px;align-items:stretch;}
-.left{width:310px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;gap:0;}
-.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#D4BC8A;font-weight:200;margin-bottom:16px;}
-h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:600;color:#F2EDE4;line-height:1.18;margin-bottom:20px;}
+.slide{width:100%;height:100%;padding:52px 90px;display:flex;gap:56px;align-items:stretch;}
+
+.left{width:280px;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;}
+.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#D4BC8A;font-weight:200;margin-bottom:14px;}
+h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:#F2EDE4;line-height:1.18;margin-bottom:18px;}
 h2 em{color:#D4855A;font-style:italic;font-weight:300;}
-.sub{font-size:12.5px;letter-spacing:0.04em;color:#F2EDE4;line-height:1.85;font-weight:200;}
-.right{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:14px;}
+.sub{font-size:11.5px;letter-spacing:0.03em;color:#F2EDE4;line-height:1.8;font-weight:200;text-align:justify;}
+
+.right{flex:1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:12px;}
 
 .occ{background:rgba(255,255,255,0.04);border:1px solid rgba(212,188,138,0.1);border-radius:13px;
-  padding:22px 20px;display:flex;flex-direction:column;justify-content:space-between;}
-.occ:hover{border-color:rgba(212,188,138,0.25);}
-.occ-date{font-size:8px;letter-spacing:0.28em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:8px;}
-.occ-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#F2EDE4;line-height:1.2;margin-bottom:10px;}
-.occ-text{font-size:11px;letter-spacing:0.03em;color:#F2EDE4;line-height:1.68;font-weight:200;flex:1;}
-.occ-tag{margin-top:12px;font-size:8.5px;letter-spacing:0.22em;text-transform:uppercase;color:#D4BC8A;opacity:0.7;font-weight:200;}
+  padding:18px 18px;display:flex;flex-direction:column;overflow:hidden;}
+.occ-date{font-size:8px;letter-spacing:0.24em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:6px;flex-shrink:0;}
+.occ-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#F2EDE4;line-height:1.2;margin-bottom:8px;flex-shrink:0;}
+.occ-text{font-size:10.5px;letter-spacing:0.02em;color:#F2EDE4;line-height:1.65;font-weight:200;text-align:justify;flex:1;overflow:hidden;}
+.occ-tag{margin-top:10px;font-size:8px;letter-spacing:0.2em;text-transform:uppercase;color:#D4BC8A;opacity:0.65;font-weight:200;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
-/* Highlight the birthday one */
 .occ-hero{background:rgba(212,188,138,0.07);border-color:rgba(212,188,138,0.28);}
 .occ-hero .occ-title{color:#D4BC8A;}
 </style></head>
@@ -27,62 +27,50 @@ h2 em{color:#D4855A;font-style:italic;font-weight:300;}
   <div class="left">
     <div class="eyebrow">Occasion campaigns</div>
     <h2>Moments people <em>want</em> to share.</h2>
-    <div class="sub">Each of these taps into something people already want to celebrate. The class becomes the gift — the photo from it becomes the post that fills the next class.</div>
+    <div class="sub">Each taps into something people already want to celebrate. The class becomes the gift — the photo from it fills the next class.</div>
   </div>
 
   <div class="right">
 
     <div class="occ occ-hero">
-      <div>
-        <div class="occ-date">Any day — year-round</div>
-        <div class="occ-title">Birthday Ritual</div>
-        <div class="occ-text">"Start your year differently. The terrace is yours." Private group 4–10 friends, personalised playlist, intention-setting moment. The birthday person always posts it.</div>
-      </div>
-      <div class="occ-tag">Books via DM · year's most shareable post</div>
+      <div class="occ-date">Any day — year-round</div>
+      <div class="occ-title">Birthday Ritual</div>
+      <div class="occ-text">"Start your year differently. The terrace is yours." Private group 4–10 friends, personalised playlist, intention-setting moment. The birthday person always posts it.</div>
+      <div class="occ-tag">Books via DM · most shareable post of the year</div>
     </div>
 
     <div class="occ">
-      <div>
-        <div class="occ-date">February 13</div>
-        <div class="occ-title">Galentines Class</div>
-        <div class="occ-text">"For the girls you love most. A class, then brunch?" Group of 4+, themed energy, something small and special waiting at the end.</div>
-      </div>
+      <div class="occ-date">February 13</div>
+      <div class="occ-title">Galentines Class</div>
+      <div class="occ-text">"For the girls you love most. A class, then brunch?" Group of 4+, themed energy, something small and special waiting at the end. Posts itself.</div>
       <div class="occ-tag">Groups of 4+ · posts itself</div>
     </div>
 
     <div class="occ">
-      <div>
-        <div class="occ-date">February 14</div>
-        <div class="occ-title">Valentine's Day</div>
-        <div class="occ-text">Two in one. Couples yoga for pairs. Solo class for singles: <em>"Come alone. Fall in love with yourself."</em> The solo angle always wins on Instagram.</div>
-      </div>
+      <div class="occ-date">February 14</div>
+      <div class="occ-title">Valentine's Day</div>
+      <div class="occ-text">Two in one. Couples yoga for pairs. Solo class for singles: <em>"Come alone. Fall in love with yourself."</em> The solo angle always wins on Instagram.</div>
       <div class="occ-tag">Two classes · two audiences</div>
     </div>
 
     <div class="occ">
-      <div>
-        <div class="occ-date">Before the big day</div>
-        <div class="occ-title">Before the Wedding</div>
-        <div class="occ-text">"One morning of calm before the best day." Bridal party books the terrace. Sisters, best friends, mothers. Gift-able. Premium price. Books by word of mouth.</div>
-      </div>
+      <div class="occ-date">Before the big day</div>
+      <div class="occ-title">Before the Wedding</div>
+      <div class="occ-text">"One morning of calm before the best day." Bridal party books the terrace — sisters, best friends, mothers. Gift-able. Books by word of mouth.</div>
       <div class="occ-tag">Private booking · premium tier</div>
     </div>
 
     <div class="occ">
-      <div>
-        <div class="occ-date">Mother's Day</div>
-        <div class="occ-title">Bring Your Mum</div>
-        <div class="occ-text">"Give her stillness." Daughters gift it to their mums, or come together. Deeply personal, deeply shareable. Caption writes itself.</div>
-      </div>
+      <div class="occ-date">Mother's Day</div>
+      <div class="occ-title">Bring Your Mum</div>
+      <div class="occ-text">"Give her stillness." Daughters gift it to their mums, or come together. Deeply personal, deeply shareable. The caption writes itself.</div>
       <div class="occ-tag">Mother + daughter · gift to book</div>
     </div>
 
     <div class="occ">
-      <div>
-        <div class="occ-date">Ramadan · Post-Iftar</div>
-        <div class="occ-title">After the Fast</div>
-        <div class="occ-text">"After the feast, find the stillness." Gentle yin yoga timed after Iftar. Deeply relevant in Malé. Underserved. Handled with care, it builds real loyalty.</div>
-      </div>
+      <div class="occ-date">Ramadan · Post-Iftar</div>
+      <div class="occ-title">After the Fast</div>
+      <div class="occ-text">"After the feast, find the stillness." Gentle yin yoga timed after Iftar. Deeply relevant in Malé and underserved. Handled with care, it builds real loyalty.</div>
       <div class="occ-tag">Culturally rooted · yin only</div>
     </div>
 
