@@ -1,0 +1,108 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 50% 40%, #3A1A08 0%, #130804 80%);font-family:'Josefin Sans',sans-serif;}
+.slide{width:100%;height:100%;padding:60px 90px;display:flex;flex-direction:column;gap:0;justify-content:space-between;}
+.top{display:flex;flex-direction:column;gap:10px;}
+.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:rgba(212,188,138,0.5);font-weight:200;}
+h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#F2EDE4;line-height:1.15;}
+h2 em{color:#D4855A;font-style:italic;font-weight:300;}
+.milestones{display:flex;gap:20px;align-items:stretch;}
+.milestone{flex:1;border-radius:14px;padding:28px 24px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.m1{background:rgba(212,188,138,0.06);border:1px solid rgba(212,188,138,0.15);}
+.m2{background:rgba(212,133,90,0.08);border:1px solid rgba(212,133,90,0.2);}
+.m3{background:rgba(184,92,56,0.1);border:1px solid rgba(184,92,56,0.25);}
+.m4{background:rgba(184,92,56,0.16);border:1px solid rgba(184,92,56,0.35);}
+.m-month{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(242,237,228,0.4);font-weight:200;margin-bottom:6px;}
+.m-pct{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;line-height:1;margin-bottom:4px;}
+.m1 .m-pct{color:rgba(212,188,138,0.6);}
+.m2 .m-pct{color:rgba(212,133,90,0.75);}
+.m3 .m-pct{color:rgba(184,92,56,0.85);}
+.m4 .m-pct{color:#D4855A;}
+.m-pct-label{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(242,237,228,0.3);font-weight:200;margin-bottom:18px;}
+.m-students{font-size:12px;letter-spacing:0.06em;color:rgba(242,237,228,0.45);font-weight:200;margin-bottom:8px;}
+.m-rev{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;}
+.m1 .m-rev{color:rgba(212,188,138,0.75);}
+.m2 .m-rev{color:rgba(212,133,90,0.85);}
+.m3 .m-rev{color:rgba(184,92,56,0.9);}
+.m4 .m-rev{color:#F2EDE4;}
+.m-rev-label{font-size:9px;letter-spacing:0.18em;color:rgba(242,237,228,0.28);text-transform:lowercase;font-weight:200;}
+.bar{position:absolute;bottom:0;left:0;right:0;height:3px;}
+.m1 .bar{background:rgba(212,188,138,0.25);}
+.m2 .bar{background:rgba(212,133,90,0.35);}
+.m3 .bar{background:rgba(184,92,56,0.45);}
+.m4 .bar{background:#D4855A;opacity:0.6;}
+.bottom-note{display:flex;justify-content:space-between;align-items:center;}
+.note-text{font-size:12px;letter-spacing:0.04em;color:rgba(242,237,228,0.4);font-weight:200;font-style:italic;}
+.year-total{display:flex;flex-direction:column;align-items:flex-end;gap:2px;}
+.year-label{font-size:9.5px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(212,188,138,0.45);font-weight:200;}
+.year-val{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#D4BC8A;}
+</style></head>
+<body><div class="slide">
+  <div class="top">
+    <div class="eyebrow">Year 1 growth path</div>
+    <h2>You don't need to fill everything at once.<br/><em>You just need to keep growing.</em></h2>
+  </div>
+  <div class="milestones">
+    <div class="milestone m1">
+      <div>
+        <div class="m-month">Month 3</div>
+        <div class="m-pct">25%</div>
+        <div class="m-pct-label">capacity filled</div>
+        <div class="m-students">36 students</div>
+      </div>
+      <div>
+        <div class="m-rev">MVR 108k</div>
+        <div class="m-rev-label">per month</div>
+      </div>
+      <div class="bar"></div>
+    </div>
+    <div class="milestone m2">
+      <div>
+        <div class="m-month">Month 6</div>
+        <div class="m-pct">50%</div>
+        <div class="m-pct-label">capacity filled</div>
+        <div class="m-students">72 students</div>
+      </div>
+      <div>
+        <div class="m-rev">MVR 216k</div>
+        <div class="m-rev-label">per month</div>
+      </div>
+      <div class="bar"></div>
+    </div>
+    <div class="milestone m3">
+      <div>
+        <div class="m-month">Month 9</div>
+        <div class="m-pct">75%</div>
+        <div class="m-pct-label">capacity filled</div>
+        <div class="m-students">108 students</div>
+      </div>
+      <div>
+        <div class="m-rev">MVR 324k</div>
+        <div class="m-rev-label">per month</div>
+      </div>
+      <div class="bar"></div>
+    </div>
+    <div class="milestone m4">
+      <div>
+        <div class="m-month">Month 12</div>
+        <div class="m-pct">90%</div>
+        <div class="m-pct-label">capacity filled</div>
+        <div class="m-students">130 students</div>
+      </div>
+      <div>
+        <div class="m-rev">MVR 389k</div>
+        <div class="m-rev-label">per month</div>
+      </div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  <div class="bottom-note">
+    <div class="note-text">No rent. No staff. No equipment costs. Almost everything you earn, you keep.</div>
+    <div class="year-total">
+      <div class="year-label">Year 1 total (if targets met)</div>
+      <div class="year-val">MVR 2,756,160</div>
+    </div>
+  </div>
+</div></body></html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 40% 60%, #4A2010 0%, #1A0C04 75%);font-family:'Josefin Sans',sans-serif;}
+.slide{width:100%;height:100%;padding:60px 90px;display:flex;gap:70px;align-items:center;}
+.left{display:flex;flex-direction:column;gap:0;width:420px;flex-shrink:0;}
+.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:rgba(212,188,138,0.5);font-weight:200;margin-bottom:16px;}
+h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#F2EDE4;line-height:1.18;margin-bottom:24px;}
+h2 em{color:#D4855A;font-weight:300;}
+.sub{font-size:13px;letter-spacing:0.04em;color:rgba(242,237,228,0.5);line-height:1.85;font-weight:200;margin-bottom:32px;}
+.big-calc{background:rgba(212,188,138,0.07);border:1px solid rgba(212,188,138,0.15);border-radius:12px;padding:22px 26px;display:flex;flex-direction:column;gap:8px;}
+.calc-row{display:flex;justify-content:space-between;align-items:center;}
+.calc-label{font-size:11.5px;letter-spacing:0.08em;color:rgba(242,237,228,0.5);font-weight:200;}
+.calc-val{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#D4BC8A;}
+.calc-div{height:1px;background:rgba(212,188,138,0.15);margin:4px 0;}
+.calc-total-label{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(242,237,228,0.45);font-weight:200;}
+.calc-total-val{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#F2EDE4;}
+.right{flex:1;display:flex;flex-direction:column;gap:14px;}
+.right-title{font-size:10px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(212,188,138,0.5);font-weight:200;margin-bottom:6px;}
+.cohort{background:rgba(255,255,255,0.03);border:1px solid rgba(212,188,138,0.1);border-radius:12px;padding:18px 22px;}
+.cohort-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(212,188,138,0.5);font-weight:200;margin-bottom:12px;}
+.slots{display:flex;gap:8px;}
+.slot{flex:1;background:rgba(212,188,138,0.07);border-radius:8px;padding:10px 8px;text-align:center;}
+.slot-time{font-size:11px;letter-spacing:0.06em;color:rgba(242,237,228,0.4);font-weight:200;margin-bottom:4px;}
+.slot-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:#D4BC8A;}
+.slot-count{font-size:9.5px;letter-spacing:0.08em;color:rgba(242,237,228,0.35);font-weight:200;}
+.slot-rev{font-size:10px;letter-spacing:0.06em;color:rgba(212,133,90,0.7);font-weight:300;margin-top:3px;}
+.bot{position:absolute;bottom:28px;left:90px;font-size:9px;letter-spacing:0.28em;color:rgba(242,237,228,0.18);text-transform:lowercase;}
+</style></head>
+<body><div class="slide" style="position:relative;">
+  <div class="left">
+    <div class="eyebrow">The model</div>
+    <h2>12 groups.<br/>12 students each.<br/><em>One terrace.</em></h2>
+    <div class="sub">Students pay once a month and come 3 times a week. That makes your income predictable — like a salary, but from your own business.</div>
+    <div class="big-calc">
+      <div class="calc-row"><span class="calc-label">Students per group</span><span class="calc-val">12</span></div>
+      <div class="calc-row"><span class="calc-label">Monthly fee</span><span class="calc-val">MVR 3,000</span></div>
+      <div class="calc-div"></div>
+      <div class="calc-row"><span class="calc-label">Per group / month</span><span class="calc-val">MVR 36,000</span></div>
+      <div class="calc-div"></div>
+      <div class="calc-row"><span class="calc-total-label">All 12 groups</span><span class="calc-total-val">MVR 432,000/mo</span></div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="right-title">Your weekly schedule — two cohorts, six slots each</div>
+    <div class="cohort">
+      <div class="cohort-label">Cohort A — Sunday · Tuesday · Thursday</div>
+      <div class="slots">
+        <div class="slot"><div class="slot-time">5am</div><div class="slot-name">Set A</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">6am</div><div class="slot-name">Set B</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">4pm</div><div class="slot-name">Set C</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">5pm</div><div class="slot-name">Set D</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">6pm</div><div class="slot-name">Set E</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">7pm</div><div class="slot-name">Set F</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+      </div>
+    </div>
+    <div class="cohort">
+      <div class="cohort-label">Cohort B — Monday · Wednesday · Saturday</div>
+      <div class="slots">
+        <div class="slot"><div class="slot-time">5am</div><div class="slot-name">Set G</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">6am</div><div class="slot-name">Set H</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">4pm</div><div class="slot-name">Set I</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">5pm</div><div class="slot-name">Set J</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">6pm</div><div class="slot-name">Set K</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+        <div class="slot"><div class="slot-time">7pm</div><div class="slot-name">Set L</div><div class="slot-count">12 students</div><div class="slot-rev">MVR 36k</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="bot">salttosoul.mv</div>
+</div></body></html>
