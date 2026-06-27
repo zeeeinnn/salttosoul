@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{width:1280px;height:720px;overflow:hidden;background:radial-gradient(ellipse at 20% 70%,#5A2210 0%,#1F0A04 70%);font-family:'Josefin Sans',sans-serif;}
+.slide{width:100%;height:100%;padding:56px 90px;display:flex;flex-direction:column;justify-content:space-between;}
+.top{display:flex;flex-direction:column;gap:10px;}
+.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#D4BC8A;font-weight:200;}
+h2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:#F2EDE4;line-height:1.15;}
+h2 em{color:#D4855A;font-style:italic;font-weight:300;}
+.cards{display:flex;gap:24px;flex:1;align-items:center;}
+
+/* Full moon card — larger, more prominent */
+.card-moon{flex:1.2;background:rgba(212,188,138,0.06);border:1px solid rgba(212,188,138,0.25);
+  border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;height:310px;}
+/* New moon card */
+.card-new{flex:1;background:rgba(255,255,255,0.04);border:1px solid rgba(212,188,138,0.1);
+  border-radius:16px;padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;height:310px;}
+
+.c-icon{width:52px;height:52px;object-fit:contain;opacity:0.85;margin-bottom:4px;}
+.c-eyebrow{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:10px;}
+.c-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:#F2EDE4;margin-bottom:14px;}
+.c-text{font-size:12.5px;letter-spacing:0.03em;color:#F2EDE4;line-height:1.78;font-weight:200;}
+.c-rule{height:1px;background:rgba(212,188,138,0.2);margin:16px 0;}
+.c-how{font-size:11px;letter-spacing:0.04em;color:#D4BC8A;line-height:1.7;font-weight:200;font-style:italic;}
+.c-badge{display:inline-block;margin-top:14px;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:#D4855A;font-weight:200;
+  border:1px solid rgba(212,133,90,0.4);border-radius:20px;padding:5px 14px;}
+
+/* Note box */
+.note{background:rgba(212,188,138,0.05);border:1px solid rgba(212,188,138,0.12);border-radius:12px;
+  padding:20px 28px;display:flex;gap:24px;align-items:center;}
+.note-label{font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#D4855A;font-weight:200;white-space:nowrap;}
+.note-text{font-size:12px;letter-spacing:0.04em;color:#F2EDE4;line-height:1.7;font-weight:200;}
+.note-text strong{color:#D4BC8A;font-weight:300;}
+
+.bot{font-size:9px;letter-spacing:0.28em;color:#F2EDE4;text-transform:lowercase;opacity:0.4;}
+</style></head>
+<body><div class="slide">
+  <div class="top">
+    <div class="eyebrow">Monthly anchors — every month, no matter what</div>
+    <h2>Two nights that become <em>the thing</em> people plan around.</h2>
+  </div>
+
+  <div class="cards">
+    <div class="card-moon">
+      <div>
+        <img class="c-icon" src="icon_meditate.png" alt=""/>
+        <div class="c-eyebrow">Full Moon</div>
+        <div class="c-title">Full Moon Class</div>
+        <div class="c-text">12 spots. 6:30pm as the sun drops, the terrace open to the sky. "When the tide pulls, so do we." Announce 10 days out. Post "4 spots left" three days before. Post "Sold out" the day of.</div>
+        <div class="c-rule"></div>
+        <div class="c-how">Within 3 months this becomes the most talked-about session she runs. The waitlist is the ad.</div>
+      </div>
+      <div class="c-badge">Monthly · 12 spots only · waitlist fills the rest</div>
+    </div>
+
+    <div class="card-new">
+      <div>
+        <img class="c-icon" src="icon_pose.png" alt=""/>
+        <div class="c-eyebrow">New Moon</div>
+        <div class="c-title">Intention Setting Class</div>
+        <div class="c-text">The quieter companion. Yin yoga + journaling. 8 spots max. "What are you calling in this month?" Held indoors, candlelit if possible. Slower, deeper, more intimate.</div>
+        <div class="c-rule"></div>
+        <div class="c-how">Different crowd — more introspective, more likely to become long-term regulars.</div>
+      </div>
+      <div class="c-badge">Monthly · 8 spots · regulars only after month 2</div>
+    </div>
+
+    <div class="note" style="flex:1;">
+      <div class="note-label">Why these two<br/>work together</div>
+      <div class="note-text">Full moon draws <strong>new people</strong> — it's exciting, shareable, social. New moon retains <strong>your regulars</strong> — it feels exclusive, meaningful. Together they give her a rhythm the community starts to build their month around. Neither requires new content. Just consistency.</div>
+    </div>
+  </div>
+
+  <div class="bot">salttosoul.mv</div>
+</div></body></html>
