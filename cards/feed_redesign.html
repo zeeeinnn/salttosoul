@@ -1,0 +1,227 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{width:1080px;background:#0A0604;font-family:'Josefin Sans',sans-serif;color:#F2EDE4;}
+
+.header{padding:56px 64px 52px;}
+.h-row1{display:flex;justify-content:space-between;align-items:center;margin-bottom:36px;}
+.brand{font-size:10px;letter-spacing:0.38em;text-transform:uppercase;color:#D4BC8A;font-weight:200;}
+.handle{font-size:10px;letter-spacing:0.24em;color:rgba(212,188,138,0.4);}
+.eyebrow{font-size:10px;letter-spacing:0.36em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:14px;}
+.h-title{font-family:'Cormorant Garamond',serif;font-size:54px;font-weight:300;font-style:italic;color:#F2EDE4;line-height:1.2;}
+
+.divider{height:1px;background:rgba(212,188,138,0.1);}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+
+.cell{aspect-ratio:1;position:relative;overflow:hidden;}
+
+/* Column type backgrounds */
+.move{background:radial-gradient(ellipse at 35% 80%,#4A1A06 0%,#1E0A04 65%,#0A0402 100%);}
+.her{background:radial-gradient(ellipse at 65% 25%,#3A1A08 0%,#160804 65%);}
+.plc{background:radial-gradient(ellipse at 50% 50%,#0D1F2D 0%,#060E16 65%);}
+/* Pinned — more vivid */
+.move-p{background:radial-gradient(ellipse at 30% 78%,#8B3010 0%,#3D1208 50%,#1A0804 100%);border-top:2px solid rgba(212,133,90,0.55);}
+.her-p{background:radial-gradient(ellipse at 60% 20%,#5A2E14 0%,#2A1008 55%,#0E0604 100%);border-top:2px solid rgba(212,188,138,0.4);}
+.plc-p{background:radial-gradient(ellipse at 70% 45%,#0D2535 0%,#060E16 65%);border-top:2px solid rgba(30,80,120,0.5);}
+
+.c-top{position:absolute;top:22px;left:22px;right:22px;display:flex;justify-content:space-between;align-items:flex-start;}
+.c-tag{font-size:8px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(212,188,138,0.65);font-weight:200;}
+.c-pin{font-size:8px;letter-spacing:0.22em;text-transform:uppercase;color:#D4855A;font-weight:200;}
+
+.c-icon{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-58%);
+  width:88px;height:88px;object-fit:contain;
+  opacity:0.42;
+  filter:brightness(1.5) drop-shadow(0 0 18px rgba(212,188,138,0.35));
+}
+
+.c-bottom{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:26px 24px;
+  background:linear-gradient(to top,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.0) 100%);
+}
+.c-label{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;font-weight:300;color:#F2EDE4;line-height:1.3;margin-bottom:5px;}
+.c-desc{font-size:7.5px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(212,188,138,0.5);font-weight:200;}
+
+/* LEGEND */
+.legend{padding:56px 64px;display:flex;gap:28px;align-items:flex-start;}
+.leg-col{display:flex;flex-direction:column;gap:18px;min-width:210px;padding-top:2px;}
+.leg-item{display:flex;gap:13px;align-items:flex-start;}
+.leg-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:2px;}
+.leg-txt{font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:#D4BC8A;font-weight:200;line-height:1.7;}
+.cards{flex:1;display:flex;gap:16px;}
+.card{flex:1;border:1px solid rgba(212,188,138,0.12);border-radius:12px;padding:22px 20px;}
+.card-lbl{font-size:8.5px;letter-spacing:0.3em;text-transform:uppercase;color:#D4855A;font-weight:200;margin-bottom:12px;}
+.card-body{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:300;color:#F2EDE4;line-height:1.6;}
+</style></head>
+<body>
+
+<div class="header">
+  <div class="h-row1">
+    <div class="brand">Salt to Soul</div>
+    <div class="handle">@salttosoul.mv — feed redesign</div>
+  </div>
+  <div class="eyebrow">New Direction</div>
+  <div class="h-title">A grid built around<br/>her presence.</div>
+</div>
+
+<div class="divider"></div>
+
+<div class="grid">
+
+  <!-- Row 1: Pinned -->
+  <div class="cell move-p">
+    <div class="c-top"><div class="c-tag">Movement</div><div class="c-pin">Pinned</div></div>
+    <img class="c-icon" src="icon_flow.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Her in motion.</div>
+      <div class="c-desc">Best reel — Zey teaching</div>
+    </div>
+  </div>
+
+  <div class="cell her-p">
+    <div class="c-top"><div class="c-tag">Her</div><div class="c-pin">Pinned</div></div>
+    <img class="c-icon" src="icon_surrender.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Who she is.</div>
+      <div class="c-desc">Portrait — the terrace</div>
+    </div>
+  </div>
+
+  <div class="cell plc-p">
+    <div class="c-top"><div class="c-tag">Place</div><div class="c-pin">Pinned</div></div>
+    <img class="c-icon" src="icon_release.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">The terrace at dawn.</div>
+      <div class="c-desc">The Maldives — the setting</div>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="cell move">
+    <div class="c-top"><div class="c-tag">Movement</div></div>
+    <img class="c-icon" src="icon_flow.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Spine. Breath. Release.</div>
+      <div class="c-desc">Reel — slow sequence</div>
+    </div>
+  </div>
+
+  <div class="cell her">
+    <div class="c-top"><div class="c-tag">Her</div></div>
+    <img class="c-icon" src="icon_surrender.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">"The body knows."</div>
+      <div class="c-desc">Quote over her photo</div>
+    </div>
+  </div>
+
+  <div class="cell plc">
+    <div class="c-top"><div class="c-tag">Place</div></div>
+    <img class="c-icon" src="icon_release.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Dawn over water.</div>
+      <div class="c-desc">Ocean, golden, empty</div>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="cell move">
+    <div class="c-top"><div class="c-tag">Movement</div></div>
+    <img class="c-icon" src="icon_flow.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Hands on.</div>
+      <div class="c-desc">Teaching — an adjustment</div>
+    </div>
+  </div>
+
+  <div class="cell her">
+    <div class="c-top"><div class="c-tag">Her</div></div>
+    <img class="c-icon" src="icon_surrender.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Eyes closed.</div>
+      <div class="c-desc">Portrait — stillness</div>
+    </div>
+  </div>
+
+  <div class="cell plc">
+    <div class="c-top"><div class="c-tag">Place</div></div>
+    <img class="c-icon" src="icon_release.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">The mat. The view.</div>
+      <div class="c-desc">Terrace — before class</div>
+    </div>
+  </div>
+
+  <!-- Row 4 -->
+  <div class="cell move">
+    <div class="c-top"><div class="c-tag">Movement</div></div>
+    <img class="c-icon" src="icon_flow.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Group in flow.</div>
+      <div class="c-desc">Class from behind her</div>
+    </div>
+  </div>
+
+  <div class="cell her">
+    <div class="c-top"><div class="c-tag">Her</div></div>
+    <img class="c-icon" src="icon_surrender.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Stillness first.</div>
+      <div class="c-desc">Zey — morning, soft light</div>
+    </div>
+  </div>
+
+  <div class="cell plc">
+    <div class="c-top"><div class="c-tag">Place</div></div>
+    <img class="c-icon" src="icon_release.png" alt=""/>
+    <div class="c-bottom">
+      <div class="c-label">Salt in the air.</div>
+      <div class="c-desc">Horizon, light on water</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="divider"></div>
+
+<div class="legend">
+  <div class="leg-col">
+    <div class="leg-item">
+      <div class="leg-dot" style="background:#B85C38;"></div>
+      <div class="leg-txt">Movement<br/>Left column — always</div>
+    </div>
+    <div class="leg-item">
+      <div class="leg-dot" style="background:#D4BC8A;"></div>
+      <div class="leg-txt">Her — Zey<br/>Centre — always</div>
+    </div>
+    <div class="leg-item">
+      <div class="leg-dot" style="background:#1A3040;"></div>
+      <div class="leg-txt">Place<br/>Right column — always</div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-lbl">The quote rule</div>
+      <div class="card-body">Quotes only on<br/>photos of Zey.<br/>Never standalone.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Unpin + archive</div>
+      <div class="card-body">All three current<br/>pinned quote cards.<br/>They don't belong.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Color grading</div>
+      <div class="card-body">Warm, golden hour.<br/>Every photo pulled<br/>to terracotta tones.</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Shoot this</div>
+      <div class="card-body">Zey's face. Her hands<br/>teaching. The terrace<br/>at 6am. The ocean.</div>
+    </div>
+  </div>
+</div>
+
+</body></html>
