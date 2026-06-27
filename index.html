@@ -125,7 +125,7 @@
 
   /* ─── BALI ─── */
   .bali { background: var(--palm); overflow: hidden; padding: 96px 48px; }
-  .bali-content { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+  .bali-content { max-width: 720px; margin: 0 auto 48px; text-align: left; }
   .bali-collage {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
     border-radius: 16px; overflow: hidden; background: var(--blush);
@@ -135,7 +135,7 @@
   .bali-collage figure { margin: 0; overflow: hidden; border-radius: 6px; aspect-ratio: 1; }
   .bali-collage img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
   @media (max-width: 740px) {
-    .bali-content { text-align: center; }
+    .bali-content { text-align: left; }
     .bali-collage { grid-template-columns: repeat(2, 1fr); }
   }
   .b-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--shore); opacity: .7; margin-bottom: 20px; }
@@ -170,16 +170,16 @@
   .o-card-text { display: flex; flex-direction: column; }
   .o-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--salt); margin-bottom: 10px; }
   .o-card-body { font-size: .86rem; letter-spacing: .03em; line-height: 1.9; color: var(--pandan); }
-  .o-note { margin-top: 38px; font-size: .62rem; letter-spacing: .1em; color: var(--shore); opacity: .38; text-align: center; }
+  .o-note { margin-top: 38px; font-size: .62rem; letter-spacing: .1em; color: var(--shore); opacity: .38; text-align: left; }
 
   /* ─── ISLANDS ─── */
-  .islands { background: var(--fern); padding: 80px 48px; text-align: center; }
+  .islands { background: var(--fern); padding: 80px 48px; text-align: left; }
   .islands-inner { max-width: 680px; margin: 0 auto; }
   .islands-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 300; font-style: italic; line-height: 1.45; color: var(--salt); margin-bottom: 18px; }
   .islands-body { font-size: .76rem; letter-spacing: .06em; color: rgba(242,237,228,.65); line-height: 1.9; }
 
   /* ─── WAITLIST ─── */
-  .waitlist { background: var(--palm); padding: 110px 48px; text-align: center; }
+  .waitlist { background: var(--palm); padding: 110px 48px; text-align: left; }
   .waitlist-inner { max-width: 560px; margin: 0 auto; }
   .w-label { font-size: .56rem; letter-spacing: .22em; text-transform: uppercase; color: var(--pandan); margin-bottom: 20px; }
   .w-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; line-height: 1.15; color: var(--salt); margin-bottom: 18px; }
@@ -228,8 +228,8 @@
   .ig-strip {
     background: var(--night); border-top: 1px solid rgba(212,188,138,.08);
     padding: 56px 48px;
-    display: flex; align-items: center; justify-content: center; gap: 36px;
-    flex-wrap: wrap; text-align: center;
+    display: flex; align-items: center; justify-content: flex-start; gap: 36px;
+    flex-wrap: wrap; text-align: left;
   }
   .ig-text { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-style: italic; color: var(--shore); letter-spacing: .03em; }
   .ig-link {
@@ -245,7 +245,7 @@
   /* ─── FOOTER ─── */
   footer {
     background: var(--night); padding: 58px 48px 40px;
-    display: flex; flex-direction: column; align-items: center; text-align: center;
+    display: flex; flex-direction: column; align-items: flex-start; text-align: left;
   }
   .f-mark { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; opacity: .65; margin-bottom: 18px; background: var(--blush); }
   .f-mark img { width: 100%; height: 100%; object-fit: contain; }
