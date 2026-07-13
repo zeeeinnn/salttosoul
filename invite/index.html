@@ -62,19 +62,44 @@
   }
   .env.opened{transform:translateY(-5%) scale(1.02)}
 
-  /* deckle: roughs up the edge of every paper face */
+  /* deckle: roughs the edge of a paper face.
+     ONLY ever put this on an empty paper surface — never on an element
+     that holds text, or the displacement map warps the glyphs too. */
   .deckle{filter:url(#deckle)}
 
+  /* For paper that DOES hold text: the rough edge goes on an underlay,
+     the type sits above it, crisp. */
+  .paper{position:relative;background:transparent}
+  .paper > .sheet{
+    position:absolute;inset:0;z-index:0;
+    background:var(--card);
+    filter:url(#deckle);
+  }
+  .paper > .tex{z-index:0}                                  /* grain sits on the sheet */
+  .paper > *:not(.sheet):not(.tex){position:relative;z-index:1}   /* type sits above, crisp */
+
   .env-back{position:absolute;inset:0;background:var(--paper-d)}
+
+  /* the side flaps a real envelope folds in — without these you see
+     straight through to the card inside */
+  .env-side{position:absolute;inset:0;z-index:2}
+  .env-side.l{
+    clip-path:polygon(0 0, 50% 67%, 0 100%);
+    background:linear-gradient(100deg,#F4EFE5 0%,#EBE4D5 100%);
+  }
+  .env-side.r{
+    clip-path:polygon(100% 0, 50% 67%, 100% 100%);
+    background:linear-gradient(260deg,#F4EFE5 0%,#EBE4D5 100%);
+  }
+
   .env-card{                      /* the card, peeking as it rises */
     position:absolute;left:4.5%;right:4.5%;top:6%;height:93%;
-    background:var(--card);
     transform:translateY(0);
     transition:transform 1.1s cubic-bezier(.34,1.15,.64,1) .3s;
-    box-shadow:0 -3px 12px rgba(90,48,32,.10);
     display:flex;flex-direction:column;align-items:center;
-    padding-top:8%;z-index:2;
+    padding-top:8%;z-index:1;
   }
+  .env-card > .sheet{box-shadow:0 -3px 12px rgba(90,48,32,.10)}
   .env.opened .env-card{transform:translateY(-56%)}
   .env-card .peek{
     font-family:var(--hand);font-size:clamp(1.5rem,6vw,2rem);
@@ -111,8 +136,8 @@
 
   /* ── the wax seal ──────────────────────────────────── */
   .seal{
-    position:absolute;left:50%;top:67%;
-    width:26%;aspect-ratio:1;transform:translate(-50%,-50%);
+    position:absolute;left:50%;top:61%;
+    width:23%;aspect-ratio:1;transform:translate(-50%,-50%);
     z-index:9;
     transition:transform .6s cubic-bezier(.5,-.5,.7,.5),opacity .5s ease;
   }
@@ -122,31 +147,35 @@
   .seal .wax{filter:url(#wax)}          /* irregular, poured-wax edge */
   .seal-mark{
     position:absolute;left:50%;top:50%;
-    width:46%;height:46%;transform:translate(-50%,-50%);
-    object-fit:contain;opacity:.5;
-    filter:drop-shadow(0 1px 0 rgba(255,255,255,.28));  /* pressed into the wax */
+    width:52%;height:52%;transform:translate(-50%,-50%);
+    object-fit:contain;opacity:.55;
+    filter:drop-shadow(0 1px 0 rgba(255,255,255,.3));  /* pressed into the wax */
   }
 
-  /* handwritten name, as if addressed by hand */
+  /* handwritten name, addressed by hand, below the seal.
+     NOTE: no transform on this element — a transform drops it into the
+     parent's 3D context and it paints behind the envelope front. The
+     tilt goes on the inner span instead. */
   .env-name{
-    position:absolute;left:0;right:0;bottom:14%;z-index:6;text-align:center;
+    position:absolute;left:0;right:0;bottom:7%;z-index:6;text-align:center;
+    transition:opacity .4s ease;
+  }
+  .env-name span{
+    display:inline-block;
     font-family:var(--hand);font-weight:500;
     color:var(--terra);
-    font-size:clamp(2rem,9vw,2.9rem);line-height:1;
-    transform:rotate(-1.4deg);
-    transition:opacity .4s ease;
+    font-size:clamp(1.85rem,8.2vw,2.6rem);line-height:1;
+    transform:rotate(-1.6deg);
   }
   .env.opened .env-name{opacity:0}
 
-  /* Maremel-style small caps, lower left of the envelope */
+  /* the small-caps line sits BELOW the envelope, clear of the wax */
   .env-note{
-    position:absolute;left:7%;bottom:6%;z-index:6;
-    max-width:52%;text-align:left;
-    font-size:.5rem;letter-spacing:.24em;line-height:2.1;text-transform:uppercase;
-    color:var(--atoll);opacity:.72;
-    transition:opacity .4s ease;
+    max-width:min(88vw,400px);text-align:center;text-wrap:balance;
+    font-size:.52rem;letter-spacing:.26em;line-height:2.3;text-transform:uppercase;
+    color:var(--atoll);opacity:.7;
   }
-  .env.opened .env-note{opacity:0}
+  .stage.opening .env-note{opacity:0;transition:opacity .3s}
 
   .tap{
     font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;
@@ -163,13 +192,14 @@
   }
   .invite.show{display:flex}
   .card{
-    position:relative;width:min(94vw,460px);
-    background:var(--card);
-    padding:clamp(2.6rem,9vw,3.6rem) clamp(1.7rem,7vw,2.8rem) clamp(2.2rem,7vw,2.8rem);
+    width:min(94vw,455px);
+    padding:clamp(2.4rem,8vw,3.2rem) clamp(1.7rem,7vw,2.7rem) clamp(2rem,6vw,2.5rem);
     text-align:center;
-    box-shadow:0 30px 70px rgba(90,48,32,.16), 0 2px 8px rgba(90,48,32,.08);
     opacity:0;transform:translateY(26px);
     animation:rise 1s cubic-bezier(.2,.7,.3,1) forwards;
+  }
+  .card > .sheet{
+    box-shadow:0 30px 70px rgba(90,48,32,.16), 0 2px 8px rgba(90,48,32,.08);
   }
   @keyframes rise{to{opacity:1;transform:translateY(0)}}
 
@@ -274,8 +304,8 @@
     <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
   </filter>
   <filter id="wax">
-    <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="3" seed="3" result="n"/>
-    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="11" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
   </filter>
 </svg>
 
@@ -285,10 +315,14 @@
     <div class="env" id="env" role="button" tabindex="0" aria-label="Open your invitation">
       <div class="env-back deckle"></div>
 
-      <div class="env-card deckle">
+      <div class="env-card paper">
+        <div class="sheet"></div>
         <span class="peek">you're invited</span>
         <div class="tex"></div>
       </div>
+
+      <div class="env-side l deckle"></div>
+      <div class="env-side r deckle"></div>
 
       <div class="env-front deckle"><div class="tex"></div></div>
       <div class="env-flap"><div class="env-flap-face deckle"><div class="tex"></div></div></div>
@@ -301,33 +335,36 @@
               <stop offset="55%" stop-color="#B85C38"/>
               <stop offset="100%" stop-color="#8E4327"/>
             </radialGradient>
-            <path id="ring" d="M50,50 m-33,0 a33,33 0 1,1 66,0 a33,33 0 1,1 -66,0"/>
+            <!-- an arc across the TOP only, so the name always reads upright -->
+            <path id="ring" d="M17,54 A33,33 0 0,1 83,54"/>
           </defs>
           <g class="wax">
-            <circle cx="50" cy="50" r="46" fill="url(#waxg)"/>
-            <circle cx="50" cy="50" r="46" fill="none" stroke="#7E3A21" stroke-opacity=".35" stroke-width="1.5"/>
+            <circle cx="50" cy="50" r="45" fill="url(#waxg)"/>
           </g>
-          <circle cx="50" cy="50" r="39" fill="none" stroke="#F7E4CE" stroke-opacity=".26" stroke-width=".8"/>
-          <text font-family="Josefin Sans, sans-serif" font-size="7.6" letter-spacing="2.6"
-                fill="#F7E4CE" fill-opacity=".62">
-            <textPath href="#ring" startOffset="50%" text-anchor="middle">SALT · TO · SOUL</textPath>
+          <circle cx="50" cy="50" r="45" fill="none" stroke="#7E3A21" stroke-opacity=".28" stroke-width="1"/>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="#F7E4CE" stroke-opacity=".22" stroke-width=".7"/>
+          <text font-family="Josefin Sans, sans-serif" font-size="8" letter-spacing="2.2"
+                fill="#F7E4CE" fill-opacity=".7">
+            <textPath href="#ring" startOffset="50%" text-anchor="middle">SALT TO SOUL</textPath>
           </text>
         </svg>
         <img class="seal-mark" src="../brand/icon/set/spiral-salt.png" alt="">
       </div>
 
-      <div class="env-name" id="envName"></div>
-      <div class="env-note">
-        A new chapter for Salt to Soul<br>is about to begin — and you're<br>invited to be there first.
-      </div>
+      <div class="env-name" id="envName"><span></span></div>
     </div>
   </div>
+
+  <p class="env-note">
+    A new chapter for Salt to Soul is about to begin — and you're invited to be there first.
+  </p>
   <p class="tap">tap to open</p>
 </main>
 
 <!-- STAGE 2 -->
 <section class="invite" id="invite">
-  <article class="card deckle">
+  <article class="card paper">
+    <div class="sheet"></div>
     <div class="tex"></div>
 
     <div class="joinme">Join me for</div>
@@ -406,7 +443,7 @@
   var key  = (new URLSearchParams(location.search).get('g') || '').toLowerCase().trim();
   var name = GUESTS[key] || '';
 
-  document.getElementById('envName').textContent = name || 'Salt to Soul';
+  document.querySelector('#envName span').textContent = name || 'Salt to Soul';
   if (name) document.title = name + ", you're invited — Salt to Soul";
 
   var env = document.getElementById('env'), stage = document.getElementById('stage'),
