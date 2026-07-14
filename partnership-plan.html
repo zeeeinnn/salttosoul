@@ -1,0 +1,762 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salt to Soul — Partnership Plan</title>
+<style>
+  :root {
+    --bg:      #0E0503;
+    --surface: rgba(255,255,255,0.04);
+    --surf2:   rgba(212,188,138,0.07);
+    --border:  rgba(212,188,138,0.13);
+    --border2: rgba(212,188,138,0.24);
+    --gold:    #D4BC8A;
+    --terra:   #D4855A;
+    --cream:   #F2EDE4;
+    --muted:   rgba(242,237,228,0.58);
+    --green:   #8ECBA0;
+    --zey-c:   #D4BC8A;
+    --zein-c:  #74A8C0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    padding: 52px 38px 80px;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
+  .eyebrow { font-size: 10px; letter-spacing: 0.36em; text-transform: uppercase; color: var(--terra); margin-bottom: 12px; }
+  h1 { font-family: Georgia, serif; font-size: 38px; font-weight: normal; color: var(--cream); line-height: 1.15; margin-bottom: 10px; }
+  h1 em { color: var(--gold); font-style: italic; }
+  .header-sub { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 48px; max-width: 560px; }
+
+  .sec-label { font-size: 10px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid rgba(212,188,138,0.12); padding-bottom: 10px; margin-bottom: 26px; }
+  section { margin-bottom: 56px; }
+
+  /* PRICING */
+  .pricing-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .price-card { border-radius: 13px; padding: 22px 22px; }
+  .pc-monthly { background: var(--surf2); border: 1px solid var(--border2); }
+  .pc-dropin  { background: rgba(212,133,90,0.07); border: 1px solid rgba(212,133,90,0.22); }
+  .price-tag  { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+  .price-big  { font-family: Georgia, serif; font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+  .pb-gold  { color: var(--gold); }
+  .pb-terra { color: var(--terra); }
+  .price-unit { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .price-desc { font-size: 14px; color: var(--muted); line-height: 1.65; padding-top: 12px; border-top: 1px solid rgba(212,188,138,0.09); }
+  .price-desc strong { color: var(--cream); font-weight: 500; }
+  .price-insight { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; font-size: 14px; color: var(--muted); line-height: 1.7; }
+  .price-insight strong { color: var(--green); font-weight: 500; }
+
+  /* PHASE CARDS */
+  .phases-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 18px; }
+  .phase-card { border-radius: 14px; padding: 26px 24px; display: flex; flex-direction: column; gap: 22px; }
+  .ph-a { background: var(--surf2); border: 1px solid var(--border2); }
+  .ph-b { background: rgba(116,168,192,0.06); border: 1px solid rgba(116,168,192,0.2); }
+
+  .ph-tag  { font-size: 9px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .ph-split { font-family: Georgia, serif; font-size: 36px; color: var(--cream); line-height: 1; margin-bottom: 5px; }
+  .ph-when  { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+  .ph-when strong { font-weight: 500; }
+  .pw-a strong { color: var(--terra); }
+  .pw-b strong { color: var(--zein-c); }
+
+  /* DONUT */
+  .donut-section { display: flex; align-items: center; gap: 20px; }
+  .donut-outer { position: relative; flex-shrink: 0; }
+  .donut-svg { display: block; }
+  .donut-label-col { display: flex; flex-direction: column; gap: 10px; }
+  .dlabel { display: flex; align-items: center; gap: 9px; }
+  .dlabel-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .dlabel-text { display: flex; flex-direction: column; gap: 2px; }
+  .dlabel-pct  { font-family: Georgia, serif; font-size: 20px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .dlabel-name { font-size: 12px; color: var(--muted); letter-spacing: 0.06em; }
+
+  /* BARS */
+  .ph-rows { display: flex; flex-direction: column; gap: 10px; }
+  .ph-row  { display: flex; align-items: center; gap: 12px; }
+  .ph-bar-wrap { flex: 1; height: 5px; background: rgba(255,255,255,0.07); border-radius: 3px; overflow: hidden; }
+  .ph-bar  { height: 100%; border-radius: 3px; }
+  .ph-row-left { width: 68px; flex-shrink: 0; }
+  .ph-row-name { font-size: 13px; color: var(--cream); font-weight: 500; }
+  .ph-row-role { font-size: 11px; color: var(--muted); }
+  .ph-row-pct  { width: 36px; text-align: right; font-family: Georgia, serif; font-size: 15px; flex-shrink: 0; }
+
+  .probation-note { background: rgba(142,203,160,0.05); border: 1px solid rgba(142,203,160,0.18); border-radius: 10px; padding: 18px 22px; font-size: 14px; color: var(--muted); line-height: 1.72; }
+  .probation-note strong { color: var(--green); font-weight: 500; }
+
+  /* ROLES */
+  .roles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .role-card { border-radius: 13px; padding: 26px 22px; display: flex; flex-direction: column; gap: 16px; }
+  .rc-zey  { background: var(--surf2); border: 1px solid var(--border2); }
+  .rc-zein { background: rgba(116,168,192,0.06); border: 1px solid rgba(116,168,192,0.2); }
+  .role-name { font-family: Georgia, serif; font-size: 24px; color: var(--cream); }
+  .role-subtitle { font-size: 12px; color: var(--muted); margin-top: 3px; line-height: 1.5; }
+  .role-who  { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 5px; }
+  .rw-gold  { color: var(--zey-c); }
+  .rw-blue  { color: var(--zein-c); }
+  .role-items { display: flex; flex-direction: column; gap: 9px; }
+  .role-item { font-size: 13.5px; color: var(--muted); line-height: 1.5; display: flex; gap: 10px; align-items: flex-start; }
+  .role-item::before { content: '·'; color: var(--gold); flex-shrink: 0; opacity: 0.5; font-size: 14px; line-height: 1.4; }
+  .role-item.hl { color: var(--cream); }
+  .role-item.hl::before { color: var(--terra); opacity: 0.8; }
+  .role-item.irreplaceable { color: var(--zein-c); opacity: 0.9; margin-top: 2px; font-size: 13px; }
+  .role-item.irreplaceable::before { color: var(--zein-c); opacity: 0.6; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); font-weight: 400; padding: 0 12px 14px; text-align: right; }
+  th:first-child { text-align: left; }
+  td { padding: 12px 12px; font-size: 14px; font-variant-numeric: tabular-nums; border-bottom: 1px solid rgba(212,188,138,0.07); text-align: right; }
+  td:first-child { text-align: left; }
+  tr:last-child td { border-bottom: none; }
+  .td-month    { font-size: 13px; color: var(--muted); }
+  .td-note     { font-size: 11px; color: rgba(212,188,138,0.4); display: block; }
+  .td-students { font-size: 13px; color: var(--muted); }
+  .td-total    { color: var(--muted); }
+  .td-zey  { color: var(--zey-c);  font-family: Georgia, serif; }
+  .td-zein { color: var(--zein-c); font-family: Georgia, serif; }
+  .td-split { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); opacity: 0.5; }
+  .row-july td { background: rgba(255,255,255,0.02); }
+  .row-a td    { background: rgba(212,188,138,0.02); }
+  .row-b td    { background: rgba(116,168,192,0.02); }
+  .row-hl td   { background: rgba(212,188,138,0.05); }
+  .phase-div td { padding: 18px 12px 8px; font-size: 9px; letter-spacing: 0.28em; text-transform: uppercase; border-bottom: none; }
+  .phase-div-a td { color: rgba(212,188,138,0.45); }
+  .phase-div-b td { color: rgba(116,168,192,0.55); }
+
+  /* TOTALS */
+  .totals-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .total-card { border-radius: 12px; padding: 22px 20px; }
+  .tc-all  { background: var(--surface); border: 1px solid var(--border); }
+  .tc-zey  { background: var(--surf2); border: 1px solid var(--border2); }
+  .tc-zein { background: rgba(116,168,192,0.06); border: 1px solid rgba(116,168,192,0.2); }
+  .total-label  { font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .total-number { font-family: Georgia, serif; font-size: 26px; font-variant-numeric: tabular-nums; line-height: 1; margin-bottom: 8px; }
+  .tn-all  { color: var(--cream); }
+  .tn-zey  { color: var(--zey-c); }
+  .tn-zein { color: var(--zein-c); }
+  .total-note { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* ============================================
+     BIG PICTURE — STAGE CARDS
+     ============================================ */
+  .bp-intro { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; max-width: 620px; }
+  .bp-intro strong { color: var(--cream); font-weight: 500; }
+
+  .bp-cards { display: flex; flex-direction: column; }
+
+  .bp-card {
+    border-radius: 18px;
+    padding: 30px 32px 28px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* the giant ghost number in the background */
+  .bp-ghost {
+    position: absolute;
+    right: 16px;
+    bottom: -28px;
+    font-family: Georgia, serif;
+    font-size: 160px;
+    line-height: 1;
+    font-weight: normal;
+    pointer-events: none;
+    user-select: none;
+    color: white;
+    opacity: 0.055;
+  }
+
+  .bp-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .bp-card-head { flex: 1; min-width: 0; }
+  .bp-card-stat-wrap { text-align: right; flex-shrink: 0; padding-top: 2px; }
+  .bp-card-stat { font-family: Georgia, serif; font-size: 20px; line-height: 1; font-variant-numeric: tabular-nums; }
+  .bp-stat-label { font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 5px; }
+
+  .bp-when2 { font-size: 9.5px; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 7px; }
+  .bp-title2 { font-family: Georgia, serif; font-size: 22px; color: var(--cream); line-height: 1.22; text-wrap: balance; }
+
+  .bp-text2 { font-size: 14px; color: var(--muted); line-height: 1.75; }
+  .bp-text2 strong { color: var(--cream); font-weight: 500; }
+
+  .bp-tags2 { display: flex; flex-wrap: wrap; gap: 6px; }
+  .bp-tag2 { font-size: 10.5px; padding: 5px 13px; border-radius: 20px; letter-spacing: 0.04em; }
+
+  /* gradient connector between cards */
+  .bp-connector { width: 2px; height: 20px; margin-left: 46px; border-radius: 1px; }
+  .bpc1 { background: linear-gradient(to bottom, rgba(212,133,90,0.55), rgba(212,188,138,0.2)); }
+  .bpc2 { background: linear-gradient(to bottom, rgba(212,188,138,0.55), rgba(116,168,192,0.2)); }
+  .bpc3 { background: linear-gradient(to bottom, rgba(116,168,192,0.55), rgba(142,203,160,0.2)); }
+  .bpc4 { background: linear-gradient(to bottom, rgba(142,203,160,0.55), rgba(212,188,138,0.2)); }
+
+  /* costs mini row (stage 3) */
+  .bp-costs { display: flex; gap: 28px; flex-wrap: wrap; padding: 14px 0 2px; }
+  .bp-cost-item { display: flex; flex-direction: column; gap: 3px; }
+  .bp-cost-label { font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+  .bp-cost-val { font-family: Georgia, serif; font-size: 17px; color: var(--zein-c); font-variant-numeric: tabular-nums; }
+
+  /* stage colours */
+  .bps1 { background: rgba(212,133,90,0.08); border: 1px solid rgba(212,133,90,0.22); }
+  .bps1 .bp-when2    { color: var(--terra); }
+  .bps1 .bp-card-stat { color: var(--terra); }
+  .bps1 .bp-tag2     { background: rgba(212,133,90,0.12); color: var(--terra); border: 1px solid rgba(212,133,90,0.25); }
+
+  .bps2 { background: rgba(212,188,138,0.06); border: 1px solid rgba(212,188,138,0.22); }
+  .bps2 .bp-when2    { color: var(--gold); }
+  .bps2 .bp-card-stat { color: var(--gold); }
+  .bps2 .bp-tag2     { background: rgba(212,188,138,0.1); color: var(--gold); border: 1px solid rgba(212,188,138,0.22); }
+
+  .bps3 { background: rgba(116,168,192,0.07); border: 1px solid rgba(116,168,192,0.22); }
+  .bps3 .bp-when2    { color: var(--zein-c); }
+  .bps3 .bp-card-stat { color: var(--zein-c); }
+  .bps3 .bp-tag2     { background: rgba(116,168,192,0.1); color: var(--zein-c); border: 1px solid rgba(116,168,192,0.22); }
+
+  .bps4 { background: rgba(142,203,160,0.07); border: 1px solid rgba(142,203,160,0.22); }
+  .bps4 .bp-when2    { color: var(--green); }
+  .bps4 .bp-card-stat { color: var(--green); }
+  .bps4 .bp-tag2     { background: rgba(142,203,160,0.1); color: var(--green); border: 1px solid rgba(142,203,160,0.22); }
+
+  /* Stage 5 — The Life — gold glow, bigger */
+  .bps5 {
+    background: radial-gradient(ellipse at 65% 40%, rgba(212,188,138,0.16) 0%, rgba(14,5,3,0) 65%),
+                rgba(212,188,138,0.04);
+    border: 1px solid rgba(212,188,138,0.38);
+    padding: 36px 32px 32px;
+  }
+  .bps5 .bp-when2    { color: var(--gold); opacity: 0.8; }
+  .bps5 .bp-title2   { color: var(--gold); font-size: 26px; }
+  .bps5 .bp-ghost    { opacity: 0.06; color: var(--gold); }
+  .bps5 .bp-tag2     { background: rgba(212,188,138,0.1); color: var(--gold); border: 1px solid rgba(212,188,138,0.32); }
+
+  /* FOUNDING MEMBER CALLOUT */
+  .founding-note { background: rgba(212,133,90,0.07); border: 1px solid rgba(212,133,90,0.22); border-radius: 10px; padding: 16px 20px; font-size: 14px; color: var(--muted); line-height: 1.7; margin-top: 14px; }
+  .founding-note strong { color: var(--cream); font-weight: 500; }
+  .fn-label { font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--terra); margin-bottom: 8px; }
+
+  /* SALARY COMPARISON */
+  .salary-compare { background: rgba(212,188,138,0.05); border: 1px solid rgba(212,188,138,0.16); border-radius: 10px; padding: 16px 20px; font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 22px; }
+  .salary-compare strong { color: var(--cream); font-weight: 500; }
+  .sc-label { font-size: 9.5px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .sc-highlight { color: var(--zey-c); font-family: Georgia, serif; font-size: 17px; }
+
+  /* NEXT STEPS */
+  .ns-items { display: flex; flex-direction: column; gap: 14px; }
+  .ns-item { display: flex; gap: 18px; align-items: flex-start; }
+  .ns-num { font-family: Georgia, serif; font-size: 24px; color: rgba(212,188,138,0.22); line-height: 1; flex-shrink: 0; width: 30px; font-variant-numeric: tabular-nums; }
+  .ns-body { padding-top: 2px; }
+  .ns-title { font-size: 15px; color: var(--cream); font-weight: 500; margin-bottom: 3px; }
+  .ns-desc { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* PERSONAL CLOSING */
+  .closing { border-top: 1px solid rgba(212,188,138,0.1); margin-top: 56px; padding-top: 40px; padding-bottom: 20px; }
+  .closing-text { font-family: Georgia, serif; font-size: 17px; color: var(--muted); line-height: 1.9; max-width: 580px; font-style: italic; }
+  .closing-text strong { color: var(--cream); font-style: normal; font-weight: normal; }
+  .closing-sig { margin-top: 28px; font-size: 13px; color: rgba(212,188,138,0.5); letter-spacing: 0.1em; }
+
+  /* ============================================
+     PHONE — single column, roomier text
+     ============================================ */
+  @media (max-width: 640px) {
+    body { padding: 34px 22px 60px; }
+    h1 { font-size: 31px; }
+    .pricing-row,
+    .phases-wrap,
+    .roles-grid,
+    .totals-row { grid-template-columns: 1fr; }
+    .ph-split { font-size: 40px; }
+    .price-big { font-size: 46px; }
+    .bp-card, .bps5 { padding: 26px 24px; }
+    .bp-ghost { font-size: 130px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="eyebrow">Salt to Soul — Partnership Plan</div>
+<h1>Built for both of us <em>to win.</em></h1>
+<p class="header-sub">A simple breakdown of how the money works, what each of us brings, and where this business can go. Read this as a plan — not just a split.</p>
+
+<!-- PRICING -->
+<section>
+  <div class="sec-label">01 — What students pay</div>
+  <div class="pricing-row">
+    <div class="price-card pc-monthly">
+      <div class="price-tag">Monthly membership</div>
+      <div class="price-big pb-gold">2,500</div>
+      <div class="price-unit">MVR · paid once a month · 3 classes a week</div>
+      <div class="price-desc">Students come 3 times a week and pay once at the start of the month. That makes the money <strong>predictable — like a salary, but from your own business.</strong></div>
+    </div>
+    <div class="price-card pc-dropin">
+      <div class="price-tag">Single drop-in class</div>
+      <div class="price-big pb-terra">350</div>
+      <div class="price-unit">MVR · one class · no commitment</div>
+      <div class="price-desc">For tourists, visitors, or people who want to try first. <strong>Much more expensive per class</strong> — which makes the monthly look like the smart choice.</div>
+    </div>
+  </div>
+  <div class="price-insight">
+    <strong>The number that sells the membership:</strong> Monthly members pay MVR 192 per class. Drop-ins pay MVR 350. That's a MVR 158 saving every single class if you commit monthly — the easiest sales pitch there is.
+  </div>
+  <div class="founding-note">
+    <div class="fn-label">Launch strategy — before July 20</div>
+    <strong>Lock in your first students before the doors open.</strong> DM 30–40 people directly — friends, family, anyone who's ever asked Zey about yoga. Offer them a founding member rate: MVR 2,000 for the first month only, locked in forever as long as they stay. This guarantees the first class isn't half-empty, gets real money in before launch day, and gives the business momentum from the very first session.
+  </div>
+</section>
+
+<!-- SPLIT -->
+<section>
+  <div class="sec-label">02 — How we split the money</div>
+  <div class="phases-wrap">
+
+    <!-- Phase 1 -->
+    <div class="phase-card ph-a">
+      <div>
+        <div class="ph-tag">Launch + trial · Jul – Oct</div>
+        <div class="ph-split">70 / 30</div>
+        <div class="ph-when pw-a">A <strong>trial period</strong> — Zein proves the value before taking a bigger share</div>
+      </div>
+
+      <div class="donut-section">
+        <div class="donut-outer">
+          <svg class="donut-svg" width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="14"/>
+            <!-- Zey 70%: arc = 0.70 × 238.76 = 167.13 -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#D4BC8A" stroke-width="14"
+              stroke-dasharray="167.13 71.63"
+              stroke-dashoffset="0"
+              transform="rotate(-90 50 50)"/>
+            <!-- Zein 30%: arc = 0.30 × 238.76 = 71.63, starts after Zey -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#74A8C0" stroke-width="14"
+              stroke-dasharray="71.63 167.13"
+              stroke-dashoffset="-167.13"
+              transform="rotate(-90 50 50)"/>
+          </svg>
+        </div>
+        <div class="donut-label-col">
+          <div class="dlabel">
+            <div class="dlabel-dot" style="background:#D4BC8A;"></div>
+            <div class="dlabel-text">
+              <div class="dlabel-pct" style="color:#D4BC8A;">70%</div>
+              <div class="dlabel-name">Zey</div>
+            </div>
+          </div>
+          <div class="dlabel">
+            <div class="dlabel-dot" style="background:#74A8C0;"></div>
+            <div class="dlabel-text">
+              <div class="dlabel-pct" style="color:#74A8C0;">30%</div>
+              <div class="dlabel-name">Zein</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-rows">
+        <div class="ph-row">
+          <div class="ph-row-left"><div class="ph-row-name">Zey</div><div class="ph-row-role">Teacher &amp; Face</div></div>
+          <div class="ph-bar-wrap"><div class="ph-bar" style="width:70%;background:#D4BC8A;"></div></div>
+          <div class="ph-row-pct" style="color:#D4BC8A;">70%</div>
+        </div>
+        <div class="ph-row">
+          <div class="ph-row-left"><div class="ph-row-name">Zein</div><div class="ph-row-role">The Business</div></div>
+          <div class="ph-bar-wrap"><div class="ph-bar" style="width:30%;background:#74A8C0;"></div></div>
+          <div class="ph-row-pct" style="color:#74A8C0;">30%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="phase-card ph-b">
+      <div>
+        <div class="ph-tag">Month 4 onwards · Nov+</div>
+        <div class="ph-split">60 / 40</div>
+        <div class="ph-when pw-b">The <strong>full partnership</strong> — once we've proven it works</div>
+      </div>
+
+      <div class="donut-section">
+        <div class="donut-outer">
+          <svg class="donut-svg" width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="14"/>
+            <!-- Zey 60%: arc = 0.60 × 238.76 = 143.26 -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#D4BC8A" stroke-width="14"
+              stroke-dasharray="143.26 95.50"
+              stroke-dashoffset="0"
+              transform="rotate(-90 50 50)"/>
+            <!-- Zein 40%: arc = 0.40 × 238.76 = 95.50, starts after Zey -->
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#74A8C0" stroke-width="14"
+              stroke-dasharray="95.50 143.26"
+              stroke-dashoffset="-143.26"
+              transform="rotate(-90 50 50)"/>
+          </svg>
+        </div>
+        <div class="donut-label-col">
+          <div class="dlabel">
+            <div class="dlabel-dot" style="background:#D4BC8A;"></div>
+            <div class="dlabel-text">
+              <div class="dlabel-pct" style="color:#D4BC8A;">60%</div>
+              <div class="dlabel-name">Zey</div>
+            </div>
+          </div>
+          <div class="dlabel">
+            <div class="dlabel-dot" style="background:#74A8C0;"></div>
+            <div class="dlabel-text">
+              <div class="dlabel-pct" style="color:#74A8C0;">40%</div>
+              <div class="dlabel-name">Zein</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ph-rows">
+        <div class="ph-row">
+          <div class="ph-row-left"><div class="ph-row-name">Zey</div><div class="ph-row-role">Teacher &amp; Face</div></div>
+          <div class="ph-bar-wrap"><div class="ph-bar" style="width:60%;background:#D4BC8A;"></div></div>
+          <div class="ph-row-pct" style="color:#D4BC8A;">60%</div>
+        </div>
+        <div class="ph-row">
+          <div class="ph-row-left"><div class="ph-row-name">Zein</div><div class="ph-row-role">The Business</div></div>
+          <div class="ph-bar-wrap"><div class="ph-bar" style="width:40%;background:#74A8C0;"></div></div>
+          <div class="ph-row-pct" style="color:#74A8C0;">40%</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="probation-note">
+    <strong>Think of the first 3 months as a probation period.</strong> Zein takes 30% while proving the marketing works, the classes fill, and the business runs without Zey having to think about any of it. Once that's done — and it will be — the split moves to 60/40 automatically in November. No conversation needed.
+  </div>
+</section>
+
+<!-- ROLES -->
+<section>
+  <div class="sec-label">03 — What each of us does</div>
+  <div class="roles-grid">
+
+    <div class="role-card rc-zey">
+      <div>
+        <div class="role-name">Zey.</div>
+        <div class="role-subtitle">Teacher, Face &amp; Brand</div>
+        <div class="role-who rw-gold">60–70% of everything</div>
+      </div>
+      <div class="role-items">
+        <div class="role-item hl">The certified yoga teacher — the entire product</div>
+        <div class="role-item hl">The face of Salt to Soul — the reason students come, and the reason they stay</div>
+        <div class="role-item hl">The brand — her story, her training, her personality is what Salt to Soul is</div>
+        <div class="role-item">Yoga teacher experience at Soneva Secret — one of the most exclusive resorts in the Maldives</div>
+        <div class="role-item">Shows up and teaches every class, every week</div>
+        <div class="role-item">Builds real relationships with students in the room</div>
+        <div class="role-item">Without her, there is no Salt to Soul. Full stop.</div>
+      </div>
+    </div>
+
+    <div class="role-card rc-zein">
+      <div>
+        <div class="role-name">Zein.</div>
+        <div class="role-subtitle">Admin · Marketing · Strategy · Everything else on the business side</div>
+        <div class="role-who rw-blue">30–40% of everything</div>
+      </div>
+      <div class="role-items">
+        <div class="role-item hl">Marketing — every campaign, strategy, and idea that brings students in the door</div>
+        <div class="role-item hl">Content creation &amp; copywriting — every post, caption, photo direction, and story</div>
+        <div class="role-item hl">Social media management — daily posting, scheduling, growth, engagement</div>
+        <div class="role-item hl">Inbox &amp; booking management — every DM, enquiry, confirmation, and follow-up</div>
+        <div class="role-item hl">Accounting &amp; finances — all money tracked, clean, and organised</div>
+        <div class="role-item hl">Operations management — everything that keeps the business running smoothly</div>
+        <div class="role-item hl">Strategy — deciding what to launch, when, and how to keep growing</div>
+        <div class="role-item">Brand, website, and business registration — built from nothing</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EARNINGS TABLE -->
+<section>
+  <div class="sec-label">04 — What we each make, month by month</div>
+  <div class="salary-compare">
+    <div class="sc-label">To put it in perspective</div>
+    A typical full-time salary in Malé sits around <strong>MVR 15,000–20,000 a month.</strong> By month 3, Zey earns <strong class="sc-highlight">MVR 63,000</strong> — teaching three mornings a week, doing what she loves, in her own city, building something that's entirely hers.
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th style="text-align:left;">Month</th>
+          <th>Students</th>
+          <th>Total in</th>
+          <th>Zey gets</th>
+          <th>Zein gets</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="phase-div phase-div-a"><td colspan="6">Launch + 3-month trial — 70 / 30 · through October</td></tr>
+        <tr class="row-july">
+          <td class="td-month">July 20–31<span class="td-note">half month launch</span></td>
+          <td class="td-students">~20</td>
+          <td class="td-total">MVR 25,000</td>
+          <td class="td-zey">MVR 17,500</td>
+          <td class="td-zein">MVR 7,500</td>
+          <td class="td-split">70/30</td>
+        </tr>
+        <tr class="row-a">
+          <td class="td-month">August<span class="td-note">First full month</span></td>
+          <td class="td-students">24</td>
+          <td class="td-total">MVR 60,000</td>
+          <td class="td-zey">MVR 42,000</td>
+          <td class="td-zein">MVR 18,000</td>
+          <td class="td-split">70/30</td>
+        </tr>
+        <tr class="row-a">
+          <td class="td-month">September</td>
+          <td class="td-students">30</td>
+          <td class="td-total">MVR 75,000</td>
+          <td class="td-zey">MVR 52,500</td>
+          <td class="td-zein">MVR 22,500</td>
+          <td class="td-split">70/30</td>
+        </tr>
+        <tr class="row-a row-hl">
+          <td class="td-month">October<span class="td-note">Last month at 70/30</span></td>
+          <td class="td-students">36</td>
+          <td class="td-total">MVR 90,000</td>
+          <td class="td-zey">MVR 63,000</td>
+          <td class="td-zein">MVR 27,000</td>
+          <td class="td-split">70/30</td>
+        </tr>
+        <tr class="phase-div phase-div-b"><td colspan="6">From November — 60 / 40 · full partnership</td></tr>
+        <tr class="row-b row-hl">
+          <td class="td-month">November<span class="td-note">60/40 begins ✓</span></td>
+          <td class="td-students">50</td>
+          <td class="td-total">MVR 125,000</td>
+          <td class="td-zey">MVR 75,000</td>
+          <td class="td-zein">MVR 50,000</td>
+          <td class="td-split">60/40</td>
+        </tr>
+        <tr class="row-b">
+          <td class="td-month">December</td>
+          <td class="td-students">60</td>
+          <td class="td-total">MVR 150,000</td>
+          <td class="td-zey">MVR 90,000</td>
+          <td class="td-zein">MVR 60,000</td>
+          <td class="td-split">60/40</td>
+        </tr>
+        <tr class="row-b row-hl">
+          <td class="td-month">January</td>
+          <td class="td-students">72</td>
+          <td class="td-total">MVR 180,000</td>
+          <td class="td-zey">MVR 108,000</td>
+          <td class="td-zein">MVR 72,000</td>
+          <td class="td-split">60/40</td>
+        </tr>
+        <tr class="row-b">
+          <td class="td-month">April</td>
+          <td class="td-students">108</td>
+          <td class="td-total">MVR 270,000</td>
+          <td class="td-zey">MVR 162,000</td>
+          <td class="td-zein">MVR 108,000</td>
+          <td class="td-split">60/40</td>
+        </tr>
+        <tr class="row-b row-hl">
+          <td class="td-month">July 2027<span class="td-note">One full year in</span></td>
+          <td class="td-students">130</td>
+          <td class="td-total">MVR 325,000</td>
+          <td class="td-zey">MVR 195,000</td>
+          <td class="td-zein">MVR 130,000</td>
+          <td class="td-split">60/40</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="totals-row">
+    <div class="total-card tc-all">
+      <div class="total-label">Year 1 · Total</div>
+      <div class="total-number tn-all">MVR 2.3M+</div>
+      <div class="total-note">No rent. No staff costs. Almost all of this is kept. Projection based on gradual class growth — conservative in the early months.</div>
+    </div>
+    <div class="total-card tc-zey">
+      <div class="total-label">Year 1 · Zey</div>
+      <div class="total-number tn-zey">MVR 1.4M+</div>
+      <div class="total-note">From teaching, on her own terms, in her own city.</div>
+    </div>
+    <div class="total-card tc-zein">
+      <div class="total-label">Year 1 · Zein</div>
+      <div class="total-number tn-zein">MVR 900k+</div>
+      <div class="total-note">For running everything behind the scenes, every single day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG PICTURE -->
+<section>
+  <div class="sec-label">05 — The big picture</div>
+  <p class="bp-intro">This isn't just about filling a few classes. <strong>This is what Salt to Soul can become</strong> — step by step, at a pace that makes sense. No rush. Just a clear direction.</p>
+
+  <div class="bp-cards">
+
+    <div class="bp-card bps1">
+      <div class="bp-card-top">
+        <div class="bp-card-head">
+          <div class="bp-when2">Now — July 2026</div>
+          <div class="bp-title2">The terrace. Two groups. Classes filling up.</div>
+        </div>
+        <div class="bp-card-stat-wrap">
+          <div class="bp-card-stat">MVR 60k</div>
+          <div class="bp-stat-label">/ month by Aug</div>
+        </div>
+      </div>
+      <div class="bp-text2">We launch with 2 groups of 12. Marketing starts, word spreads, the waitlist builds. By month 3 we're at 36 students. By month 6, 72. <strong>Zey teaches what she loves. The money comes in every month, like a salary.</strong></div>
+      <div class="bp-tags2">
+        <span class="bp-tag2">2 groups to start</span>
+        <span class="bp-tag2">MVR 25,000 launch month</span>
+        <span class="bp-tag2">Waitlist builds</span>
+      </div>
+      <div class="bp-ghost">01</div>
+    </div>
+
+    <div class="bp-connector bpc1"></div>
+
+    <div class="bp-card bps2">
+      <div class="bp-card-top">
+        <div class="bp-card-head">
+          <div class="bp-when2">Year 2 — Mid 2027</div>
+          <div class="bp-title2">8 sessions a day. A second teacher joins.</div>
+        </div>
+        <div class="bp-card-stat-wrap">
+          <div class="bp-card-stat">MVR 300k+</div>
+          <div class="bp-stat-label">/ month</div>
+        </div>
+      </div>
+      <div class="bp-text2">By next year, demand is high enough that Zey can't — and shouldn't — teach every session alone. <strong>We hire a second yoga teacher</strong> at a fixed monthly salary. They take the early mornings. Zey teaches only the sessions she actually wants to teach. The income keeps coming in either way.</div>
+      <div class="bp-tags2">
+        <span class="bp-tag2">8 sessions daily</span>
+        <span class="bp-tag2">2nd teacher hired</span>
+        <span class="bp-tag2">Zey teaches on her terms</span>
+      </div>
+      <div class="bp-ghost">02</div>
+    </div>
+
+    <div class="bp-connector bpc2"></div>
+
+    <div class="bp-card bps3">
+      <div class="bp-card-top">
+        <div class="bp-card-head">
+          <div class="bp-when2">Year 2–3 — The Studio</div>
+          <div class="bp-title2">A proper studio space in Malé. Then pilates.</div>
+        </div>
+      </div>
+      <div class="bp-text2">A dedicated studio — not a terrace, but a space that's fully ours. More capacity, more income. <strong>Then comes the big move: 5 reformer pilates machines.</strong> Zey does a pilates certification. Pilates classes launch alongside yoga. A completely new income stream, from the same space.</div>
+      <div class="bp-costs">
+        <div class="bp-cost-item">
+          <span class="bp-cost-label">Studio rent est.</span>
+          <span class="bp-cost-val">MVR 20k / mo</span>
+        </div>
+        <div class="bp-cost-item">
+          <span class="bp-cost-label">5 reformers · one-time investment</span>
+          <span class="bp-cost-val">MVR 225k total</span>
+        </div>
+      </div>
+      <div class="bp-text2">The machines pay for themselves in under 2 months at full capacity. <strong>A one-time investment, not an ongoing cost.</strong></div>
+      <div class="bp-tags2">
+        <span class="bp-tag2">Studio space</span>
+        <span class="bp-tag2">5 reformers</span>
+        <span class="bp-tag2">Pilates certification</span>
+        <span class="bp-tag2">New income stream</span>
+      </div>
+      <div class="bp-ghost">03</div>
+    </div>
+
+    <div class="bp-connector bpc3"></div>
+
+    <div class="bp-card bps4">
+      <div class="bp-card-top">
+        <div class="bp-card-head">
+          <div class="bp-when2">Year 3+ — The Business Runs Itself</div>
+          <div class="bp-title2">Teachers are in. The studio is full. Money comes in every month.</div>
+        </div>
+        <div class="bp-card-stat-wrap">
+          <div class="bp-card-stat">MVR 400k+</div>
+          <div class="bp-stat-label">/ month</div>
+        </div>
+      </div>
+      <div class="bp-text2">The studio has a team. Classes run with or without Zey in the room. <strong>Zey doesn't have to work when she doesn't want to.</strong> The income is consistent regardless. She still teaches when she feels like it — because she loves it, not because she has to.</div>
+      <div class="bp-tags2">
+        <span class="bp-tag2">Yoga + pilates running</span>
+        <span class="bp-tag2">Team in place</span>
+        <span class="bp-tag2">Passive income</span>
+      </div>
+      <div class="bp-ghost">04</div>
+    </div>
+
+    <div class="bp-connector bpc4"></div>
+
+    <div class="bp-card bps5">
+      <div class="bp-card-top">
+        <div class="bp-card-head">
+          <div class="bp-when2">The Life — What all of this is actually for</div>
+          <div class="bp-title2">She goes wherever she wants. The money keeps coming.</div>
+        </div>
+      </div>
+      <div class="bp-text2">Host a retreat on a private island in the Maldives. Go to a yoga retreat in Bali. Travel the world. <strong>Salt to Soul keeps running. The income keeps coming. She built something real — and now it works for her, not the other way around.</strong> This is the end goal. And it is genuinely achievable from exactly where we're starting right now.</div>
+      <div class="bp-tags2">
+        <span class="bp-tag2">Island retreats</span>
+        <span class="bp-tag2">Travel freely</span>
+        <span class="bp-tag2">Studio keeps earning</span>
+        <span class="bp-tag2">Complete financial freedom</span>
+      </div>
+      <div class="bp-ghost">05</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section>
+  <div class="sec-label">06 — What happens next</div>
+  <div class="ns-items">
+    <div class="ns-item">
+      <div class="ns-num">1</div>
+      <div class="ns-body">
+        <div class="ns-title">Confirm July 20 as the launch date</div>
+        <div class="ns-desc">Lock it in. Everything else — the content, the outreach, the schedule — works backwards from that date. Once we both agree, it's real.</div>
+      </div>
+    </div>
+    <div class="ns-item">
+      <div class="ns-num">2</div>
+      <div class="ns-body">
+        <div class="ns-title">Send the founding member offer this week</div>
+        <div class="ns-desc">DM 30–40 people directly. Offer the founding rate — MVR 2,000 for the first month, locked in as long as they stay. This fills the first class before it even opens.</div>
+      </div>
+    </div>
+    <div class="ns-item">
+      <div class="ns-num">3</div>
+      <div class="ns-body">
+        <div class="ns-title">Sign a simple one-page partnership agreement</div>
+        <div class="ns-desc">Just the basics: the split, who does what, and what happens if either of us wants to leave. It protects both of us — and it takes 20 minutes. Starting money without something on paper isn't smart for either of us.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING NOTE -->
+<div class="closing">
+  <p class="closing-text">
+    I didn't put this together because I want a cut of something. I put it together because I've watched you build something real — the teaching, Soneva, the brand — and I don't want to see it stay small just because no one was running the business side. <strong>You are Salt to Soul.</strong> I just want to make sure the world knows it, the classes fill, and the money comes in every month. This is how we do it together.
+  </p>
+  <div class="closing-sig">— Zein</div>
+</div>
+
+</body>
+</html>
