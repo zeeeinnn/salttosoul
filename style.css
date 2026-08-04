@@ -403,9 +403,9 @@ footer {
 @media (max-width: 900px) {
   .nav-links, .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
-  footer { grid-template-columns: 1fr; }
-  .f-right { align-items: flex-start; }
-  .f-links { align-items: flex-start; }
+  footer { grid-template-columns: 1fr; gap: 28px; }
+  .f-right { align-items: flex-start; flex-direction: row; align-items: center; justify-content: space-between; }
+  .f-links { flex-direction: row; flex-wrap: wrap; gap: 14px 24px; align-items: flex-start; }
   .sched-day { grid-template-columns: 1fr; gap: 12px; }
 }
 @media (max-width: 600px) {
