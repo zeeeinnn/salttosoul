@@ -1,0 +1,158 @@
+/* ─────────────────────────────────────────
+   Salt to Soul — Shared Stylesheet
+   ───────────────────────────────────────── */
+
+/* ── TOKENS ── */
+:root {
+  --night: #2E1A0E; --palm:  #5A3020;
+  --salt:  #F2EDE4; --shore: #E0D8C8;
+  --terra: #B85C38; --gold:  #C98840;
+  --blush: #D4855A; --pandan:#D4BC8A;
+  --fern:  #4D6538;
+  --ff-d: 'Cormorant Garamond', Georgia, serif;
+  --ff-b: 'Josefin Sans', sans-serif;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; }
+
+body {
+  background: var(--night);
+  color: var(--salt);
+  font-family: var(--ff-b);
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 44px;
+  background: rgba(46,26,14,0.92);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212,188,138,.07);
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.nav-mark { width: 32px; height: 32px; border-radius: 50%; background: var(--blush); overflow: hidden; flex-shrink: 0; }
+.nav-mark img { width: 100%; height: 100%; object-fit: contain; }
+.nav-name { font-family: var(--ff-d); font-size: .88rem; font-weight: 600; letter-spacing: .24em; color: var(--salt); text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-link { font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(242,237,228,.55); transition: color .2s; }
+.nav-link:hover { color: var(--salt); }
+.nav-link.active { color: var(--salt); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+.nav-cta {
+  font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--pandan); border: 1px solid rgba(212,188,138,.3);
+  padding: 9px 22px; border-radius: 40px; transition: all .25s;
+}
+.nav-cta:hover { background: var(--pandan); color: var(--night); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-hamburger span { display: block; width: 22px; height: 1.5px; background: var(--salt); transition: all .3s; }
+.nav-mobile {
+  display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+  background: rgba(46,26,14,.98); border-bottom: 1px solid rgba(212,188,138,.1);
+  padding: 28px 36px 36px; flex-direction: column; gap: 22px;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-size: .68rem; letter-spacing: .25em; text-transform: uppercase; color: rgba(242,237,228,.65); }
+.nav-mobile a:hover { color: var(--salt); }
+.nav-mobile-cta { color: var(--pandan) !important; border: 1px solid rgba(212,188,138,.3); padding: 12px 0; text-align: center; border-radius: 40px; margin-top: 8px; }
+
+/* ── PAGE HERO (sub-pages) ── */
+.page-hero {
+  padding: 160px 44px 80px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(184,92,56,.15) 0%, transparent 60%);
+}
+.page-hero-label { font-size: .58rem; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; position: relative; }
+.page-hero-title { font-family: var(--ff-d); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 400; line-height: 1.1; position: relative; }
+.page-hero-title em { font-style: italic; color: var(--blush); }
+.page-hero-sub { margin-top: 18px; font-size: .8rem; letter-spacing: .06em; color: rgba(242,237,228,.45); max-width: 480px; margin-inline: auto; position: relative; }
+
+/* ── COMMON SECTION ATOMS ── */
+.section-label { font-size: .58rem; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); }
+.section-title { font-family: var(--ff-d); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 400; line-height: 1.15; }
+.section-body { font-size: .86rem; letter-spacing: .03em; line-height: 1.95; color: var(--pandan); }
+.gold-rule { width: 36px; height: 1px; background: var(--gold); }
+
+/* ── BUTTONS ── */
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ff-b); font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; cursor: pointer; transition: all .25s; }
+.btn-primary { background: var(--terra); color: var(--salt); padding: 14px 34px; border-radius: 40px; border: none; }
+.btn-primary:hover { background: var(--blush); }
+.btn-outline { color: var(--pandan); border: 1px solid rgba(212,188,138,.3); padding: 12px 28px; border-radius: 40px; background: none; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── JOURNAL CARDS ── */
+.post-card { background: rgba(255,255,255,.03); border: 1px solid rgba(212,188,138,.08); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform .25s, border-color .25s; }
+.post-card:hover { transform: translateY(-4px); border-color: rgba(212,188,138,.2); }
+.post-card-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.post-card-body { padding: 24px 28px 32px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.post-card-tag { font-size: .54rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.post-card-title { font-family: var(--ff-d); font-size: 1.45rem; font-weight: 400; color: var(--salt); line-height: 1.3; }
+.post-card-excerpt { font-size: .8rem; color: rgba(212,188,138,.65); line-height: 1.85; }
+.post-card-link { font-size: .57rem; letter-spacing: .2em; text-transform: uppercase; color: var(--terra); margin-top: auto; padding-top: 12px; display: flex; align-items: center; gap: 6px; }
+
+/* ── ARTICLE ── */
+.article { max-width: 700px; margin-inline: auto; padding: 0 24px 100px; }
+.article-lead { font-family: var(--ff-d); font-size: 1.2rem; font-style: italic; color: var(--pandan); line-height: 1.75; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(212,188,138,.12); }
+.article-body p { font-size: .88rem; line-height: 2.05; color: rgba(242,237,228,.78); margin-bottom: 26px; }
+.article-body h2 { font-family: var(--ff-d); font-size: 1.6rem; font-weight: 400; font-style: italic; color: var(--salt); margin: 52px 0 20px; }
+.article-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 4px; margin: 44px 0; }
+.pull-quote { border-left: 2px solid var(--terra); padding: 12px 0 12px 28px; margin: 52px 0; }
+.pull-quote p { font-family: var(--ff-d); font-size: 1.3rem; font-style: italic; color: var(--blush); line-height: 1.5; margin: 0 !important; }
+
+/* ── SESSION / BOOKING CARDS ── */
+.session-card { background: rgba(255,255,255,.04); border: 1px solid rgba(212,188,138,.1); border-radius: 10px; padding: 32px 36px; display: flex; flex-direction: column; gap: 14px; transition: border-color .25s; }
+.session-card:hover { border-color: rgba(212,188,138,.28); }
+.session-icon { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; flex-shrink: 0; }
+.session-icon img { width: 100%; height: 100%; object-fit: contain; }
+.session-name { font-family: var(--ff-d); font-size: 1.35rem; font-weight: 600; color: var(--salt); }
+.session-desc { font-size: .84rem; color: var(--pandan); line-height: 1.85; }
+.session-details { font-size: .7rem; letter-spacing: .08em; color: rgba(212,188,138,.5); }
+
+/* ── INSTAGRAM STRIP ── */
+.ig-strip { border-top: 1px solid rgba(212,188,138,.07); border-bottom: 1px solid rgba(212,188,138,.07); padding: 18px 44px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.ig-text { font-size: .68rem; letter-spacing: .15em; color: rgba(212,188,138,.45); }
+.ig-link { display: flex; align-items: center; gap: 10px; font-size: .62rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(242,237,228,.5); transition: color .2s; }
+.ig-link:hover { color: var(--blush); }
+.ig-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ── FOOTER ── */
+footer { padding: 60px 44px 44px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; border-top: 1px solid rgba(212,188,138,.07); }
+.f-mark { width: 48px; height: 48px; border-radius: 50%; background: var(--blush); overflow: hidden; }
+.f-mark img { width: 100%; height: 100%; object-fit: contain; }
+.f-name { font-family: var(--ff-d); font-size: .85rem; letter-spacing: .2em; color: rgba(242,237,228,.45); text-transform: uppercase; }
+.f-tag { font-style: italic; font-size: .78rem; color: rgba(242,237,228,.25); }
+.f-links { display: flex; gap: 24px; margin-top: 6px; }
+.f-link { font-size: .57rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(212,188,138,.35); transition: color .2s; }
+.f-link:hover { color: var(--gold); }
+.f-copy { font-size: .55rem; color: rgba(212,188,138,.18); margin-top: 16px; letter-spacing: .1em; }
+
+/* ── WAITLIST FORM ── */
+.w-input { background: rgba(255,255,255,.06); border: 1px solid rgba(212,188,138,.15); padding: 13px 18px; border-radius: 40px; color: var(--salt); font-family: var(--ff-b); font-size: .76rem; letter-spacing: .05em; outline: none; transition: border-color .2s; width: 100%; }
+.w-input::placeholder { color: rgba(212,188,138,.35); }
+.w-input:focus { border-color: rgba(212,188,138,.4); }
+.w-btn { background: var(--terra); color: var(--salt); font-family: var(--ff-b); font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; padding: 13px 28px; border: none; border-radius: 40px; cursor: pointer; transition: background .2s; white-space: nowrap; }
+.w-btn:hover { background: var(--blush); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .page-hero { padding: 140px 24px 60px; }
+  .ig-strip { padding: 16px 24px; }
+  footer { padding: 48px 24px 36px; }
+}
+@media (max-width: 600px) {
+  .ig-strip { flex-direction: column; text-align: center; }
+  .article-photo { aspect-ratio: 3/2; }
+}

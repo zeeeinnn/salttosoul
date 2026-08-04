@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<meta name="description" content="Two weeks teaching yoga at Soneva Secret — what it feels like to teach on a private island and what it revealed about why I do this work."/>
+<title>Two weeks at Soneva Secret — Salt to Soul Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.post-hero {
+  min-height: 65vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.post-hero-bg {
+  position: absolute; inset: 0;
+  background: url('../photos/terrace_class.jpg') center 40% / cover no-repeat;
+}
+.post-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(46,26,14,.4) 0%, rgba(46,26,14,.55) 50%, rgba(46,26,14,1) 100%);
+}
+.post-hero-content { position: relative; z-index: 2; padding: 0 60px 72px; max-width: 860px; }
+.post-hero-back { display: inline-flex; align-items: center; gap: 8px; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(242,237,228,.5); margin-bottom: 24px; transition: color .2s; }
+.post-hero-back:hover { color: var(--salt); }
+.post-meta { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.post-date { font-size: .58rem; letter-spacing: .15em; color: rgba(242,237,228,.35); }
+.post-title { font-family: var(--ff-d); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 400; line-height: 1.1; }
+
+.post-body { padding: 80px 0 100px; }
+.post-inner { max-width: 1100px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: start; }
+.post-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 32px; }
+.sidebar-card { background: rgba(255,255,255,.04); border: 1px solid rgba(212,188,138,.1); border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; }
+.sidebar-card-label { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.sidebar-card-title { font-family: var(--ff-d); font-size: 1rem; color: var(--salt); line-height: 1.4; }
+.sidebar-card-sub { font-size: .76rem; color: var(--pandan); line-height: 1.7; }
+
+.post-footer { padding: 80px 60px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; border-top: 1px solid rgba(212,188,138,.1); }
+.post-footer h2 { font-family: var(--ff-d); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; }
+.post-footer-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+@media (max-width: 1024px) { .post-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 28px; } .post-sidebar { position: static; } }
+@media (max-width: 900px) { .post-hero-content { padding: 0 28px 60px; } .post-footer { padding: 60px 28px; } .post-body { padding: 60px 0 80px; } }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <div class="nav-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+    <span class="nav-name">Salt · to · Soul</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../about.html" class="nav-link">About</a>
+    <a href="../blog/" class="nav-link active">Journal</a>
+    <a href="../book.html" class="nav-link">Book</a>
+  </div>
+  <a href="../book.html" class="nav-cta">Book a session</a>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../blog/">Journal</a>
+  <a href="../book.html">Book a Session</a>
+  <a href="../book.html" class="nav-mobile-cta">Book a session →</a>
+</div>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <div class="post-hero-bg"></div>
+  <div class="post-hero-overlay"></div>
+  <div class="post-hero-content">
+    <a href="./index.html" class="post-hero-back">← Back to Journal</a>
+    <div class="post-meta">
+      <span class="post-tag">Teaching &nbsp;·&nbsp; Soneva Secret</span>
+      <span class="post-date">2025</span>
+    </div>
+    <h1 class="post-title">Two weeks teaching at Soneva Secret</h1>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="post-body">
+  <div class="post-inner">
+    <div class="article">
+      <div class="article-lead">
+        What it actually feels like to teach yoga on a private island in the Indian Ocean — and what it revealed about why I do this work.
+      </div>
+
+      <div class="article-body">
+        <p>I am a Maldivian woman. I grew up here. The ocean has been background noise my entire life — the particular shade of it, the way the light moves on it in the early morning, the smell of it when the tide comes in. I thought I was immune to the beauty of this place in the way you become immune to anything you grow up with.</p>
+
+        <p>Soneva Secret reminded me I was not.</p>
+
+        <h2>How it came about</h2>
+
+        <p>The opportunity arrived through a conversation. I had completed my 200-hour training in Bali and had been teaching in Malé — small groups, private sessions, learning what it actually meant to hold space for other people's bodies. When the chance to teach a two-week residency at Soneva Secret came up, my first reaction was honest: I was terrified.</p>
+
+        <p>Not of the resort. Not of the guests. Terrified of what it would mean to step into that level of visibility as a teacher. Of being seen, formally, as someone who does this. Of it being real.</p>
+
+        <p>I went anyway. That has become a theme.</p>
+
+        <h2>The island</h2>
+
+        <p>Soneva Secret is a private island. It is small enough that you can walk its perimeter in twenty minutes, and vast enough that you can spend a day discovering corners of it. The yoga space was open-air, raised, surrounded by the sound of water on three sides. Every morning session started in the dark, and by the time we were moving, the sky was changing.</p>
+
+        <p>There is something it does to your teaching when the environment is that alive. You stop over-explaining. You stop filling silence. You let the ocean be part of the session. You realize that the guests came from cities where they rarely hear anything except traffic, and what they need first — before any pose, before any breathwork — is just to be still in a place that makes stillness feel possible.</p>
+
+        <div class="pull-quote">
+          <p>"Before any pose, before any breathwork — they needed to be still in a place that made stillness feel possible."</p>
+        </div>
+
+        <h2>Teaching people from everywhere</h2>
+
+        <p>The guests at Soneva Secret come from all over the world. In two weeks I taught people from eight or nine different countries. Different bodies. Different relationships to yoga. Different things they were carrying when they arrived.</p>
+
+        <p>Some had practiced for decades and wanted a rigorous technical class. Some had never been on a mat and arrived because their partner signed them up. Some were grieving. Some were celebrating. Some were just exhausted in the specific way that people who have been working too hard for too long get exhausted — a kind of hollowness that shows up in the shoulders.</p>
+
+        <p>Teaching across that range in the same session is a skill I did not know I was developing until I was in it. You learn to hold structure loosely. To offer options without judgment. To read what someone's body is saying and meet it there, rather than where the lesson plan said they should be.</p>
+
+        <img src="../photos/terrace_class.jpg" alt="Evening class at the terrace" class="article-photo" style="object-position:center 40%;"/>
+
+        <h2>What it asked of me</h2>
+
+        <p>Teaching two sessions a day for two weeks is different from teaching two sessions a week. Your voice gets more efficient. Your cues get cleaner. You stop saying things because you were trained to say them and start saying things because they are actually useful in this moment for this person in this body.</p>
+
+        <p>There were sessions that felt effortless — where everything flowed and I could feel the room moving with me. There were sessions where I lost the thread halfway through and had to find it quietly, without letting anyone know it was lost. Both taught me something.</p>
+
+        <p>The most important thing I learned in those two weeks is that teaching is not about delivering a performance. It is about being genuinely present. When you are genuinely present, people feel it. When you are performing, they feel that too, even if they can't name what feels slightly off.</p>
+
+        <div class="pull-quote">
+          <p>"Teaching is not about delivering a performance. It is about being genuinely present."</p>
+        </div>
+
+        <h2>What came back with me</h2>
+
+        <p>I came back to Malé with something I didn't have when I left. Not a credential — though I have that too now. Something quieter. A confirmation that I am supposed to be doing this. That the practice I am building with Salt to Soul is not just a passion project. It is real work. It is work that matters to people. And it is work I am ready to do.</p>
+
+        <p>Salt to Soul exists because of what Soneva Secret made visible. Not the resort — the experience of watching people arrive tense and leave lighter. Of watching someone breathe deeply for the first time in weeks. Of seeing what happens when you give a person an hour to be in their body without an agenda.</p>
+
+        <p>That is the work. That is what I want to keep doing, here, in the Maldives, with people from every kind of life. The ocean will help. It always does.</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="post-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">About the author</div>
+        <div class="sidebar-card-title">Zey</div>
+        <div class="sidebar-card-sub">Maldivian yoga and dance meditation teacher. 200-hour YTT certified. Founder of Salt to Soul. Former resident teacher, Soneva Secret.</div>
+        <a href="../about.html" class="btn btn-outline" style="font-size:.57rem;padding:10px 20px;margin-top:4px;">Read her story →</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Resort & guesthouse</div>
+        <div class="sidebar-card-title">Bring Zey to your property</div>
+        <div class="sidebar-card-sub">Wellness residencies, daily programmes, and one-time events. Get in touch for a tailored proposal.</div>
+        <a href="../book.html#inquiry" class="btn btn-primary" style="margin-top:4px;">Send inquiry →</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Also in the journal</div>
+        <div class="sidebar-card-title">What 200 hours in Bali taught me</div>
+        <div class="sidebar-card-sub">On teacher training, the body, and learning to trust yourself.</div>
+        <a href="./bali.html" class="post-card-link" style="margin-top:4px;">Read →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST FOOTER -->
+<div class="post-footer">
+  <div class="section-label">Continue reading</div>
+  <h2>More from the journal.</h2>
+  <div class="post-footer-links">
+    <a href="./bali.html" class="btn btn-outline">200 hours in Bali →</a>
+    <a href="./index.html" class="btn btn-outline">All posts →</a>
+  </div>
+</div>
+
+<!-- IG STRIP -->
+<div class="ig-strip">
+  <span class="ig-text">Follow the journey as it happens.</span>
+  <a href="https://instagram.com/salttosoul.mv" target="_blank" class="ig-link">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @salttosoul.mv
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+  <div class="f-name">Salt to Soul &nbsp;·&nbsp; salttosoul.com</div>
+  <div class="f-tag">a journey from doing to being</div>
+  <div class="f-links">
+    <a href="https://instagram.com/salttosoul.mv" target="_blank" class="f-link">Instagram</a>
+    <a href="../about.html" class="f-link">About</a>
+    <a href="../blog/" class="f-link">Journal</a>
+    <a href="../book.html" class="f-link">Book</a>
+    <a href="mailto:zey@salttosoul.mv" class="f-link">Email</a>
+  </div>
+  <div class="f-copy">&copy; 2025 Salt to Soul. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
+</script>
+</body>
+</html>

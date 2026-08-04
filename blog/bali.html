@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<meta name="description" content="What 200 hours of yoga teacher training in Bali taught me about teaching, the body, and trusting myself."/>
+<title>What 200 hours in Bali taught me — Salt to Soul Journal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+/* POST HERO */
+.post-hero {
+  min-height: 65vh; position: relative; overflow: hidden;
+  display: flex; align-items: flex-end;
+}
+.post-hero-bg {
+  position: absolute; inset: 0;
+  background: url('../photos/bali-study.jpg') center / cover no-repeat;
+}
+.post-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(46,26,14,.3) 0%, rgba(46,26,14,.5) 50%, rgba(46,26,14,1) 100%);
+}
+.post-hero-content { position: relative; z-index: 2; padding: 0 60px 72px; max-width: 860px; }
+.post-hero-back {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(242,237,228,.5); margin-bottom: 24px; transition: color .2s;
+}
+.post-hero-back:hover { color: var(--salt); }
+.post-meta { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+.post-tag { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.post-date { font-size: .58rem; letter-spacing: .15em; color: rgba(242,237,228,.35); }
+.post-title { font-family: var(--ff-d); font-size: clamp(2.4rem, 5.5vw, 4rem); font-weight: 400; line-height: 1.1; color: var(--salt); }
+
+/* ARTICLE LAYOUT */
+.post-body { padding: 80px 0 100px; }
+.post-inner { max-width: 1100px; margin: 0 auto; padding: 0 60px; display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: start; }
+.post-sidebar { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 32px; }
+.sidebar-card { background: rgba(255,255,255,.04); border: 1px solid rgba(212,188,138,.1); border-radius: 8px; padding: 28px 24px; display: flex; flex-direction: column; gap: 12px; }
+.sidebar-card-label { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); }
+.sidebar-card-title { font-family: var(--ff-d); font-size: 1rem; color: var(--salt); line-height: 1.4; }
+.sidebar-card-sub { font-size: .76rem; color: var(--pandan); line-height: 1.7; }
+
+/* POST FOOTER */
+.post-footer { padding: 80px 60px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; border-top: 1px solid rgba(212,188,138,.1); }
+.post-footer h2 { font-family: var(--ff-d); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 400; }
+.post-footer-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+@media (max-width: 1024px) {
+  .post-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 28px; }
+  .post-sidebar { position: static; }
+}
+@media (max-width: 900px) {
+  .post-hero-content { padding: 0 28px 60px; }
+  .post-footer { padding: 60px 28px; }
+  .post-body { padding: 60px 0 80px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <div class="nav-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+    <span class="nav-name">Salt · to · Soul</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../about.html" class="nav-link">About</a>
+    <a href="../blog/" class="nav-link active">Journal</a>
+    <a href="../book.html" class="nav-link">Book</a>
+  </div>
+  <a href="../book.html" class="nav-cta">Book a session</a>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../blog/">Journal</a>
+  <a href="../book.html">Book a Session</a>
+  <a href="../book.html" class="nav-mobile-cta">Book a session →</a>
+</div>
+
+<!-- POST HERO -->
+<div class="post-hero">
+  <div class="post-hero-bg"></div>
+  <div class="post-hero-overlay"></div>
+  <div class="post-hero-content">
+    <a href="./index.html" class="post-hero-back">← Back to Journal</a>
+    <div class="post-meta">
+      <span class="post-tag">Teacher Training &nbsp;·&nbsp; Bali</span>
+      <span class="post-date">2024</span>
+    </div>
+    <h1 class="post-title">What 200 hours in Bali taught me</h1>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="post-body">
+  <div class="post-inner">
+    <div class="article">
+      <div class="article-lead">
+        I went to Bali thinking I was going to learn how to teach yoga. I came back having learned something much harder: how to trust myself.
+      </div>
+
+      <div class="article-body">
+        <p>The decision to go felt enormous. I was not someone who had spent years on a mat. I had practiced — seriously, consistently — for a few years. But I was still in my head about whether I was "ready enough." Whether my body was flexible enough, advanced enough, Instagrammable enough. I had absorbed every story the wellness industry tells about what a yoga teacher is supposed to look like.</p>
+
+        <p>I almost didn't go. And then I did.</p>
+
+        <h2>What it actually looked like</h2>
+
+        <p>A 200-hour YTT is not a relaxing holiday in Bali. I want to say that clearly, because it is easy to romanticise it from the outside. There were mornings I woke up at 5:30am for a two-hour practice before breakfast. There were afternoons I sat through anatomy lectures with my eyes burning. There were evenings I sat with the Yoga Sutras of Patanjali and read sentences three times, trying to understand what they meant for a body living in this century, in this world.</p>
+
+        <p>There were also moments that were genuinely extraordinary. Practicing together in the early morning when the air was still cool. Watching someone in the room have a realisation — not an intellectual one, a body one — and feel the whole space shift with it. Learning to cue a pose for someone who had never done it before, and watching their face change when something clicked.</p>
+
+        <div class="pull-quote">
+          <p>"I expected to learn how to teach. I didn't expect to learn how to be in my own body."</p>
+        </div>
+
+        <h2>The anatomy revelation</h2>
+
+        <p>The anatomy module changed everything for me. Not because I became a science person overnight, but because I finally understood why certain poses had always felt impossible in my body. I had spent years assuming I wasn't flexible enough. What I actually learned was that I had a particular structure — a particular set of bone lengths and joint shapes — that made some poses harder and others easier. Not good or bad. Just mine.</p>
+
+        <p>This might sound obvious. But when you grow up comparing your practice to images on social media, you carry a background noise of inadequacy that is surprisingly hard to name. Anatomy gave me a language for it. It said: your body is not wrong. It is just specific.</p>
+
+        <img src="../photos/zeyba-certified.jpg" alt="Yoga certification in Bali" class="article-photo"/>
+
+        <h2>The hardest part: teaching</h2>
+
+        <p>We were required to teach from very early in the training. Within the first week, we were cuing each other through poses. Within the second, we were teaching observed thirty-minute classes to the group. By the end, each of us taught a full sixty-minute class to everyone, assessed in real time.</p>
+
+        <p>The first time I stood at the front of the room, I forgot everything. Every cue I had written. Every sequence I had planned. My mind went completely blank, and I stood there for what felt like several minutes but was probably ten seconds, until my mouth just started speaking. Something came out. It was not perfect. But it was mine.</p>
+
+        <p>What I learned in those moments of teaching was that the technique is the foundation, but it is not the practice. The practice is your presence. Your ability to read the room. Your willingness to stay calm when someone is struggling, to offer an adjustment and then step back, to let the person in front of you have their own experience instead of the one you planned for them.</p>
+
+        <div class="pull-quote">
+          <p>"The technique is the foundation. But presence is the practice."</p>
+        </div>
+
+        <h2>Becoming a Maldivian yoga teacher</h2>
+
+        <p>I thought about this a lot in Bali. What it means to be a Maldivian woman doing this. To go to the island of someone else's spiritual tradition and train in it, and then bring it home. There is something to hold lightly there — the borrowing, the lineage, the history.</p>
+
+        <p>What I know is that yoga — in its truest sense — is not a brand or an aesthetic. It is a framework for paying attention. For returning to the body. For noticing what is happening in you before you react to what is happening around you. That is not trademarked. That is available to every person on every island, in every form it wants to take.</p>
+
+        <p>That is the Salt to Soul I came home to build.</p>
+
+        <img src="../photos/IMG_graduation.jpg" alt="Graduation from Bali YTT" class="article-photo"/>
+
+        <h2>What I carried home</h2>
+
+        <p>A certificate. Calluses on my hands. A dramatically different relationship to breath. A group of women from around the world who held space for me in a way I didn't know I needed. And something quieter than all of that — a sense of permission. To take up space. To call myself a teacher. To begin.</p>
+
+        <p>Salt to Soul is what began on the other side of those 200 hours. It is still beginning, every session. I think that's how it's supposed to be.</p>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="post-sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">About the author</div>
+        <div class="sidebar-card-title">Zey</div>
+        <div class="sidebar-card-sub">Maldivian yoga and dance meditation teacher. 200-hour YTT certified. Founder of Salt to Soul.</div>
+        <a href="../about.html" class="btn btn-outline" style="font-size:.57rem;padding:10px 20px;margin-top:4px;">Read her story →</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Book a session</div>
+        <div class="sidebar-card-title">Practice with Zey</div>
+        <div class="sidebar-card-sub">Private yoga, small group sessions, dance meditation. All levels welcome.</div>
+        <a href="../book.html" class="btn btn-primary" style="margin-top:4px;">Book now →</a>
+      </div>
+      <div class="sidebar-card">
+        <div class="sidebar-card-label">Also in the journal</div>
+        <div class="sidebar-card-title">Two weeks at Soneva Secret</div>
+        <div class="sidebar-card-sub">What it feels like to teach yoga on a private island in the Indian Ocean.</div>
+        <a href="./soneva.html" class="post-card-link" style="margin-top:4px;">Read →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- POST FOOTER -->
+<div class="post-footer">
+  <div class="section-label">Continue reading</div>
+  <h2>More from the journal.</h2>
+  <div class="post-footer-links">
+    <a href="./soneva.html" class="btn btn-outline">Two weeks at Soneva Secret →</a>
+    <a href="./index.html" class="btn btn-outline">All posts →</a>
+  </div>
+</div>
+
+<!-- IG STRIP -->
+<div class="ig-strip">
+  <span class="ig-text">Follow the journey as it happens.</span>
+  <a href="https://instagram.com/salttosoul.mv" target="_blank" class="ig-link">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @salttosoul.mv
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+  <div class="f-name">Salt to Soul &nbsp;·&nbsp; salttosoul.com</div>
+  <div class="f-tag">a journey from doing to being</div>
+  <div class="f-links">
+    <a href="https://instagram.com/salttosoul.mv" target="_blank" class="f-link">Instagram</a>
+    <a href="../about.html" class="f-link">About</a>
+    <a href="../blog/" class="f-link">Journal</a>
+    <a href="../book.html" class="f-link">Book</a>
+    <a href="mailto:zey@salttosoul.mv" class="f-link">Email</a>
+  </div>
+  <div class="f-copy">&copy; 2025 Salt to Soul. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
+</script>
+</body>
+</html>

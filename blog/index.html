@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg"/>
+<meta name="description" content="The Salt to Soul journal — stories from the practice, the islands, and everything in between."/>
+<title>Journal — Salt to Soul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.blog-section { padding: 80px 60px 120px; }
+.blog-inner { max-width: 1100px; margin: 0 auto; }
+.blog-head { display: flex; flex-direction: column; gap: 14px; margin-bottom: 60px; }
+
+.posts-featured { margin-bottom: 60px; }
+.post-card-featured {
+  display: grid; grid-template-columns: 1fr 1fr; border-radius: 10px; overflow: hidden;
+  border: 1px solid rgba(212,188,138,.08); text-decoration: none;
+  transition: border-color .25s, transform .25s;
+}
+.post-card-featured:hover { border-color: rgba(212,188,138,.22); transform: translateY(-3px); }
+.post-card-featured .post-card-img { aspect-ratio: 4/3; height: 100%; object-fit: cover; object-position: center 40%; }
+.post-card-featured .post-card-body { padding: 48px 52px; display: flex; flex-direction: column; justify-content: center; gap: 14px; background: rgba(255,255,255,.04); }
+.post-card-featured .post-card-title { font-size: 1.9rem; line-height: 1.2; }
+.post-featured-badge {
+  display: inline-block; background: var(--terra); color: var(--salt);
+  font-size: .54rem; letter-spacing: .3em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 20px; align-self: flex-start;
+}
+
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+
+.blog-subscribe { padding: 80px 60px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.blog-subscribe h2 { font-family: var(--ff-d); font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 400; }
+
+@media (max-width: 900px) {
+  .blog-section { padding: 60px 28px 80px; }
+  .post-card-featured { grid-template-columns: 1fr; }
+  .post-card-featured .post-card-img { aspect-ratio: 16/9; height: auto; }
+  .post-card-featured .post-card-body { padding: 32px 28px; }
+  .blog-subscribe { padding: 60px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="nav-brand">
+    <div class="nav-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+    <span class="nav-name">Salt · to · Soul</span>
+  </a>
+  <div class="nav-links">
+    <a href="../index.html" class="nav-link">Home</a>
+    <a href="../about.html" class="nav-link">About</a>
+    <a href="../blog/" class="nav-link active">Journal</a>
+    <a href="../book.html" class="nav-link">Book</a>
+  </div>
+  <a href="../book.html" class="nav-cta">Book a session</a>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="../index.html">Home</a>
+  <a href="../about.html">About</a>
+  <a href="../blog/">Journal</a>
+  <a href="../book.html">Book a Session</a>
+  <a href="../book.html" class="nav-mobile-cta">Book a session →</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-label">Words from the practice</div>
+  <h1 class="page-hero-title">The <em>Journal.</em></h1>
+  <p class="page-hero-sub">Stories from teacher training, from island life, from the mat. Written honestly and without performance.</p>
+</div>
+
+<!-- POSTS -->
+<section class="blog-section">
+  <div class="blog-inner">
+    <div class="blog-head">
+      <div class="section-label">Latest</div>
+      <h2 class="section-title">Stories from the practice.</h2>
+    </div>
+
+    <!-- FEATURED -->
+    <div class="posts-featured">
+      <a href="./bali.html" class="post-card-featured">
+        <img src="../photos/bali-study.jpg" alt="Bali yoga teacher training" class="post-card-img"/>
+        <div class="post-card-body">
+          <span class="post-featured-badge">Featured</span>
+          <div class="post-card-tag">Teacher Training &nbsp;·&nbsp; Bali &nbsp;·&nbsp; 2024</div>
+          <div class="post-card-title">What 200 hours in Bali taught me</div>
+          <div class="post-card-excerpt">I went to Bali thinking I was going to learn how to teach yoga. I came back having learned something much harder: how to trust myself. A month of full immersion — in the asana, the philosophy, the anatomy, and the terrifying act of standing in front of a room and guiding someone else's body.</div>
+          <div class="post-card-link">Read the full story →</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- GRID -->
+    <div class="posts-grid">
+      <a href="./soneva.html" class="post-card">
+        <img src="../photos/terrace_class.jpg" alt="Teaching at Soneva Secret" class="post-card-img" style="object-position:center 40%;"/>
+        <div class="post-card-body">
+          <div class="post-card-tag">Teaching &nbsp;·&nbsp; Soneva Secret &nbsp;·&nbsp; 2025</div>
+          <div class="post-card-title">Two weeks teaching at Soneva Secret</div>
+          <div class="post-card-excerpt">What it actually feels like to teach yoga on a private island in the Indian Ocean — and what it revealed about why I do this work.</div>
+          <div class="post-card-link">Read →</div>
+        </div>
+      </a>
+      <div class="post-card" style="border-style:dashed;opacity:.45;cursor:default;">
+        <div class="post-card-body" style="justify-content:center;min-height:280px;">
+          <div class="post-card-tag">Coming soon</div>
+          <div class="post-card-title" style="font-style:italic;">More stories on the way.</div>
+          <div class="post-card-excerpt">Join the waitlist to be notified when new posts are published.</div>
+          <a href="../index.html#waitlist" class="post-card-link" style="cursor:pointer;opacity:1;">Join the waitlist →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="blog-subscribe">
+  <div class="section-label">Stay in the loop</div>
+  <h2>New posts, first.</h2>
+  <p class="section-body" style="text-align:center;max-width:440px;">Join the waitlist and you'll hear about new journal entries and class announcements before anyone else.</p>
+  <a href="../index.html#waitlist" class="btn btn-primary" style="margin-top:8px;">Join the waitlist →</a>
+</section>
+
+<!-- IG STRIP -->
+<div class="ig-strip">
+  <span class="ig-text">Follow the journey as it happens.</span>
+  <a href="https://instagram.com/salttosoul.mv" target="_blank" class="ig-link">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    @salttosoul.mv
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-mark"><img src="../brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
+  <div class="f-name">Salt to Soul &nbsp;·&nbsp; salttosoul.com</div>
+  <div class="f-tag">a journey from doing to being</div>
+  <div class="f-links">
+    <a href="https://instagram.com/salttosoul.mv" target="_blank" class="f-link">Instagram</a>
+    <a href="../about.html" class="f-link">About</a>
+    <a href="../blog/" class="f-link">Journal</a>
+    <a href="../book.html" class="f-link">Book</a>
+    <a href="mailto:zey@salttosoul.mv" class="f-link">Email</a>
+  </div>
+  <div class="f-copy">&copy; 2025 Salt to Soul. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleNav() { document.getElementById('navMobile').classList.toggle('open'); }
+</script>
+</body>
+</html>
