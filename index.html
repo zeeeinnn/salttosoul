@@ -101,6 +101,19 @@
   0%, 100% { transform: translate(-50%, -50%) scale(0.84); opacity: .38; }
   50%       { transform: translate(-50%, -50%) scale(1.16); opacity: 1; }
 }
+.arrival-breathe {
+  font-family: var(--ff-b);
+  font-size: .52rem;
+  letter-spacing: .55em;
+  text-transform: uppercase;
+  color: rgba(184,92,56,.6);
+  animation: breatheText 5.5s ease-in-out infinite;
+  user-select: none;
+}
+@keyframes breatheText {
+  0%, 100% { opacity: .28; letter-spacing: .45em; }
+  50%       { opacity: .85; letter-spacing: .65em; }
+}
 .arrival-inner {
   max-width: 780px; margin: 0 auto;
   display: flex; flex-direction: column; align-items: center; gap: 36px;
@@ -576,6 +589,7 @@
     <h2 class="arrival-headline fade-up fade-up-delay-2">
       You arrive.<br>The city fades.<br><em>Something shifts.</em>
     </h2>
+    <div class="arrival-breathe">Breathe.</div>
     <div class="arrival-body fade-up fade-up-delay-3">
       <p>There is a moment, just after you step inside, when the sounds of Malé soften and something quieter takes their place. You remove your shoes. You find your mat. You have not yet moved, and already something has begun to change.</p>
       <p>Salt to Soul was built around that moment. Not the postures, not the sequence, but the quality of presence that becomes possible when you give yourself permission to slow down.</p>
