@@ -19,7 +19,7 @@
   --ff-b: 'Josefin Sans', sans-serif;
 
   --pad: clamp(24px, 6vw, 80px);
-  --section-v: clamp(80px, 11vw, 140px);
+  --section-v: clamp(60px, 8vw, 110px);
   --max: 1240px;
 }
 
