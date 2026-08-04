@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
 <link rel="apple-touch-icon" href="./brand/icon/icon-logo.png"/>
-<meta name="description" content="Salt to Soul: a boutique wellness experience in Malé, Maldives. Movement, stillness, and the details of care with certified teacher Zey."/>
+<meta name="description" content="Salt to Soul: a private wellness practice in Malé, Maldives. Movement, stillness, and the details of care with certified teacher Zey."/>
 <meta property="og:title" content="Salt to Soul · Maldives"/>
-<meta property="og:description" content="From doing to being. A boutique wellness experience in Malé, Maldives."/>
+<meta property="og:description" content="From doing to being. A wellness experience in Malé, Maldives."/>
 <meta property="og:image" content="./photos/rooftop_mandala.png"/>
-<title>Salt to Soul · Boutique Wellness · Maldives</title>
+<title>Salt to Soul · Wellness · Maldives</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
@@ -74,14 +74,32 @@
 
 /* THE ARRIVAL */
 .arrival {
-  padding: clamp(100px, 14vw, 200px) var(--pad);
+  padding: clamp(64px, 9vw, 130px) var(--pad);
   background: var(--salt);
   text-align: center;
   position: relative;
+  overflow: hidden;
+}
+.arrival::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: clamp(420px, 70vw, 700px);
+  height: clamp(420px, 70vw, 700px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,92,56,.09) 0%, rgba(201,136,64,.05) 38%, transparent 68%);
+  animation: breatheGlow 5.5s ease-in-out infinite;
+  pointer-events: none;
+  transform-origin: center;
+}
+@keyframes breatheGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.88); opacity: .6; }
+  50%       { transform: translate(-50%, -50%) scale(1.14); opacity: 1; }
 }
 .arrival-inner {
   max-width: 780px; margin: 0 auto;
-  display: flex; flex-direction: column; align-items: center; gap: 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 36px;
+  position: relative; z-index: 1;
 }
 .arrival-headline {
   font-family: var(--ff-d);
@@ -93,7 +111,7 @@
 }
 .arrival-headline em { font-style: italic; color: var(--terra); }
 .arrival-body {
-  max-width: 560px; text-align: center;
+  max-width: 540px; text-align: justify; text-align-last: center;
 }
 .arrival-body p {
   font-size: clamp(.88rem, 1.5vw, .95rem);
@@ -103,7 +121,7 @@
 }
 .arrival-body p:last-child { margin-bottom: 0; }
 .arrival-rule {
-  width: 1px; height: 64px; background: rgba(184,92,56,.25);
+  width: 1px; height: 56px; background: rgba(184,92,56,.22);
   margin: 0 auto;
 }
 
@@ -134,7 +152,7 @@
 }
 
 /* SPACES */
-.spaces { padding: var(--section-v) 0 clamp(48px, 6vw, 80px); }
+.spaces { padding: clamp(40px, 5vw, 72px) 0 clamp(48px, 6vw, 80px); }
 .spaces-intro {
   padding: 0 var(--pad); max-width: calc(var(--max) + 2 * var(--pad));
   margin: 0 auto 56px;
@@ -173,50 +191,57 @@
 }
 .sched-day-col { display: flex; flex-direction: column; gap: 14px; }
 .sched-day-label {
-  font-size: .57rem; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--pandan); padding-bottom: 14px;
-  border-bottom: 1px solid rgba(242,237,228,.08);
+  font-size: .8rem; letter-spacing: .25em; text-transform: uppercase;
+  color: var(--pandan); padding-bottom: 16px;
+  border-bottom: 1px solid rgba(242,237,228,.10);
+  font-weight: 300;
 }
 .sched-glass-card {
-  background: rgba(255,255,255,.08);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,.13);
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(40px) saturate(1.4);
+  -webkit-backdrop-filter: blur(40px) saturate(1.4);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 18px;
-  padding: 26px 28px;
-  display: flex; flex-direction: column; gap: 6px;
-  position: relative;
+  padding: 28px 30px;
+  display: flex; flex-direction: column; gap: 8px;
+  position: relative; overflow: hidden;
   box-shadow:
-    0 4px 32px rgba(0,0,0,.25),
-    0 0 80px rgba(201,136,64,.13),
-    0 0 120px rgba(201,136,64,.06),
-    inset 0 1px 0 rgba(255,255,255,.12),
-    inset 0 -1px 0 rgba(0,0,0,.06);
+    0 4px 40px rgba(0,0,0,.30),
+    0 0 100px rgba(201,136,64,.16),
+    0 0 160px rgba(201,136,64,.07),
+    inset 0 1.5px 0 rgba(255,255,255,.22),
+    inset 0 -1px 0 rgba(0,0,0,.08);
   transition: border-color .35s, background .35s, box-shadow .35s;
   cursor: default;
 }
-.sched-glass-card:hover {
-  background: rgba(255,255,255,.13);
-  border-color: rgba(255,255,255,.24);
-  box-shadow:
-    0 8px 48px rgba(0,0,0,.30),
-    0 0 120px rgba(201,136,64,.22),
-    0 0 60px rgba(255,255,255,.04),
-    inset 0 1px 0 rgba(255,255,255,.18),
-    inset 0 -1px 0 rgba(0,0,0,.06);
+.sched-glass-card::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E") center/200px;
+  opacity: .035; mix-blend-mode: overlay; pointer-events: none;
 }
-.sched-glass-card.sunrise-card { border-top: 2px solid rgba(201,136,64,.45); }
-.sched-glass-card.sunset-card { border-top: 2px solid rgba(184,92,56,.5); }
-.sched-gc-dot { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.sched-glass-card:hover {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.30);
+  box-shadow:
+    0 10px 56px rgba(0,0,0,.34),
+    0 0 140px rgba(201,136,64,.28),
+    0 0 70px rgba(255,255,255,.05),
+    inset 0 1.5px 0 rgba(255,255,255,.28),
+    inset 0 -1px 0 rgba(0,0,0,.08);
+}
+.sched-glass-card.sunrise-card { border-top: 2px solid rgba(201,136,64,.55); }
+.sched-glass-card.sunset-card { border-top: 2px solid rgba(184,92,56,.6); }
+.sched-gc-dot { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .sched-gc-time {
-  font-family: var(--ff-d); font-size: 2.4rem; font-weight: 300;
+  font-family: var(--ff-d); font-size: 3rem; font-weight: 300;
   color: var(--salt); font-variant-numeric: tabular-nums; line-height: 1;
 }
 .sched-gc-name {
-  font-size: .62rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(242,237,228,.82);
+  font-size: .84rem; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(242,237,228,.88); font-weight: 300;
 }
-.sched-gc-dur { font-size: .68rem; letter-spacing: .12em; color: rgba(242,237,228,.5); margin-top: 4px; }
+.sched-gc-dur { font-size: .8rem; letter-spacing: .10em; color: rgba(242,237,228,.55); margin-top: 6px; }
 
 .schedule-monthly { margin-top: 72px; border-top: 1px solid rgba(242,237,228,.08); padding-top: 56px; }
 .monthly-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
@@ -246,25 +271,32 @@
 /* OFFERINGS */
 .offerings { padding: clamp(60px,6vw,80px) var(--pad) var(--section-v); background: var(--night); }
 .offerings-wrap { max-width: var(--max); margin: 0 auto; }
-.offerings-head { display: flex; flex-direction: column; gap: 22px; margin-bottom: 60px; max-width: 580px; }
+.offerings-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 52px; max-width: 580px; }
 .offerings .section-label { color: var(--pandan); }
 .offerings .section-title { color: var(--salt); }
 .offerings .section-body { color: rgba(212,188,138,.72); }
 .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .offering-card {
   padding: 40px 32px;
-  background: rgba(255,255,255,.065);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(36px) saturate(1.3); -webkit-backdrop-filter: blur(36px) saturate(1.3);
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 16px;
   display: flex; flex-direction: column; gap: 16px;
-  box-shadow: 0 4px 32px rgba(0,0,0,.22), 0 0 80px rgba(201,136,64,.09), inset 0 1px 0 rgba(255,255,255,.08);
+  position: relative; overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,.26), 0 0 90px rgba(201,136,64,.12), inset 0 1.5px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.06);
   transition: background .3s, border-color .3s, box-shadow .3s;
 }
+.offering-card::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E") center/200px;
+  opacity: .03; mix-blend-mode: overlay; pointer-events: none;
+}
 .offering-card:hover {
-  background: rgba(255,255,255,.10);
-  border-color: rgba(255,255,255,.18);
-  box-shadow: 0 8px 48px rgba(0,0,0,.28), 0 0 110px rgba(201,136,64,.20), inset 0 1px 0 rgba(255,255,255,.12);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.24);
+  box-shadow: 0 10px 56px rgba(0,0,0,.32), 0 0 130px rgba(201,136,64,.24), inset 0 1.5px 0 rgba(255,255,255,.24);
 }
 .offering-icon {
   width: 56px; height: 56px; object-fit: contain;
@@ -281,53 +313,101 @@
 }
 .offering-card:hover .offering-link { transform: translateX(6px); color: var(--salt); }
 
-/* THE RITUAL */
+/* THE RITUAL — dark luxury */
 .ritual {
   padding: var(--section-v) var(--pad);
-  background: var(--shore);
+  background: var(--night);
+  position: relative; overflow: hidden;
 }
-.ritual-inner { max-width: var(--max); margin: 0 auto; }
-.ritual-head { display: flex; flex-direction: column; gap: 22px; max-width: 560px; margin-bottom: 72px; }
+.ritual::before {
+  content: '';
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px; height: 700px;
+  background: radial-gradient(ellipse, rgba(201,136,64,.09) 0%, transparent 60%);
+  pointer-events: none;
+}
+.ritual-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
+.ritual-head {
+  display: flex; flex-direction: column; gap: 20px;
+  max-width: 560px; margin-bottom: 64px;
+}
+.ritual-head .section-label { color: var(--pandan); }
+.ritual-head .section-title { color: var(--salt); }
+.ritual-head .section-title em { color: var(--pandan); }
+.ritual-head .section-body { color: rgba(212,188,138,.65); }
 .ritual-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  border: 1px solid rgba(212,188,138,.09);
 }
 .ritual-item {
-  padding: 52px 48px;
-  background: var(--salt);
-  display: flex; flex-direction: column; gap: 18px;
-  transition: background .3s;
+  padding: 56px 52px;
+  background: rgba(212,188,138,.03);
+  display: flex; flex-direction: column; gap: 20px;
+  position: relative; overflow: hidden;
+  transition: background .4s, box-shadow .4s;
 }
-.ritual-item:hover { background: rgba(242,237,228,.7); }
+.ritual-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201,136,64,.35), transparent);
+}
+.ritual-item:hover {
+  background: rgba(212,188,138,.07);
+  box-shadow: inset 0 0 80px rgba(201,136,64,.06);
+}
 .ritual-num {
-  font-family: var(--ff-d); font-size: .75rem; font-weight: 300;
-  letter-spacing: .3em; color: rgba(184,92,56,.45);
+  font-family: var(--ff-d); font-size: 3.8rem; font-weight: 300;
+  color: rgba(201,136,64,.14); line-height: 1;
   font-variant-numeric: tabular-nums;
 }
 .ritual-name {
-  font-family: var(--ff-d); font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 400; color: var(--night); line-height: 1.1;
+  font-family: var(--ff-d); font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-weight: 400; color: var(--salt); line-height: 1.12;
 }
-.ritual-name em { font-style: italic; color: var(--terra); }
+.ritual-name em { font-style: italic; color: var(--pandan); }
 .ritual-desc {
-  font-size: .88rem; color: var(--palm); line-height: 2.0;
+  font-size: .88rem; color: rgba(212,188,138,.68); line-height: 2.05;
   text-align: justify; text-align-last: left;
   max-width: 360px;
 }
 
 /* TESTIMONIALS */
-.testimonials { padding: var(--section-v) var(--pad); background: var(--night); }
-.testimonials-inner { max-width: var(--max); margin: 0 auto; }
+.testimonials { padding: var(--section-v) var(--pad); background: var(--night); position: relative; overflow: hidden; }
+.testimonials::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, rgba(201,136,64,.12) 30%, rgba(201,136,64,.12) 70%, transparent);
+  pointer-events: none;
+}
+.testimonials-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
 .testimonials-head { margin-bottom: 72px; display: flex; flex-direction: column; gap: 16px; }
 .testimonials-head .section-label { color: var(--pandan); }
 .testimonials-head .section-title { color: var(--salt); }
-.t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
-.testimonial { padding: 48px 0; border-bottom: 1px solid rgba(242,237,228,.08); display: flex; flex-direction: column; gap: 18px; }
+.t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 80px; }
+.testimonial { padding: 52px 0; border-bottom: 1px solid rgba(242,237,228,.07); display: flex; flex-direction: column; gap: 22px; }
 .testimonial:last-child, .testimonial:nth-last-child(2):nth-child(odd) { border-bottom: none; }
-.t-diamond { font-size: 1.3rem; color: var(--pandan); opacity: .5; line-height: 1; }
-.t-quote { font-family: var(--ff-d); font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-style: italic; font-weight: 400; line-height: 1.65; color: var(--salt); }
+.t-diamond {
+  font-size: 1.0rem; color: var(--pandan); opacity: .65; line-height: 1;
+  letter-spacing: .4em;
+}
+.t-quote { font-family: var(--ff-d); font-size: clamp(1.25rem, 2.4vw, 1.75rem); font-style: italic; font-weight: 300; line-height: 1.7; color: rgba(242,237,228,.9); }
 
 /* JOURNAL */
-.journal-preview { padding: var(--section-v) var(--pad); background: var(--shore); }
+.journal-preview { padding: var(--section-v) var(--pad); background: var(--shore); position: relative; }
+.journal-preview::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, transparent, rgba(184,92,56,.25) 25%, rgba(184,92,56,.25) 75%, transparent);
+}
+.post-card-img-wrap {
+  overflow: hidden; border-radius: 3px; margin-bottom: 28px;
+  box-shadow: 0 8px 32px rgba(46,26,14,.12);
+}
+.post-card:hover .post-card-img-wrap { box-shadow: 0 16px 48px rgba(46,26,14,.2); }
+
+/* JOURNAL (inner) */
 .journal-inner { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
 .journal-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
 .journal-head-text { display: flex; flex-direction: column; gap: 14px; }
@@ -471,7 +551,7 @@
       Where breath
       <em>becomes stillness.</em>
     </h1>
-    <p class="hero-sub">A boutique wellness experience. Malé, Maldives.</p>
+    <p class="hero-sub">A wellness experience. Malé, Maldives.</p>
     <div class="hero-actions">
       <a href="./book.html" class="btn btn-terra">Reserve an experience</a>
       <a href="./schedule.html" class="btn btn-outline-light">Our schedule</a>
@@ -541,7 +621,7 @@
       <div class="space-overlay">
         <div class="space-label">Indoors</div>
         <div class="space-name">Beneath the Beams</div>
-        <div class="space-desc">Warm, candlelit, with mandala cork mats and lavender bolsters. Daylight streams through tall windows. Intimate and grounding.</div>
+        <div class="space-desc">Warm, candlelit, with natural light streaming through tall windows. Lavender bolsters, cork mats, and quiet that settles the moment you enter.</div>
       </div>
     </div>
     <div class="space-panel">
@@ -666,27 +746,27 @@
 <section class="offerings">
   <div class="offerings-wrap">
     <div class="offerings-head fade-up">
-      <div class="section-label">Private journeys</div>
+      <div class="section-label">Exclusively with Zey</div>
       <h2 class="section-title">Held around<br><em>you.</em></h2>
-      <p class="section-body">Every private experience is tailored in pace, duration, intention, and space to exactly where you are right now.</p>
+      <p class="section-body">Each experience is shaped entirely around you — your pace, your intention, your moment.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card fade-up">
         <img src="./brand/icon/icon-meditation.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Private Journey</div>
+        <div class="offering-name">One to One</div>
         <div class="offering-desc">One complete hour, just you and Zey. Paced entirely to where you are now, built toward where you want to go. No prior experience needed.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-2">
         <img src="./brand/icon/icon-warrior2.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Private Gathering</div>
-        <div class="offering-desc">Your circle, your practice. The space held exclusively for your people. Birthdays, retreats, team moments, or simply a Tuesday that deserves something more.</div>
+        <div class="offering-name">Private Circle</div>
+        <div class="offering-desc">Your people, your practice. The space held exclusively for your circle. Birthdays, retreats, team moments, or simply a day that deserves something more.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-3">
         <img src="./brand/icon/icon-childpose-resort.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Destination Wellness</div>
-        <div class="offering-desc">Zey comes to you, wherever you are in the Maldives. Dawn on the beach. Dusk on a private deck. An experience shaped entirely around your setting.</div>
+        <div class="offering-name">Resort & Island Wellness</div>
+        <div class="offering-desc">Zey comes to your resort or island property. Dawn on the beach, dusk on a private deck. A full wellness experience shaped entirely around your setting.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up">
