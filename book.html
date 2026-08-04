@@ -30,38 +30,15 @@
 
 .sessions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
 
-/* Calendly / booking CTA */
+/* How it works */
 .booking-cta {
   padding: 80px 60px;
   position: relative; overflow: hidden;
   text-align: center;
 }
-.booking-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(184,92,56,.12) 0%, transparent 65%); }
-.booking-cta-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.booking-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(184,92,56,.1) 0%, transparent 65%); }
+.booking-cta-inner { max-width: 780px; margin: 0 auto; position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 18px; }
 .booking-cta h2 { font-family: var(--ff-d); font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 400; }
-.calendly-box {
-  width: 100%; background: rgba(255,255,255,.04);
-  border: 1px solid rgba(212,188,138,.15);
-  border-radius: 12px; padding: 40px 36px;
-  display: flex; flex-direction: column; align-items: center; gap: 16px;
-  position: relative;
-}
-.calendly-badge {
-  background: var(--gold); color: var(--night);
-  font-size: .55rem; letter-spacing: .25em; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 20px;
-}
-.calendly-title { font-family: var(--ff-d); font-size: 1.3rem; font-weight: 400; }
-.calendly-sub { font-size: .78rem; color: var(--pandan); text-align: center; line-height: 1.8; }
-.calendly-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--terra); color: var(--salt);
-  font-family: var(--ff-b); font-size: .6rem; letter-spacing: .2em; text-transform: uppercase;
-  padding: 14px 32px; border-radius: 40px; border: none; cursor: pointer;
-  transition: background .2s; margin-top: 4px;
-}
-.calendly-btn:hover { background: var(--blush); }
-.calendly-note { font-size: .65rem; color: rgba(212,188,138,.35); letter-spacing: .08em; }
 
 /* Inquiry form */
 .inquiry { padding: 80px 60px 100px; }
@@ -219,24 +196,30 @@ select.form-input option { background: var(--night); }
   </div>
 </section>
 
-<!-- CALENDLY / BOOKING CTA -->
+<!-- HOW IT WORKS -->
 <section class="booking-cta">
   <div class="booking-cta-inner">
-    <div class="section-label">How to book</div>
-    <h2>Pick your time.</h2>
-    <p class="section-body" style="text-align:center;">Sessions are booked directly through the calendar — no back and forth, no waiting. Pick the session type and a time that works for you.</p>
-    <div class="calendly-box">
-      <div class="calendly-badge">Powered by Calendly</div>
-      <div class="calendly-title">Book Online</div>
-      <div class="calendly-sub">Click below to see available times and book your session. You'll receive a confirmation by email and a reminder the day before.</div>
-      <a href="https://calendly.com/salttosoul" target="_blank" class="calendly-btn">
-        View available times →
-      </a>
-      <div class="calendly-note">
-        Calendly link coming soon — currently setting up the calendar.<br/>
-        In the meantime, send an inquiry below.
+    <div class="section-label">How it works</div>
+    <h2>Simple. No fuss.</h2>
+    <p class="section-body" style="text-align:center;">Fill in the form below — tell me which session interests you and when you're free. I'll get back to you within 24 hours to confirm the details.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;width:100%;margin-top:16px;">
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,188,138,.1);border-radius:10px;padding:28px 24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;">
+        <div style="font-family:var(--ff-d);font-size:2rem;color:var(--terra);font-style:italic;">1</div>
+        <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--salt);">Fill the form</div>
+        <div style="font-size:.78rem;color:var(--pandan);line-height:1.7;">Choose your session type and share a few preferred dates or times.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,188,138,.1);border-radius:10px;padding:28px 24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;">
+        <div style="font-family:var(--ff-d);font-size:2rem;color:var(--terra);font-style:italic;">2</div>
+        <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--salt);">I'll confirm</div>
+        <div style="font-size:.78rem;color:var(--pandan);line-height:1.7;">I reply within 24 hours with your confirmed time, location, and any details you need.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(212,188,138,.1);border-radius:10px;padding:28px 24px;text-align:center;display:flex;flex-direction:column;gap:10px;align-items:center;">
+        <div style="font-family:var(--ff-d);font-size:2rem;color:var(--terra);font-style:italic;">3</div>
+        <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--salt);">Show up</div>
+        <div style="font-size:.78rem;color:var(--pandan);line-height:1.7;">Bring yourself, comfortable clothes, and an open mind. Everything else is taken care of.</div>
       </div>
     </div>
+    <a href="#inquiry" class="btn btn-primary" style="margin-top:8px;">Book your session →</a>
   </div>
 </section>
 
