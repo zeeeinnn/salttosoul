@@ -19,7 +19,7 @@
   --ff-b: 'Josefin Sans', sans-serif;
 
   --pad: clamp(24px, 6vw, 80px);
-  --section-v: clamp(60px, 8vw, 110px);
+  --section-v: clamp(52px, 7vw, 96px);
   --max: 1240px;
 }
 
@@ -131,8 +131,9 @@ body {
 }
 .section-title em { font-style: italic; }
 .section-body {
-  font-size: .88rem; letter-spacing: .03em; line-height: 2;
+  font-size: .9rem; letter-spacing: .03em; line-height: 2;
   color: var(--palm);
+  text-align: justify; text-align-last: left;
 }
 .terra-rule { width: 40px; height: 1px; background: var(--terra); }
 
@@ -267,10 +268,11 @@ body {
 
 /* ── FOOTER ── */
 footer {
-  padding: 72px var(--pad) 48px;
+  padding: 52px var(--pad) 36px;
   display: grid; grid-template-columns: 1fr auto;
   align-items: start; gap: 40px;
-  border-top: 1px solid var(--shore);
+  border-top: 1px solid rgba(46,26,14,.1);
+  background: var(--shore);
 }
 .f-left { display: flex; flex-direction: column; gap: 16px; }
 .f-brand { display: flex; align-items: center; gap: 12px; }
