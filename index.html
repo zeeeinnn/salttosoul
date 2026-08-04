@@ -119,16 +119,15 @@
 .space-name { font-family: var(--ff-d); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--salt); line-height: 1.1; }
 .space-desc { font-size: .84rem; color: rgba(242,237,228,.78); margin-top: 12px; line-height: 1.85; text-align: justify; text-align-last: left; }
 .spaces-note {
-  padding: 16px var(--pad) 0;
-  max-width: calc(var(--max) + 2 * var(--pad)); margin: 12px auto 0;
-  font-size: .88rem; color: var(--palm); line-height: 1.85;
-  border-top: 1px solid var(--shore);
+  padding: 12px var(--pad) 0;
+  max-width: calc(var(--max) + 2 * var(--pad)); margin: 8px auto 0;
+  font-size: .82rem; color: var(--palm); line-height: 1.8;
 }
 
 /* SCHEDULE */
-.schedule { padding: var(--section-v) var(--pad); background: var(--night); color: var(--salt); }
+.schedule { padding: var(--section-v) var(--pad) clamp(40px,5vw,64px); background: var(--night); color: var(--salt); }
 .schedule-inner { max-width: var(--max); margin: 0 auto; }
-.schedule-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 56px; }
+.schedule-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 56px; }
 .schedule-head .section-label { color: var(--pandan); }
 .schedule-head .section-title { color: var(--salt); }
 .schedule-head .section-body { color: rgba(212,188,138,.7); }
@@ -210,7 +209,7 @@
 .schedule-cta { margin-top: 56px; display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* OFFERINGS */
-.offerings { padding: var(--section-v) var(--pad); background: var(--night); }
+.offerings { padding: clamp(40px,5vw,64px) var(--pad) var(--section-v); background: var(--night); }
 .offerings-wrap { max-width: var(--max); margin: 0 auto; }
 .offerings-head { display: flex; flex-direction: column; gap: 18px; margin-bottom: 52px; max-width: 560px; }
 .offerings .section-label { color: var(--pandan); }
@@ -264,7 +263,13 @@
 .journal-inner { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
 .journal-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; flex-wrap: wrap; gap: 24px; }
 .journal-head-text { display: flex; flex-direction: column; gap: 14px; }
-.j-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.journal-head-text .section-label { display: flex; align-items: center; gap: 14px; }
+.journal-head-text .section-label::before {
+  content: ''; display: inline-block;
+  width: 32px; height: 1px; background: var(--terra); opacity: .7;
+}
+.journal-preview .section-title { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+.j-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
 
 /* NEWSLETTER */
 .newsletter {
@@ -471,8 +476,7 @@
     <div class="schedule-head">
       <div>
         <div class="section-label">Weekly classes</div>
-        <div style="height:18px;"></div>
-        <h2 class="section-title" style="color:var(--salt);">Find your<br><em>time.</em></h2>
+        <h2 class="section-title" style="color:var(--salt);margin-top:14px;">Find your<br><em>time.</em></h2>
       </div>
       <div>
         <p class="section-body" style="color:rgba(212,188,138,.7);margin-top:8px;">Open classes run three times a week, twice a day. At first light and as the sun goes down. No experience needed.</p>
@@ -580,7 +584,7 @@
     </div>
     <div class="offerings-grid">
       <div class="offering-card fade-up">
-        <img src="./brand/icon/icon-rise.png" alt="" class="offering-icon" aria-hidden="true"/>
+        <img src="./brand/icon/icon-meditation.png" alt="" class="offering-icon" aria-hidden="true"/>
         <div class="offering-name">Solo Sessions</div>
         <div class="offering-desc">One-on-one with Zey. Completely personalised, whether you are brand new to yoga or returning to a practice after years away.</div>
         <a href="./book.html" class="offering-link">→</a>
@@ -592,7 +596,7 @@
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-3">
-        <img src="./brand/icon/icon-yoga.png" alt="" class="offering-icon" aria-hidden="true"/>
+        <img src="./brand/icon/icon-warrior.png" alt="" class="offering-icon" aria-hidden="true"/>
         <div class="offering-name">Resort Bookings</div>
         <div class="offering-desc">Zey brings the practice to you. Private yoga sessions at your resort in the Maldives, dawn on the beach, dusk on a deck, wherever you choose.</div>
         <a href="./book.html" class="offering-link">→</a>
@@ -610,7 +614,7 @@
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-3">
-        <img src="./brand/icon/icon-lotus.png" alt="" class="offering-icon" aria-hidden="true"/>
+        <img src="./brand/icon/icon-dance-med.png" alt="" class="offering-icon" aria-hidden="true"/>
         <div class="offering-name">Dance Meditation</div>
         <div class="offering-desc">This is about feeling. Movement begins gently, opens into free expression, then settles into stillness. Come as you are.</div>
         <a href="./book.html" class="offering-link">→</a>
@@ -659,14 +663,14 @@
     </div>
     <div class="j-grid">
       <a href="./blog/bali.html" class="post-card fade-up">
-        <img src="./photos/bali-study.jpg" alt="Bali yoga teacher training" class="post-card-img"/>
+        <div class="post-card-img-wrap"><img src="./photos/bali-study.jpg" alt="Bali yoga teacher training" class="post-card-img"/></div>
         <div class="post-card-tag">Teacher Training &nbsp; Bali</div>
         <div class="post-card-title">What 200 hours in Bali taught me</div>
         <div class="post-card-excerpt">I went to Bali thinking I was going to learn how to teach yoga. I came back having learned something much harder: how to trust myself.</div>
         <div class="post-card-link">Read the story</div>
       </a>
       <a href="./blog/soneva.html" class="post-card fade-up fade-up-delay-2">
-        <img src="./photos/terrace_class.jpg" alt="Teaching yoga at a Maldivian resort" class="post-card-img" style="object-position:center 40%;"/>
+        <div class="post-card-img-wrap"><img src="./photos/terrace_class.jpg" alt="Teaching yoga at a Maldivian resort" class="post-card-img" style="object-position:center 40%;"/></div>
         <div class="post-card-tag">Teaching &nbsp; Maldives</div>
         <div class="post-card-title">Two weeks teaching at a private island resort</div>
         <div class="post-card-excerpt">What it actually feels like to teach yoga on a private island in the Indian Ocean, and what it revealed about why I do this work.</div>
@@ -707,6 +711,7 @@
       <div class="f-mark"><img src="./brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
       <span class="f-name">Salt to Soul</span>
     </div>
+    <p class="f-slogan">From doing to being.</p>
     <p class="f-tag">Yoga and Movement &nbsp; Malé, Maldives</p>
     <p class="f-copy">© 2025 Salt to Soul. All rights reserved.</p>
   </div>
