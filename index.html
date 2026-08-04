@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" type="image/svg+xml" href="./favicon.svg"/>
 <link rel="apple-touch-icon" href="./brand/icon/icon-logo.png"/>
-<meta name="description" content="Salt to Soul: yoga, movement, and stillness in the Maldives. Classes, private sessions, and retreat bookings with certified teacher Zey."/>
+<meta name="description" content="Salt to Soul: a boutique wellness experience in Malé, Maldives. Movement, stillness, and the rituals of return with certified teacher Zey."/>
 <meta property="og:title" content="Salt to Soul · Maldives"/>
-<meta property="og:description" content="From doing to being. Yoga and movement in Malé, Maldives."/>
+<meta property="og:description" content="From doing to being. A boutique wellness experience in Malé, Maldives."/>
 <meta property="og:image" content="./photos/rooftop_sunset.png"/>
-<title>Salt to Soul · Yoga & Movement · Maldives</title>
+<title>Salt to Soul · Boutique Wellness · Maldives</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
@@ -43,24 +43,24 @@
   position: relative; z-index: 2;
   padding: 130px var(--pad) 60px;
   display: flex; flex-direction: column; align-items: center;
-  width: 100%; max-width: 900px; flex: 1;
+  width: 100%; max-width: 1000px; flex: 1;
   justify-content: center;
 }
 .hero-title {
   font-family: var(--ff-d);
-  font-size: clamp(3.6rem, 9vw, 8rem);
+  font-size: clamp(4.2rem, 11vw, 10rem);
   font-weight: 300; line-height: 1.0;
   color: var(--salt);
   text-wrap: balance;
   letter-spacing: -.01em;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
   text-align: center;
 }
 .hero-title em { font-style: italic; color: var(--pandan); display: block; }
 .hero-sub {
-  font-size: clamp(.78rem, 1.5vw, .9rem); letter-spacing: .08em;
-  color: rgba(242,237,228,.6); max-width: 420px; line-height: 1.9;
-  margin-bottom: 44px; text-align: center;
+  font-size: clamp(.78rem, 1.5vw, .88rem); letter-spacing: .12em;
+  color: rgba(242,237,228,.5); max-width: 360px; line-height: 1.9;
+  margin-bottom: 52px; text-align: center; text-transform: uppercase;
 }
 .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
 .hero-scroll {
@@ -72,6 +72,41 @@
 .hero-scroll-line { width: 1px; height: 44px; background: rgba(242,237,228,.2); animation: scrollPulse 2s ease-in-out infinite; }
 @keyframes scrollPulse { 0%,100%{opacity:.2} 50%{opacity:.6} }
 
+/* THE ARRIVAL */
+.arrival {
+  padding: clamp(100px, 14vw, 200px) var(--pad);
+  background: var(--salt);
+  text-align: center;
+  position: relative;
+}
+.arrival-inner {
+  max-width: 780px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+}
+.arrival-headline {
+  font-family: var(--ff-d);
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  font-weight: 300; line-height: 1.15;
+  color: var(--night);
+  text-wrap: balance;
+  letter-spacing: -.01em;
+}
+.arrival-headline em { font-style: italic; color: var(--terra); }
+.arrival-body {
+  max-width: 560px; text-align: center;
+}
+.arrival-body p {
+  font-size: clamp(.88rem, 1.5vw, .95rem);
+  line-height: 2.1; color: var(--palm);
+  letter-spacing: .025em;
+  margin-bottom: 22px;
+}
+.arrival-body p:last-child { margin-bottom: 0; }
+.arrival-rule {
+  width: 1px; height: 64px; background: rgba(184,92,56,.25);
+  margin: 0 auto;
+}
+
 /* ABOUT ZEY */
 .about-zey {
   padding: var(--section-v) var(--pad);
@@ -80,7 +115,7 @@
   margin: 0 auto;
 }
 .about-text { display: flex; flex-direction: column; gap: 20px; }
-.about-name { font-family: var(--ff-d); font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 400; line-height: 1.1; }
+.about-name { font-family: var(--ff-d); font-size: clamp(2.8rem, 5.5vw, 4.4rem); font-weight: 400; line-height: 1.08; }
 .about-tagline { font-size: .58rem; letter-spacing: .4em; text-transform: uppercase; color: var(--terra); }
 .about-body { font-size: .9rem; letter-spacing: .03em; line-height: 2.1; color: var(--palm); }
 .about-body p { margin-bottom: 18px; text-align: justify; text-align-last: left; }
@@ -99,11 +134,11 @@
 }
 
 /* SPACES */
-.spaces { padding: var(--section-v) 0 clamp(32px, 4vw, 56px); }
+.spaces { padding: var(--section-v) 0 clamp(48px, 6vw, 80px); }
 .spaces-intro {
   padding: 0 var(--pad); max-width: calc(var(--max) + 2 * var(--pad));
   margin: 0 auto 56px;
-  display: flex; flex-direction: column; gap: 18px;
+  display: flex; flex-direction: column; gap: 22px;
 }
 .spaces-grid { display: grid; grid-template-columns: 1fr 1fr; }
 .space-panel { position: relative; overflow: hidden; aspect-ratio: 3/4; }
@@ -113,21 +148,21 @@
   position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(46,26,14,.8) 0%, transparent 55%);
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 36px 40px;
+  padding: 40px 44px;
 }
 .space-label { font-size: .55rem; letter-spacing: .4em; text-transform: uppercase; color: rgba(242,237,228,.55); margin-bottom: 10px; }
 .space-name { font-family: var(--ff-d); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; color: var(--salt); line-height: 1.1; }
 .space-desc { font-size: .84rem; color: rgba(242,237,228,.78); margin-top: 12px; line-height: 1.85; text-align: justify; text-align-last: left; }
 .spaces-note {
-  padding: 12px var(--pad) 0;
+  padding: 20px var(--pad) 0;
   max-width: calc(var(--max) + 2 * var(--pad)); margin: 8px auto 0;
-  font-size: .82rem; color: var(--palm); line-height: 1.8;
+  font-size: .82rem; color: var(--palm); line-height: 1.9;
 }
 
 /* SCHEDULE */
-.schedule { padding: var(--section-v) var(--pad) clamp(40px,5vw,64px); background: var(--night); color: var(--salt); }
+.schedule { padding: var(--section-v) var(--pad) clamp(60px,6vw,80px); background: var(--night); color: var(--salt); }
 .schedule-inner { max-width: var(--max); margin: 0 auto; }
-.schedule-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 56px; }
+.schedule-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 64px; }
 .schedule-head .section-label { color: var(--pandan); }
 .schedule-head .section-title { color: var(--salt); }
 .schedule-head .section-body { color: rgba(212,188,138,.7); }
@@ -183,7 +218,7 @@
 }
 .sched-gc-dur { font-size: .68rem; letter-spacing: .12em; color: rgba(242,237,228,.5); margin-top: 4px; }
 
-.schedule-monthly { margin-top: 60px; border-top: 1px solid rgba(242,237,228,.08); padding-top: 48px; }
+.schedule-monthly { margin-top: 72px; border-top: 1px solid rgba(242,237,228,.08); padding-top: 56px; }
 .monthly-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
 .monthly-card {
   padding: 28px 26px;
@@ -206,23 +241,23 @@
 .monthly-name { font-family: var(--ff-d); font-size: 1.2rem; font-weight: 400; color: var(--salt); }
 .monthly-freq { font-size: .56rem; letter-spacing: .3em; text-transform: uppercase; color: var(--pandan); opacity: .6; }
 .monthly-desc { font-size: .85rem; color: rgba(212,188,138,.8); line-height: 1.9; text-align: justify; text-align-last: left; }
-.schedule-cta { margin-top: 56px; display: flex; gap: 16px; flex-wrap: wrap; }
+.schedule-cta { margin-top: 64px; display: flex; gap: 16px; flex-wrap: wrap; }
 
 /* OFFERINGS */
-.offerings { padding: clamp(40px,5vw,64px) var(--pad) var(--section-v); background: var(--night); }
+.offerings { padding: clamp(60px,6vw,80px) var(--pad) var(--section-v); background: var(--night); }
 .offerings-wrap { max-width: var(--max); margin: 0 auto; }
-.offerings-head { display: flex; flex-direction: column; gap: 18px; margin-bottom: 52px; max-width: 560px; }
+.offerings-head { display: flex; flex-direction: column; gap: 22px; margin-bottom: 60px; max-width: 580px; }
 .offerings .section-label { color: var(--pandan); }
 .offerings .section-title { color: var(--salt); }
 .offerings .section-body { color: rgba(212,188,138,.72); }
 .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .offering-card {
-  padding: 36px 30px;
+  padding: 40px 32px;
   background: rgba(255,255,255,.065);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255,255,255,.10);
   border-radius: 16px;
-  display: flex; flex-direction: column; gap: 14px;
+  display: flex; flex-direction: column; gap: 16px;
   box-shadow: 0 4px 32px rgba(0,0,0,.22), 0 0 80px rgba(201,136,64,.09), inset 0 1px 0 rgba(255,255,255,.08);
   transition: background .3s, border-color .3s, box-shadow .3s;
 }
@@ -237,8 +272,8 @@
   transition: opacity .3s;
 }
 .offering-card:hover .offering-icon { opacity: .95; }
-.offering-name { font-family: var(--ff-d); font-size: 1.3rem; font-weight: 400; color: var(--salt); }
-.offering-desc { font-size: .88rem; color: rgba(212,188,138,.82); line-height: 1.9; flex: 1; text-align: justify; text-align-last: left; }
+.offering-name { font-family: var(--ff-d); font-size: 1.35rem; font-weight: 400; color: var(--salt); }
+.offering-desc { font-size: .88rem; color: rgba(212,188,138,.82); line-height: 1.95; flex: 1; text-align: justify; text-align-last: left; }
 .offering-link {
   font-size: 1.25rem; color: var(--pandan);
   display: flex; align-items: center;
@@ -246,34 +281,67 @@
 }
 .offering-card:hover .offering-link { transform: translateX(6px); color: var(--salt); }
 
+/* THE RITUAL */
+.ritual {
+  padding: var(--section-v) var(--pad);
+  background: var(--shore);
+}
+.ritual-inner { max-width: var(--max); margin: 0 auto; }
+.ritual-head { display: flex; flex-direction: column; gap: 22px; max-width: 560px; margin-bottom: 72px; }
+.ritual-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px;
+}
+.ritual-item {
+  padding: 52px 48px;
+  background: var(--salt);
+  display: flex; flex-direction: column; gap: 18px;
+  transition: background .3s;
+}
+.ritual-item:hover { background: rgba(242,237,228,.7); }
+.ritual-num {
+  font-family: var(--ff-d); font-size: .75rem; font-weight: 300;
+  letter-spacing: .3em; color: rgba(184,92,56,.45);
+  font-variant-numeric: tabular-nums;
+}
+.ritual-name {
+  font-family: var(--ff-d); font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 400; color: var(--night); line-height: 1.1;
+}
+.ritual-name em { font-style: italic; color: var(--terra); }
+.ritual-desc {
+  font-size: .88rem; color: var(--palm); line-height: 2.0;
+  text-align: justify; text-align-last: left;
+  max-width: 360px;
+}
+
 /* TESTIMONIALS */
 .testimonials { padding: var(--section-v) var(--pad); background: var(--night); }
 .testimonials-inner { max-width: var(--max); margin: 0 auto; }
-.testimonials-head { margin-bottom: 60px; display: flex; flex-direction: column; gap: 16px; }
+.testimonials-head { margin-bottom: 72px; display: flex; flex-direction: column; gap: 16px; }
 .testimonials-head .section-label { color: var(--pandan); }
 .testimonials-head .section-title { color: var(--salt); }
 .t-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 60px; }
-.testimonial { padding: 44px 0; border-bottom: 1px solid rgba(242,237,228,.08); display: flex; flex-direction: column; gap: 18px; }
+.testimonial { padding: 48px 0; border-bottom: 1px solid rgba(242,237,228,.08); display: flex; flex-direction: column; gap: 18px; }
 .testimonial:last-child, .testimonial:nth-last-child(2):nth-child(odd) { border-bottom: none; }
 .t-diamond { font-size: 1.3rem; color: var(--pandan); opacity: .5; line-height: 1; }
-.t-quote { font-family: var(--ff-d); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-style: italic; font-weight: 400; line-height: 1.6; color: var(--salt); }
+.t-quote { font-family: var(--ff-d); font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-style: italic; font-weight: 400; line-height: 1.65; color: var(--salt); }
 
 /* JOURNAL */
 .journal-preview { padding: var(--section-v) var(--pad); background: var(--shore); }
 .journal-inner { max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto; }
-.journal-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 52px; flex-wrap: wrap; gap: 24px; }
+.journal-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 60px; flex-wrap: wrap; gap: 24px; }
 .journal-head-text { display: flex; flex-direction: column; gap: 14px; }
 .journal-head-text .section-label { display: flex; align-items: center; gap: 14px; }
 .journal-head-text .section-label::before {
   content: ''; display: inline-block;
   width: 32px; height: 1px; background: var(--terra); opacity: .7;
 }
-.journal-preview .section-title { font-size: clamp(2.6rem, 6vw, 4.2rem); }
+.journal-preview .section-title { font-size: clamp(2.6rem, 6vw, 4.4rem); }
 .j-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
 
 /* NEWSLETTER */
 .newsletter {
-  padding: clamp(80px,12vw,150px) var(--pad) clamp(80px,10vw,120px);
+  padding: clamp(100px,14vw,180px) var(--pad) clamp(100px,12vw,160px);
   background: var(--night);
   text-align: center;
   position: relative;
@@ -291,15 +359,15 @@
 .newsletter .section-label { color: var(--pandan); }
 .newsletter-inner {
   max-width: 580px; margin: 0 auto;
-  display: flex; flex-direction: column; align-items: center; gap: 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
   position: relative; z-index: 1;
 }
 .nl-title {
-  font-family: var(--ff-d); font-size: clamp(3.2rem, 9vw, 6.2rem);
+  font-family: var(--ff-d); font-size: clamp(3.6rem, 10vw, 7rem);
   font-weight: 300; line-height: 1.05; color: var(--salt);
 }
 .nl-title em { font-style: italic; color: var(--pandan); }
-.nl-body { font-size: .9rem; color: rgba(212,188,138,.72); line-height: 1.95; }
+.nl-body { font-size: .9rem; color: rgba(212,188,138,.72); line-height: 1.95; max-width: 420px; }
 .nl-form { width: 100%; display: flex; flex-direction: column; gap: 12px; }
 .nl-row { display: flex; gap: 10px; }
 .nl-row .form-input {
@@ -346,16 +414,20 @@
   .t-grid { grid-template-columns: 1fr; gap: 0; }
   .j-grid { grid-template-columns: 1fr; gap: 44px; }
   .nl-row { flex-direction: column; }
+  .ritual-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 760px) {
   .offerings-grid { grid-template-columns: 1fr 1fr; }
+  .ritual-item { padding: 40px 32px; }
 }
 @media (max-width: 600px) {
-  .hero-title { font-size: 3.2rem; }
+  .hero-title { font-size: 3.4rem; }
   .offerings-grid { grid-template-columns: 1fr; }
   .monthly-grid { grid-template-columns: 1fr; }
   .journal-head { flex-direction: column; align-items: flex-start; }
   .sched-day-col { grid-template-columns: 1fr; }
+  .ritual-item { padding: 36px 24px; }
+  .arrival-inner { gap: 32px; }
 }
 </style>
 </head>
@@ -374,7 +446,7 @@
     <a href="./blog/" class="nav-link">Journal</a>
     <a href="./book.html" class="nav-link">Book</a>
   </div>
-  <a href="./book.html" class="nav-cta">Book a Session</a>
+  <a href="./book.html" class="nav-cta">Reserve an experience</a>
   <button class="nav-hamburger" onclick="openNav()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
@@ -387,7 +459,7 @@
   <a href="./schedule.html" onclick="closeNav()">Schedule</a>
   <a href="./blog/" onclick="closeNav()">Journal</a>
   <a href="./book.html" onclick="closeNav()">Book</a>
-  <a href="./book.html" class="nav-mobile-cta" onclick="closeNav()">Book a Session</a>
+  <a href="./book.html" class="nav-mobile-cta" onclick="closeNav()">Reserve an experience</a>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -399,15 +471,31 @@
       Where breath
       <em>becomes stillness.</em>
     </h1>
-    <p class="hero-sub">Yoga and movement for those who seek depth. Small classes, private sessions, and retreat bookings.</p>
+    <p class="hero-sub">A boutique wellness experience. Malé, Maldives.</p>
     <div class="hero-actions">
-      <a href="./book.html" class="btn btn-terra">Book a Session</a>
-      <a href="./schedule.html" class="btn btn-outline-light">View Schedule</a>
+      <a href="./book.html" class="btn btn-terra">Reserve an experience</a>
+      <a href="./schedule.html" class="btn btn-outline-light">Our rituals</a>
     </div>
   </div>
   <div class="hero-scroll">
     <span class="hero-scroll-label">Scroll</span>
     <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── THE ARRIVAL ─── -->
+<section class="arrival">
+  <div class="arrival-inner">
+    <div class="arrival-rule fade-up"></div>
+    <h2 class="arrival-headline fade-up fade-up-delay-1">
+      You arrive.<br>The city fades.<br><em>Something shifts.</em>
+    </h2>
+    <div class="arrival-body fade-up fade-up-delay-2">
+      <p>There is a moment, just after you step inside, when the sounds of Malé soften and something quieter takes their place. You remove your shoes. You find your mat. You have not yet moved, and already something has begun to change.</p>
+      <p>Salt to Soul was built around that moment. Not the postures, not the sequence, but the quality of presence that becomes possible when you give yourself permission to slow down.</p>
+      <p>This is not a studio. It is a practice. One you return to.</p>
+    </div>
+    <div class="arrival-rule fade-up fade-up-delay-3"></div>
   </div>
 </section>
 
@@ -418,11 +506,10 @@
     <h2 class="about-name">Hi, I'm Zey.</h2>
     <div class="about-body">
       <p>Maldivian, through and through.</p>
-      <p>For over ten years, I worked in the Maldivian hospitality industry. It taught me how to care for people, stay calm under pressure, and appreciate the beauty in small moments. Throughout it all, the ocean was a constant, always moving, always returning to itself.</p>
-      <p>Over the years, life and the people I met challenged me in ways I never expected. Those experiences slowly brought me closer to myself. I learned to enjoy my own company, protect my peace, and appreciate the value of slowing down.</p>
-      <p>Yoga became part of that journey. What started as a way to move my body gradually became a practice that helped me feel more grounded, present, and connected.</p>
-      <p>Wanting to deepen my understanding, I travelled to Bali to complete my 200-hour Yoga Teacher Training. Becoming a certified yoga teacher gave me not only the knowledge to teach, but also a deeper appreciation for the philosophy and practice of yoga beyond the mat.</p>
-      <p>Salt to Soul grew from that experience. Inspired by island life and the rhythm of the ocean, Salt to Soul is about creating space to slow down, breathe deeply, and reconnect with yourself, with nature, and with the present moment.</p>
+      <p>For over ten years, I worked in the Maldivian hospitality industry, learning how to hold space for people, stay composed under pressure, and find meaning in the smallest gestures of care. The ocean was always close. Always moving. Always returning to itself.</p>
+      <p>Life brought its own teachings. Ones I did not choose but could not avoid. Through those years, I found my way back to stillness, learned to value solitude, and began to understand that slowing down is not a retreat from the world, but a deeper way of meeting it.</p>
+      <p>Movement became part of that journey. What began as a way to inhabit my body became a practice that helped me feel present, grounded, and at home in my own skin.</p>
+      <p>I trained in Bali, completed 200 hours of immersive teacher training, and came back to Malé with something I could not have planned for: a clear sense of what this work is for. Salt to Soul grew from that. Rooted in island life, shaped by the rhythm of the ocean, and offered to those who are ready to return to themselves.</p>
     </div>
     <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;">
       <a href="./about.html" class="btn btn-dark">Her full story</a>
@@ -436,24 +523,24 @@
 
 <!-- ─── PHOTO BREAK ─── -->
 <div class="photo-break">
-  <img src="./photos/studio_detail.png" alt="Yoga studio detail — mats and bolsters in soft light"/>
+  <img src="./photos/studio_detail.png" alt="Yoga studio detail, mats and bolsters in soft light"/>
   <div class="photo-break-overlay"></div>
 </div>
 
 <!-- ─── SPACES ─── -->
 <section class="spaces">
   <div class="spaces-intro fade-up">
-    <div class="section-label">Our space</div>
+    <div class="section-label">The setting</div>
     <h2 class="section-title">Indoors or<br><em>under the sky.</em></h2>
-    <p class="section-body" style="max-width:480px;">Every class runs in both spaces. Rain or shine, your practice continues.</p>
+    <p class="section-body" style="max-width:480px;">Every experience unfolds in both spaces. Sunrise to sunset, rain or shine, your practice continues exactly as planned.</p>
   </div>
   <div class="spaces-grid">
     <div class="space-panel">
-      <img src="./photos/studio_interior.jpg" alt="Indoor yoga space with tall windows and natural light"/>
+      <img src="./photos/studio_interior.jpg" alt="Indoor practice space with tall windows and natural light"/>
       <div class="space-overlay">
         <div class="space-label">Indoors</div>
         <div class="space-name">Beneath the Beams</div>
-        <div class="space-desc">Warm, candle-lit, with mandala cork mats and lavender bolsters. Daylight streams through tall windows. Intimate and grounding.</div>
+        <div class="space-desc">Warm, candlelit, with mandala cork mats and lavender bolsters. Daylight streams through tall windows. Intimate and grounding.</div>
       </div>
     </div>
     <div class="space-panel">
@@ -461,12 +548,12 @@
       <div class="space-overlay">
         <div class="space-label">Outdoors</div>
         <div class="space-name">Under the Sky</div>
-        <div class="space-desc">An open terrace above the city. Sunrise flows, sunset sessions, and moon circles with the sky as the ceiling and the ocean breeze as the soundtrack.</div>
+        <div class="space-desc">An open terrace above the city. Morning rituals at first light, sunset practices as the sky turns gold, moon gatherings with no ceiling but the stars.</div>
       </div>
     </div>
   </div>
   <div class="spaces-note fade-up">
-    <p>Private bookers can choose their preferred space, or move between both. Everything is fully set up: mats, bolsters, and blocks. <a href="./book.html" style="color:var(--terra);text-decoration:underline;text-underline-offset:3px;">Inquire about a private booking</a></p>
+    <p>Private journeys can move between both spaces, or settle in one. Everything is laid out and waiting when you arrive: mats, bolsters, and blocks. <a href="./book.html" style="color:var(--terra);text-decoration:underline;text-underline-offset:3px;">Reserve your space privately</a></p>
   </div>
 </section>
 
@@ -475,18 +562,18 @@
   <div class="schedule-inner">
     <div class="schedule-head">
       <div>
-        <div class="section-label">Weekly classes</div>
-        <h2 class="section-title" style="color:var(--salt);margin-top:14px;">Find your<br><em>time.</em></h2>
+        <div class="section-label">Open experiences</div>
+        <h2 class="section-title" style="color:var(--salt);margin-top:14px;">Your<br><em>practice.</em></h2>
       </div>
       <div>
-        <p class="section-body" style="color:rgba(212,188,138,.7);margin-top:8px;">Open classes run three times a week, twice a day. At first light and as the sun goes down. No experience needed.</p>
+        <p class="section-body" style="color:rgba(212,188,138,.7);margin-top:8px;">Open experiences run three times a week, at first light and as the sun descends. No experience required. No expectation either.</p>
         <div style="height:16px;"></div>
         <div style="display:flex;gap:18px;flex-wrap:wrap;">
           <span style="display:flex;align-items:center;gap:8px;font-size:.57rem;letter-spacing:.2em;color:rgba(242,237,228,.45);text-transform:uppercase;">
-            <span class="sched-dot sunrise"></span> Sunrise Flow
+            <span class="sched-dot sunrise"></span> Morning Ritual
           </span>
           <span style="display:flex;align-items:center;gap:8px;font-size:.57rem;letter-spacing:.2em;color:rgba(242,237,228,.45);text-transform:uppercase;">
-            <span class="sched-dot sunset"></span> Sunset Flow
+            <span class="sched-dot sunset"></span> Sunset Practice
           </span>
         </div>
       </div>
@@ -499,13 +586,13 @@
         <div class="sched-glass-card sunrise-card">
           <div class="sched-gc-dot"><span class="sched-dot sunrise"></span></div>
           <div class="sched-gc-time">6:00 am</div>
-          <div class="sched-gc-name">Sunrise Flow</div>
+          <div class="sched-gc-name">Morning Ritual</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
         <div class="sched-glass-card sunset-card">
           <div class="sched-gc-dot"><span class="sched-dot sunset"></span></div>
           <div class="sched-gc-time">5:45 pm</div>
-          <div class="sched-gc-name">Sunset Flow</div>
+          <div class="sched-gc-name">Sunset Practice</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
       </div>
@@ -515,13 +602,13 @@
         <div class="sched-glass-card sunrise-card">
           <div class="sched-gc-dot"><span class="sched-dot sunrise"></span></div>
           <div class="sched-gc-time">6:00 am</div>
-          <div class="sched-gc-name">Sunrise Flow</div>
+          <div class="sched-gc-name">Morning Ritual</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
         <div class="sched-glass-card sunset-card">
           <div class="sched-gc-dot"><span class="sched-dot sunset"></span></div>
           <div class="sched-gc-time">5:45 pm</div>
-          <div class="sched-gc-name">Sunset Flow</div>
+          <div class="sched-gc-name">Sunset Practice</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
       </div>
@@ -531,13 +618,13 @@
         <div class="sched-glass-card sunrise-card">
           <div class="sched-gc-dot"><span class="sched-dot sunrise"></span></div>
           <div class="sched-gc-time">6:00 am</div>
-          <div class="sched-gc-name">Sunrise Flow</div>
+          <div class="sched-gc-name">Morning Ritual</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
         <div class="sched-glass-card sunset-card">
           <div class="sched-gc-dot"><span class="sched-dot sunset"></span></div>
           <div class="sched-gc-time">5:45 pm</div>
-          <div class="sched-gc-name">Sunset Flow</div>
+          <div class="sched-gc-name">Sunset Practice</div>
           <div class="sched-gc-dur">60 min</div>
         </div>
       </div>
@@ -550,26 +637,26 @@
           <img src="./brand/icon/icon-warrior2.png" alt="" class="monthly-card-icon" aria-hidden="true"/>
           <div class="monthly-freq">Monthly</div>
           <div class="monthly-name">Salt to Soul × Element</div>
-          <div class="monthly-desc">Yoga and sound healing in collaboration with Element. A monthly ritual combining movement, breath, and vibration.</div>
+          <div class="monthly-desc">Movement and sound healing in collaboration with Element. A monthly gathering combining breath, vibration, and intentional stillness.</div>
         </div>
         <div class="monthly-card fade-up fade-up-delay-2">
           <img src="./brand/icon/icon-lotus.png" alt="" class="monthly-card-icon" aria-hidden="true"/>
           <div class="monthly-freq">Monthly, Full Moon</div>
-          <div class="monthly-name">Full Moon Yoga</div>
-          <div class="monthly-desc">An open-air class timed to the full moon. Expansive and energising, held under the open sky above the city.</div>
+          <div class="monthly-name">Full Moon Gathering</div>
+          <div class="monthly-desc">An open-air experience timed to the full moon. Expansive, energising, held under the open sky. A practice for letting go.</div>
         </div>
         <div class="monthly-card fade-up fade-up-delay-3">
           <img src="./brand/icon/icon-rise.png" alt="" class="monthly-card-icon" aria-hidden="true"/>
           <div class="monthly-freq">Monthly, New Moon</div>
-          <div class="monthly-name">New Moon Yoga</div>
-          <div class="monthly-desc">A quieter, more inward practice. Held on the new moon to honour rest, intention-setting, and stillness.</div>
+          <div class="monthly-name">New Moon Gathering</div>
+          <div class="monthly-desc">A quieter, more inward practice. Held at the new moon to honour rest, intention, and the power of beginning again.</div>
         </div>
       </div>
     </div>
 
     <div class="schedule-cta fade-up">
-      <a href="./book.html" class="btn btn-terra">Book a Class</a>
-      <a href="./schedule.html" class="btn btn-outline-light">Full Schedule</a>
+      <a href="./book.html" class="btn btn-terra">Reserve your place</a>
+      <a href="./schedule.html" class="btn btn-outline-light">View all experiences</a>
     </div>
   </div>
 </section>
@@ -578,46 +665,79 @@
 <section class="offerings">
   <div class="offerings-wrap">
     <div class="offerings-head fade-up">
-      <div class="section-label">Private sessions</div>
-      <h2 class="section-title">Designed<br>around <em>you.</em></h2>
-      <p class="section-body">Every private session is tailored in style, pace, duration, and space to exactly what you need.</p>
+      <div class="section-label">Private journeys</div>
+      <h2 class="section-title">Held around<br><em>you.</em></h2>
+      <p class="section-body">Every private experience is tailored in pace, duration, intention, and space to exactly where you are right now.</p>
     </div>
     <div class="offerings-grid">
       <div class="offering-card fade-up">
         <img src="./brand/icon/icon-meditation.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Solo Sessions</div>
-        <div class="offering-desc">One-on-one with Zey. Completely personalised, whether you are brand new to yoga or returning to a practice after years away.</div>
+        <div class="offering-name">Private Journey</div>
+        <div class="offering-desc">One complete hour, just you and Zey. Paced entirely to where you are now, built toward where you want to go. No prior experience needed.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-2">
         <img src="./brand/icon/icon-warrior2.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Private Groups</div>
-        <div class="offering-desc">Book the space for your friends, family, or a small group. Birthdays, hen parties, corporate wellness, or just a Tuesday.</div>
+        <div class="offering-name">Private Gathering</div>
+        <div class="offering-desc">Your circle, your practice. The space held exclusively for your people. Birthdays, retreats, team moments, or simply a Tuesday that deserves something more.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-3">
         <img src="./brand/icon/icon-childpose-resort.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Resort Bookings</div>
-        <div class="offering-desc">Zey brings the practice to you. Private yoga sessions at your resort in the Maldives, dawn on the beach, dusk on a deck, wherever you choose.</div>
+        <div class="offering-name">Destination Wellness</div>
+        <div class="offering-desc">Zey comes to you, wherever you are in the Maldives. Dawn on the beach. Dusk on a private deck. An experience shaped entirely around your setting.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up">
         <img src="./brand/icon/icon-sidebend.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Guesthouse Sessions</div>
-        <div class="offering-desc">Tailored sessions for guesthouse guests, available as add-ons or ongoing packages. Reach out to discuss how we work together.</div>
+        <div class="offering-name">Guesthouse Experience</div>
+        <div class="offering-desc">Tailored mornings and evenings for guesthouse guests. A gentler beginning to the day, a more peaceful end. Available as add-ons or guest packages.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-2">
         <img src="./brand/icon/icon-downdog2.png" alt="" class="offering-icon" aria-hidden="true"/>
-        <div class="offering-name">Corporate Wellness</div>
-        <div class="offering-desc">In-office or offsite yoga for teams. Single sessions or ongoing programmes for organisations that understand wellbeing is a strategy.</div>
+        <div class="offering-name">Corporate Wellbeing</div>
+        <div class="offering-desc">Movement and stillness for teams who understand that presence is a competitive advantage. Single sessions or sustained programmes, in-office or offsite.</div>
         <a href="./book.html" class="offering-link">→</a>
       </div>
       <div class="offering-card fade-up fade-up-delay-3">
         <img src="./brand/icon/icon-dance-med.png" alt="" class="offering-icon" aria-hidden="true"/>
         <div class="offering-name">Dance Meditation</div>
-        <div class="offering-desc">This is about feeling. Movement begins gently, opens into free expression, then settles into stillness. Come as you are.</div>
+        <div class="offering-desc">Begin gently. Open into full expression. Settle into silence. This is about feeling, not performing. No experience required. No expectation either.</div>
         <a href="./book.html" class="offering-link">→</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── THE RITUAL ─── -->
+<section class="ritual">
+  <div class="ritual-inner">
+    <div class="ritual-head fade-up">
+      <div class="section-label">The Ritual</div>
+      <h2 class="section-title">What we carry<br>to every <em>practice.</em></h2>
+      <p class="section-body">The small, intentional details that transform a session into something you carry with you long after the mat is rolled away.</p>
+    </div>
+    <div class="ritual-grid">
+      <div class="ritual-item fade-up">
+        <div class="ritual-num">01</div>
+        <div class="ritual-name">Lavender<br><em>eye pillow</em></div>
+        <p class="ritual-desc">Placed gently over your eyes during Savasana. Weighted, warm, lightly scented. An invitation to fully release what you came in holding.</p>
+      </div>
+      <div class="ritual-item fade-up fade-up-delay-2">
+        <div class="ritual-num">02</div>
+        <div class="ritual-name">White<br><em>tea towel</em></div>
+        <p class="ritual-desc">Warm and folded, waiting for you after practice. A small, unhurried ceremony of care. A signal that you have done something for yourself today.</p>
+      </div>
+      <div class="ritual-item fade-up">
+        <div class="ritual-num">03</div>
+        <div class="ritual-name">Herbal<br><em>tea</em></div>
+        <p class="ritual-desc">Poured and waiting after every session. Something warm to sit with, to breathe in, before you return to the world. Take your time.</p>
+      </div>
+      <div class="ritual-item fade-up fade-up-delay-2">
+        <div class="ritual-num">04</div>
+        <div class="ritual-name">Affirmation<br><em>card</em></div>
+        <p class="ritual-desc">A single sentence chosen each day and placed on your mat. Offered at the close. Something to carry with you. Yours to keep.</p>
       </div>
     </div>
   </div>
@@ -627,13 +747,13 @@
 <section class="testimonials">
   <div class="testimonials-inner">
     <div class="testimonials-head fade-up">
-      <div class="section-label">What people say</div>
-      <h2 class="section-title">From those<br>who <em>showed up.</em></h2>
+      <div class="section-label">Voices</div>
+      <h2 class="section-title">What remains<br><em>after.</em></h2>
     </div>
     <div class="t-grid">
       <div class="testimonial fade-up">
         <span class="t-diamond">✦</span>
-        <blockquote class="t-quote">I came to Zey's class not knowing what I was looking for. Somehow I left knowing exactly what it was.</blockquote>
+        <blockquote class="t-quote">I came not knowing what I was looking for. Somehow I left knowing exactly what it was.</blockquote>
       </div>
       <div class="testimonial fade-up fade-up-delay-2">
         <span class="t-diamond">✦</span>
@@ -641,11 +761,11 @@
       </div>
       <div class="testimonial fade-up">
         <span class="t-diamond">✦</span>
-        <blockquote class="t-quote">Zey teaches with such calm presence. I've tried many yoga classes. This was the first one where I actually felt something shift.</blockquote>
+        <blockquote class="t-quote">Zey holds the space with such quiet presence. I have tried many classes. This was the first time I actually felt something shift.</blockquote>
       </div>
       <div class="testimonial fade-up fade-up-delay-2">
         <span class="t-diamond">✦</span>
-        <blockquote class="t-quote">We booked a private group session for our team. Everyone left lighter. It's become something we return to.</blockquote>
+        <blockquote class="t-quote">We brought our whole team. Everyone left lighter. It has become something we return to, again and again.</blockquote>
       </div>
     </div>
   </div>
@@ -666,14 +786,14 @@
         <div class="post-card-img-wrap"><img src="./photos/bali-study.jpg" alt="Bali yoga teacher training" class="post-card-img"/></div>
         <div class="post-card-tag">Teacher Training &nbsp; Bali</div>
         <div class="post-card-title">What 200 hours in Bali taught me</div>
-        <div class="post-card-excerpt">I went to Bali thinking I was going to learn how to teach yoga. I came back having learned something much harder: how to trust myself.</div>
+        <div class="post-card-excerpt">I went to Bali thinking I was going to learn how to teach. I came back having learned something much harder: how to trust myself.</div>
         <div class="post-card-link">Read the story</div>
       </a>
       <a href="./blog/soneva.html" class="post-card fade-up fade-up-delay-2">
-        <div class="post-card-img-wrap"><img src="./photos/terrace_class.jpg" alt="Teaching yoga at a Maldivian resort" class="post-card-img" style="object-position:center 40%;"/></div>
+        <div class="post-card-img-wrap"><img src="./photos/terrace_class.jpg" alt="Teaching at a Maldivian resort" class="post-card-img" style="object-position:center 40%;"/></div>
         <div class="post-card-tag">Teaching &nbsp; Maldives</div>
         <div class="post-card-title">Two weeks teaching at a private island resort</div>
-        <div class="post-card-excerpt">What it actually feels like to teach yoga on a private island in the Indian Ocean, and what it revealed about why I do this work.</div>
+        <div class="post-card-excerpt">What it actually feels like to teach on a private island in the Indian Ocean, and what it revealed about why I do this work.</div>
         <div class="post-card-link">Read the story</div>
       </a>
     </div>
@@ -685,7 +805,7 @@
   <div class="newsletter-inner">
     <div class="section-label fade-up">Stay close</div>
     <h2 class="nl-title fade-up fade-up-delay-1">Be the first<br>to <em>know.</em></h2>
-    <p class="nl-body fade-up fade-up-delay-2">New classes, moon circles, and special events, straight to your inbox. No noise.</p>
+    <p class="nl-body fade-up fade-up-delay-2">New experiences, moon gatherings, and the occasional letter from the practice. Straight to your inbox. No noise.</p>
     <form class="nl-form fade-up fade-up-delay-3" id="nlForm" action="https://formspree.io/f/xpqnglya" method="POST">
       <input type="hidden" name="_next" value="https://salttosoul.com?joined=1"/>
       <input type="hidden" name="_subject" value="New subscriber, Salt to Soul"/>
@@ -712,7 +832,7 @@
       <span class="f-name">Salt to Soul</span>
     </div>
     <p class="f-slogan">From doing to being.</p>
-    <p class="f-tag">Yoga and Movement &nbsp; Malé, Maldives</p>
+    <p class="f-tag">Boutique Wellness &nbsp; Malé, Maldives</p>
     <p class="f-copy">© 2025 Salt to Soul. All rights reserved.</p>
   </div>
   <div class="f-right">
@@ -745,7 +865,7 @@ function closeNav() {
   document.body.style.overflow = '';
 }
 
-// Bounded parallax — photo moves gently while scrolling but never leaves frame
+// Bounded parallax
 const heroBg = document.getElementById('heroBg');
 const heroEl = heroBg && heroBg.parentElement;
 window.addEventListener('scroll', () => {
