@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@200;300;400&family=Caveat:wght@400;500&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="./style.css"/>
 <style>
+/* Single cream ground throughout — only one accent break + dark CTA */
 html, body { background: #F4EFE6; }
 
 /* ══ HERO ══ */
@@ -49,82 +50,82 @@ html, body { background: #F4EFE6; }
 }
 .ab-hero-name em { font-style: italic; color: var(--pandan); display: block; }
 
-/* ══ SPLIT INTRO — photo bleeds left edge, text right ══ */
+/* ══ SPLIT — photo bleeds left, text right ══ */
 .ab-split {
   display: grid;
-  grid-template-columns: 42% 1fr;
+  grid-template-columns: 52% 1fr; /* fix #3: wider photo */
   min-height: 88vh;
 }
-.ab-split-photo {
-  overflow: hidden; position: relative;
-}
+.ab-split-photo { overflow: hidden; }
 .ab-split-photo img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center 15%;
+  object-fit: cover; object-position: center 18%;
   display: block;
 }
 .ab-split-text {
-  padding: clamp(60px,9vw,120px) clamp(48px,7vw,100px);
+  padding: clamp(60px,9vw,120px) clamp(48px,7vw,96px);
   display: flex; flex-direction: column;
   justify-content: center; gap: 28px;
   background: #F4EFE6;
 }
 .ab-split-kicker {
   font-family: var(--ff-b); font-size: .44rem;
-  letter-spacing: .5em; text-transform: uppercase;
-  color: var(--terra);
+  letter-spacing: .5em; text-transform: uppercase; color: var(--terra);
 }
+.ab-split-rule { width: 32px; height: 1px; background: rgba(184,92,56,.28); }
 .ab-split-lede {
   font-family: var(--ff-d); font-weight: 300;
-  font-size: clamp(1.5rem,2.8vw,2.2rem);
-  line-height: 1.45; color: var(--night);
-  text-wrap: balance;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  line-height: 1.48; color: var(--night); text-wrap: balance;
 }
 .ab-split-lede em { font-style: italic; }
 .ab-split-body {
   font-size: clamp(.86rem,1.35vw,.95rem);
-  line-height: 2.2; color: var(--palm);
+  line-height: 2.25; color: var(--palm);
   display: flex; flex-direction: column; gap: 16px;
-  max-width: 440px;
+  max-width: 400px;
 }
-.ab-split-rule { width: 32px; height: 1px; background: rgba(184,92,56,.28); }
 
-/* ══ ALL CAPS JUSTIFIED STATEMENT ══ */
+/* ══ ALL CAPS STATEMENT — fix #1: left-aligned, manually broken ══ */
 .ab-statement {
-  padding: clamp(88px,12vw,160px) clamp(40px,8vw,120px);
-  background: #EDE5D6;
+  padding: clamp(96px,13vw,172px) clamp(40px,7vw,100px);
+  background: #EDE5D6; /* single accent ground break */
 }
 .ab-statement-h {
   font-family: var(--ff-d); font-weight: 300;
-  font-size: clamp(1.9rem,5.2vw,5.2rem);
+  font-size: clamp(2.4rem, 6.2vw, 6.5rem);
   line-height: 1.06; color: var(--night);
   text-transform: uppercase;
-  text-align: justify;
-  letter-spacing: .035em;
+  text-align: left; /* fix #1: no justify, manually controlled */
+  letter-spacing: .02em;
+  text-wrap: balance;
 }
 .ab-statement-attr {
-  margin-top: 36px; display: block;
+  margin-top: 40px; display: block;
   font-family: var(--ff-b); font-size: .44rem;
   letter-spacing: .44em; text-transform: uppercase;
   color: rgba(184,92,56,.42);
 }
 
-/* ══ STAGGERED PHOTO PAIR + ANNOTATION ══ */
+/* ══ STAGGERED PHOTOS — fix #5: tall photo touches left edge ══ */
 .ab-photos {
-  padding: clamp(80px,11vw,150px) clamp(40px,7vw,100px);
-  background: #F4EFE6;
+  background: #F4EFE6; /* fix #2: same cream ground, no break */
+  padding-top: clamp(80px,11vw,150px);
+  padding-bottom: clamp(80px,11vw,150px);
+  padding-left: clamp(12px,2.5vw,32px); /* much smaller left — photo nearly flush */
+  padding-right: clamp(40px,7vw,100px);
   display: grid;
   grid-template-columns: 46% 1fr;
-  gap: clamp(20px,3vw,40px);
+  gap: clamp(20px,3.5vw,48px);
   align-items: start;
 }
 .ab-photo-tall {
-  width: 100%; height: clamp(480px,68vh,780px);
+  width: 100%; height: clamp(480px,70vh,800px);
   object-fit: cover; object-position: center 20%;
   display: block;
 }
 .ab-photos-right {
-  padding-top: clamp(90px,15vw,200px);
+  padding-top: clamp(100px,16vw,220px); /* drops the small photo lower */
   display: flex; flex-direction: column; gap: 20px;
 }
 .ab-photo-small {
@@ -134,23 +135,20 @@ html, body { background: #F4EFE6; }
 }
 .annotation {
   font-family: 'Caveat', cursive;
-  font-size: clamp(1rem,1.6vw,1.35rem);
+  font-size: clamp(1.05rem,1.7vw,1.4rem);
   color: rgba(90,48,32,.5);
-  display: inline-block;
-  line-height: 1.55;
+  display: inline-block; line-height: 1.55;
   transform: rotate(-2.5deg);
-  margin-top: 8px;
-  padding-left: 4px;
+  margin-top: 6px; padding-left: 4px;
 }
 
-/* ══ SPIRAL ══ */
+/* ══ SPIRAL — same cream ground ══ */
 .ab-spiral {
-  padding: clamp(80px,11vw,140px) clamp(28px,8vw,120px);
-  background: #EDE5D6;
+  padding: clamp(80px,11vw,150px) clamp(40px,7vw,100px);
+  background: #F4EFE6; /* fix #2: no background break here */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(52px,8vw,120px);
-  align-items: center;
+  gap: clamp(52px,8vw,120px); align-items: center;
 }
 .ab-spiral-vis {
   display: flex; justify-content: center; align-items: center;
@@ -158,7 +156,7 @@ html, body { background: #F4EFE6; }
 }
 .ab-spiral-glow {
   position: absolute; inset: -30%;
-  background: radial-gradient(circle, rgba(184,92,56,.10) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(184,92,56,.09) 0%, transparent 65%);
   border-radius: 50%;
   animation: breathe 5.5s ease-in-out infinite;
 }
@@ -167,10 +165,8 @@ html, body { background: #F4EFE6; }
   50%      { opacity:1;  transform:scale(1.13); }
 }
 .ab-spiral-logo {
-  width: clamp(160px,26vw,300px);
-  height: clamp(160px,26vw,300px);
-  object-fit: contain;
-  position: relative; z-index: 1; opacity: .88;
+  width: clamp(160px,26vw,300px); height: clamp(160px,26vw,300px);
+  object-fit: contain; position: relative; z-index: 1; opacity: .88;
 }
 .ab-spiral-text { display: flex; flex-direction: column; gap: 22px; }
 .ab-spiral-kicker {
@@ -196,12 +192,12 @@ html, body { background: #F4EFE6; }
   border-left: 1.5px solid rgba(184,92,56,.22);
 }
 
-/* ══ CHAPTERS ══ */
+/* ══ CHAPTERS — fix #4: journal style, left border, no CV grid ══ */
 .ab-chapters {
-  background: #F4EFE6;
+  background: #EDE5D6; /* second deliberate accent break */
   padding: clamp(80px,11vw,150px) clamp(40px,7vw,100px);
 }
-.ab-ch-header { margin-bottom: clamp(56px,8vw,100px); }
+.ab-ch-header { margin-bottom: clamp(52px,8vw,96px); }
 .ab-ch-kicker {
   font-family: var(--ff-b); font-size: .44rem; letter-spacing: .5em;
   text-transform: uppercase; color: rgba(184,92,56,.45);
@@ -209,39 +205,31 @@ html, body { background: #F4EFE6; }
 }
 .ab-ch-header h2 {
   font-family: var(--ff-d); font-weight: 300;
-  font-size: clamp(2.4rem,6vw,5rem);
+  font-size: clamp(2.2rem,5.5vw,4.8rem);
   line-height: 1.0; color: var(--night); text-wrap: balance;
 }
 .ab-ch-header h2 em { font-style: italic; }
 
-.ab-chapter {
-  display: grid;
-  grid-template-columns: 36% 1fr;
-  gap: clamp(32px,5vw,80px);
-  align-items: start;
-  padding: clamp(44px,6vw,72px) 0;
-  border-top: 1px solid rgba(46,26,14,.07);
+/* journal entry — thin left border, flowing ¶ */
+.ab-entry {
+  padding: 0 0 0 clamp(20px,3vw,36px);
+  border-left: 1.5px solid rgba(184,92,56,.22);
+  margin-bottom: clamp(44px,6vw,72px);
 }
-.ab-chapter:last-child { border-bottom: 1px solid rgba(46,26,14,.07); }
-.ab-ch-left { display: flex; flex-direction: column; gap: 8px; }
-.ab-ch-num {
-  font-family: var(--ff-d); font-weight: 300; font-style: italic;
-  font-size: clamp(5rem,10vw,9rem);
-  color: rgba(184,92,56,.07); line-height: .8;
-  margin-bottom: -8px;
+.ab-entry:last-child { margin-bottom: 0; }
+.ab-entry-where {
+  font-family: var(--ff-b); font-size: .44rem;
+  letter-spacing: .44em; text-transform: uppercase;
+  color: rgba(184,92,56,.5); display: block; margin-bottom: 14px;
 }
-.ab-ch-title {
-  font-family: var(--ff-d); font-size: clamp(1.3rem,2.4vw,1.9rem);
+.ab-entry-title {
+  font-family: var(--ff-d); font-size: clamp(1.25rem,2.2vw,1.75rem);
   font-weight: 400; color: var(--night); line-height: 1.2;
+  margin-bottom: 18px;
 }
-.ab-ch-where {
-  font-family: var(--ff-d); font-style: italic;
-  font-size: .9rem; color: var(--blush); line-height: 1.5;
-}
-.ab-ch-body {
-  padding-top: 8px;
+.ab-entry-body {
   font-size: clamp(.86rem,1.35vw,.95rem);
-  line-height: 2.15; color: var(--palm);
+  line-height: 2.2; color: var(--palm); max-width: 620px;
 }
 
 /* ══ CTA ══ */
@@ -259,8 +247,7 @@ html, body { background: #F4EFE6; }
 }
 .ab-cta-inner {
   position: relative; z-index: 1;
-  display: flex; flex-direction: column;
-  align-items: center; gap: 16px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
 }
 .ab-cta-kicker {
   font-family: var(--ff-b); font-size: .44rem;
@@ -273,22 +260,18 @@ html, body { background: #F4EFE6; }
 }
 .ab-cta-h em { font-style: italic; color: var(--pandan); }
 .ab-cta-p { font-size: .9rem; color: rgba(212,188,138,.65); line-height: 1.9; }
-.ab-cta-btns {
-  display: flex; gap: 12px; flex-wrap: wrap;
-  justify-content: center; margin-top: 8px;
-}
+.ab-cta-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .ab-split { grid-template-columns: 1fr; }
-  .ab-split-photo { height: 60vw; min-height: 300px; }
-  .ab-photos { grid-template-columns: 1fr; }
+  .ab-split-photo { height: 65vw; min-height: 280px; }
+  .ab-photos { grid-template-columns: 1fr; padding-left: clamp(28px,6vw,60px); }
   .ab-photos-right { padding-top: 0; }
-  .ab-photo-small { width: 100%; }
+  .ab-photo-small { width: 78%; }
   .ab-spiral { grid-template-columns: 1fr; text-align: center; }
   .ab-spiral-vis { order: -1; }
   .ab-spiral-pull { text-align: left; }
-  .ab-chapter { grid-template-columns: 1fr; gap: 16px; }
 }
 </style>
 </head>
@@ -324,12 +307,12 @@ html, body { background: #F4EFE6; }
   <img src="./photos/zey_rooftop_setup.jpg" alt="Zey on a Malé rooftop" class="ab-hero-img" id="pgHeroBg"/>
   <div class="ab-hero-veil"></div>
   <div class="ab-hero-copy fade-up">
-    <span class="ab-hero-kicker">The teacher</span>
+    <span class="ab-hero-kicker">Malé, Maldives</span>
     <h1 class="ab-hero-name">Hi,<br>I'm<br><em>Zey.</em></h1>
   </div>
 </section>
 
-<!-- SPLIT INTRO — photo left, text right -->
+<!-- SPLIT — photo 52% left, text right -->
 <section class="ab-split">
   <div class="ab-split-photo">
     <img src="./photos/zey_beach_dancer.jpg" alt="Zey in dancer pose"/>
@@ -345,13 +328,19 @@ html, body { background: #F4EFE6; }
   </div>
 </section>
 
-<!-- ALL CAPS JUSTIFIED STATEMENT -->
+<!-- ALL CAPS STATEMENT — large, left-aligned, manually broken -->
 <section class="ab-statement fade-up">
-  <p class="ab-statement-h">I trained in Bali. I taught on a private island. I came home to Malé and built the practice I always wanted to find.</p>
+  <p class="ab-statement-h">
+    I trained in Bali.<br>
+    I taught on a private island.<br>
+    I came home to Malé<br>
+    and built the practice<br>
+    I always wanted to find.
+  </p>
   <span class="ab-statement-attr">Zey · Founder, Salt to Soul</span>
 </section>
 
-<!-- STAGGERED PHOTO PAIR + HANDWRITTEN ANNOTATION -->
+<!-- STAGGERED PHOTOS — tall nearly flush left, small lower-right -->
 <section class="ab-photos fade-up">
   <img src="./photos/zeyba-certified.jpg"
        alt="Yoga Union certification, Bali"
@@ -381,38 +370,29 @@ html, body { background: #F4EFE6; }
   </div>
 </section>
 
-<!-- CHAPTERS -->
+<!-- CHAPTERS — journal style, left border, no numbered grid -->
 <section class="ab-chapters">
   <div class="ab-ch-header fade-up">
     <span class="ab-ch-kicker">How it all began</span>
     <h2>Everything happened<br>in <em>one year.</em></h2>
   </div>
 
-  <div class="ab-chapter fade-up">
-    <div class="ab-ch-left">
-      <div class="ab-ch-num">01</div>
-      <div class="ab-ch-title">200-Hour Teacher Training</div>
-      <div class="ab-ch-where">Yoga Union · Bali, 2026</div>
-    </div>
-    <p class="ab-ch-body">A full residential immersion — asana, alignment, breathwork, pranayama, yoga philosophy, anatomy, and the art of holding space. The month in Bali changed how she understood her body and what it means to guide another person through theirs.</p>
+  <div class="ab-entry fade-up">
+    <span class="ab-entry-where">Yoga Union · Bali, 2026</span>
+    <p class="ab-entry-title">200-Hour Teacher Training</p>
+    <p class="ab-entry-body">A full residential immersion — asana, alignment, breathwork, pranayama, yoga philosophy, anatomy, and the art of holding space. The month in Bali changed how she understood her body and what it means to guide another person through theirs.</p>
   </div>
 
-  <div class="ab-chapter fade-up fade-up-delay-1">
-    <div class="ab-ch-left">
-      <div class="ab-ch-num">02</div>
-      <div class="ab-ch-title">Resident Yoga Teacher</div>
-      <div class="ab-ch-where">Soneva Secret · Maldives, 2026</div>
-    </div>
-    <p class="ab-ch-body">A two-week teaching residency at one of the Maldives' most exclusive private island resorts — daily sessions overlooking the Indian Ocean, and the deepening ability to meet people exactly where they are.</p>
+  <div class="ab-entry fade-up fade-up-delay-1">
+    <span class="ab-entry-where">Soneva Secret · Maldives, 2026</span>
+    <p class="ab-entry-title">Resident Yoga Teacher</p>
+    <p class="ab-entry-body">A two-week teaching residency at one of the Maldives' most exclusive private island resorts — daily sessions overlooking the Indian Ocean, and the deepening ability to meet people exactly where they are.</p>
   </div>
 
-  <div class="ab-chapter fade-up fade-up-delay-2">
-    <div class="ab-ch-left">
-      <div class="ab-ch-num">03</div>
-      <div class="ab-ch-title">Founder &amp; Lead Teacher</div>
-      <div class="ab-ch-where">Salt to Soul · Malé, 2026 —</div>
-    </div>
-    <p class="ab-ch-body">Sunrise yoga on the rooftop. Full moon gatherings. Private sessions. Dance meditation. All of it rooted in these islands, offered with full presence. The practice she had always wanted to find — now open to everyone.</p>
+  <div class="ab-entry fade-up fade-up-delay-2">
+    <span class="ab-entry-where">Salt to Soul · Malé, 2026 —</span>
+    <p class="ab-entry-title">Founder &amp; Lead Teacher</p>
+    <p class="ab-entry-body">Sunrise yoga on the rooftop. Full moon gatherings. Private sessions. Dance meditation. All of it rooted in these islands, offered with full presence. The practice she had always wanted to find — now open to everyone.</p>
   </div>
 </section>
 
@@ -451,11 +431,7 @@ window.addEventListener('scroll', () => {
   if (heroImg) heroImg.style.transform = `scale(1.05) translateY(${scrollY * .2}px)`;
 }, { passive: true });
 const io = new IntersectionObserver(e => {
-  e.forEach(x => {
-    if (!x.isIntersecting) return;
-    x.target.classList.add('visible');
-    io.unobserve(x.target);
-  });
+  e.forEach(x => { if (x.isIntersecting){ x.target.classList.add('visible'); io.unobserve(x.target); } });
 }, { threshold: .1 });
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 </script>
