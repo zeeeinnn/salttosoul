@@ -162,7 +162,7 @@
 .about-body p { margin-bottom: 18px; text-align: justify; text-align-last: left; }
 .about-body p:last-child { margin-bottom: 0; }
 .about-photo-wrap { position: sticky; top: 120px; }
-.about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: 2px; }
+.about-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 20%; border-radius: 2px; }
 
 /* PHOTO BREAK */
 .photo-break {
@@ -412,13 +412,7 @@
 
 /* TESTIMONIALS */
 .testimonials { padding: var(--section-v) var(--pad); background: var(--night); position: relative; overflow: hidden; }
-.testimonials::before {
-  content: '';
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 1px; height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(201,136,64,.12) 30%, rgba(201,136,64,.12) 70%, transparent);
-  pointer-events: none;
-}
+.testimonials::before { display: none; }
 .testimonials-inner { max-width: var(--max); margin: 0 auto; position: relative; z-index: 1; }
 .testimonials-head { margin-bottom: 72px; display: flex; flex-direction: column; gap: 16px; }
 .testimonials-head .section-label { color: var(--pandan); }
@@ -630,7 +624,7 @@
     <h2 class="about-name">Hi, I'm Zey.</h2>
     <div class="about-body">
       <p>Maldivian, through and through.</p>
-      <p>For over ten years, I worked in the Maldivian hospitality industry, learning how to hold space for people, stay composed under pressure, and find meaning in the smallest gestures of care. The ocean was always close. Always moving. Always returning to itself.</p>
+      <p>For 12 years, I worked in the Maldivian hospitality industry, learning how to hold space for people, stay composed under pressure, and find meaning in the smallest gestures of care. The ocean was always close. Always moving. Always returning to itself.</p>
       <p>Life brought its own teachings. Ones I did not choose but could not avoid. Through those years, I found my way back to stillness, learned to value solitude, and began to understand that slowing down is not a retreat from the world, but a deeper way of meeting it.</p>
       <p>Movement became part of that journey. What began as a way to inhabit my body became a practice that helped me feel present, grounded, and at home in my own skin.</p>
       <p>I trained in Bali, completed 200 hours of immersive teacher training, and came back to Malé with something I could not have planned for: a clear sense of what this work is for. Salt to Soul grew from that. Rooted in island life, shaped by the rhythm of the ocean, and offered to those who are ready to return to themselves.</p>
@@ -855,7 +849,7 @@
       </div>
       <div class="ritual-item fade-up">
         <div class="ritual-num">03</div>
-        <div class="ritual-name">Herbal<br><em>tea</em></div>
+        <div class="ritual-name">Iced<br><em>tea</em></div>
         <p class="ritual-desc">Poured and waiting after every session. Something warm to sit with, to breathe in, before you return to the world. Take your time.</p>
       </div>
       <div class="ritual-item fade-up fade-up-delay-2">
