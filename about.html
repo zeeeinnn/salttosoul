@@ -80,8 +80,8 @@ html, body { background: #F4EFE6; }
 }
 .ab-split-lede em { font-style: italic; }
 .ab-split-body {
-  font-size: clamp(.86rem,1.35vw,.95rem);
-  line-height: 2.25; color: var(--palm);
+  font-size: clamp(.93rem,1.4vw,1.02rem);
+  line-height: 2.3; color: var(--palm);
   display: flex; flex-direction: column; gap: 16px;
   max-width: 400px;
 }
@@ -121,7 +121,7 @@ html, body { background: #F4EFE6; }
 }
 .ab-photo-tall {
   width: 100%; height: clamp(480px,70vh,800px);
-  object-fit: cover; object-position: center 20%;
+  object-fit: cover; object-position: center 40%;
   display: block;
 }
 .ab-photos-right {
@@ -135,11 +135,11 @@ html, body { background: #F4EFE6; }
 }
 .annotation {
   font-family: 'Caveat', cursive;
-  font-size: clamp(1.05rem,1.7vw,1.4rem);
-  color: rgba(90,48,32,.5);
-  display: inline-block; line-height: 1.55;
+  font-size: clamp(1.3rem,2.2vw,1.9rem);
+  color: rgba(90,48,32,.52);
+  display: inline-block; line-height: 1.5;
   transform: rotate(-2.5deg);
-  margin-top: 6px; padding-left: 4px;
+  margin-top: 10px; padding-left: 4px;
 }
 
 /* ══ SPIRAL — same cream ground ══ */
@@ -189,7 +189,7 @@ html, body { background: #F4EFE6; }
   font-size: clamp(1rem,1.6vw,1.18rem);
   color: var(--terra); line-height: 1.6;
   padding: 16px 20px;
-  border-left: 1.5px solid rgba(184,92,56,.22);
+  border-left: 1.5px solid rgba(184,92,56,.40);
 }
 
 /* ══ CHAPTERS — fix #4: journal style, left border, no CV grid ══ */
@@ -213,7 +213,7 @@ html, body { background: #F4EFE6; }
 /* journal entry — thin left border, flowing ¶ */
 .ab-entry {
   padding: 0 0 0 clamp(20px,3vw,36px);
-  border-left: 1.5px solid rgba(184,92,56,.22);
+  border-left: 1.5px solid rgba(184,92,56,.40);
   margin-bottom: clamp(44px,6vw,72px);
 }
 .ab-entry:last-child { margin-bottom: 0; }
@@ -228,8 +228,8 @@ html, body { background: #F4EFE6; }
   margin-bottom: 18px;
 }
 .ab-entry-body {
-  font-size: clamp(.86rem,1.35vw,.95rem);
-  line-height: 2.2; color: var(--palm); max-width: 620px;
+  font-size: clamp(.93rem,1.4vw,1.02rem);
+  line-height: 2.3; color: var(--palm); max-width: 620px;
 }
 
 /* ══ CTA ══ */
@@ -353,23 +353,6 @@ html, body { background: #F4EFE6; }
   </div>
 </section>
 
-<!-- SPIRAL -->
-<section class="ab-spiral">
-  <div class="ab-spiral-vis fade-up">
-    <div class="ab-spiral-glow"></div>
-    <img src="./brand/icon/icon-logo.png" alt="Salt to Soul spiral" class="ab-spiral-logo"/>
-  </div>
-  <div class="ab-spiral-text fade-up fade-up-delay-2">
-    <span class="ab-spiral-kicker">The symbol</span>
-    <h2 class="ab-spiral-h">The spiral is<br>the <em>whole story.</em></h2>
-    <div class="ab-spiral-body">
-      <p>The spiral is one of the oldest symbols humanity has ever drawn. It moves inward and outward — representing the journey we must take into ourselves if we are to truly know who we are.</p>
-      <p>Every time you step onto a mat, you begin that journey again. You spiral a little deeper. You return carrying something you didn't have before.</p>
-    </div>
-    <p class="ab-spiral-pull">Salt — from the islands that shaped her.<br>Soul — what the practice gives back.</p>
-  </div>
-</section>
-
 <!-- CHAPTERS — journal style, left border, no numbered grid -->
 <section class="ab-chapters">
   <div class="ab-ch-header fade-up">
@@ -393,6 +376,23 @@ html, body { background: #F4EFE6; }
     <span class="ab-entry-where">Salt to Soul · Malé, 2026 —</span>
     <p class="ab-entry-title">Founder &amp; Lead Teacher</p>
     <p class="ab-entry-body">Sunrise yoga on the rooftop. Full moon gatherings. Private sessions. Dance meditation. All of it rooted in these islands, offered with full presence. The practice she had always wanted to find — now open to everyone.</p>
+  </div>
+</section>
+
+<!-- SPIRAL — closes the story before CTA -->
+<section class="ab-spiral">
+  <div class="ab-spiral-vis fade-up">
+    <div class="ab-spiral-glow"></div>
+    <img src="./brand/icon/icon-logo.png" alt="Salt to Soul spiral" class="ab-spiral-logo"/>
+  </div>
+  <div class="ab-spiral-text fade-up fade-up-delay-2">
+    <span class="ab-spiral-kicker">The symbol</span>
+    <h2 class="ab-spiral-h">The spiral is<br>the <em>whole story.</em></h2>
+    <div class="ab-spiral-body">
+      <p>The spiral is one of the oldest symbols humanity has ever drawn. It moves inward and outward — representing the journey we must take into ourselves if we are to truly know who we are.</p>
+      <p>Every time you step onto a mat, you begin that journey again. You spiral a little deeper. You return carrying something you didn't have before.</p>
+    </div>
+    <p class="ab-spiral-pull">Salt — from the islands that shaped her.<br>Soul — what the practice gives back.</p>
   </div>
 </section>
 
