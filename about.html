@@ -299,48 +299,61 @@ html, body { background: #F4EFE6; }
 
 /* ══ JOURNEY INWARD ══ */
 .ab-journey {
-  background: #F4EFE6;
+  background: var(--night);
   padding: clamp(80px,11vw,150px) clamp(40px,7vw,100px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px,9vw,110px);
+}
+.ab-journey-head {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(48px,8vw,120px);
-  align-items: start;
+  align-items: center;
+  gap: clamp(40px,6vw,80px);
 }
 .ab-journey-kicker {
-  font-family: var(--ff-b); font-size: .44rem;
-  letter-spacing: .5em; text-transform: uppercase;
-  color: rgba(184,92,56,.45); display: block; margin-bottom: 16px;
+  font-family: var(--ff-b); font-size: .6rem;
+  letter-spacing: .45em; text-transform: uppercase;
+  color: rgba(201,136,64,.5); display: block; margin-bottom: 20px;
 }
 .ab-journey-title {
   font-family: var(--ff-d); font-weight: 300;
-  font-size: clamp(2.2rem,4.5vw,4rem);
-  line-height: 1.05; color: var(--night); text-wrap: balance;
+  font-size: clamp(2.8rem,5.5vw,5rem);
+  line-height: 1.05; color: var(--salt); text-wrap: balance;
+  margin-bottom: 24px;
 }
-.ab-journey-title em { font-style: italic; }
-.ab-journey-path { display: flex; flex-direction: column; }
-.ab-touchpoint {
-  display: flex; flex-direction: column; gap: 6px;
-  padding: 0 0 0 clamp(20px,3vw,32px);
-  border-left: 1.5px solid rgba(184,92,56,.35);
+.ab-journey-title em { font-style: italic; color: var(--terra); }
+.ab-journey-sub {
+  font-size: clamp(.9rem,1.3vw,1.05rem);
+  color: rgba(242,237,228,.45);
+  line-height: 1.9; max-width: 38ch;
 }
-.ab-tp-marker {
-  font-size: .46rem; letter-spacing: .35em;
-  text-transform: uppercase; color: var(--terra);
+.ab-journey-spiral {
+  display: flex; align-items: center; justify-content: center;
 }
-.ab-tp-name {
-  font-family: var(--ff-d); font-style: italic;
-  font-size: clamp(1.1rem,1.8vw,1.45rem);
-  color: var(--night); line-height: 1.2;
+.ab-journey-logo {
+  width: clamp(220px,38vw,460px);
+  height: clamp(220px,38vw,460px);
+  object-fit: contain;
+  filter: drop-shadow(0 0 80px rgba(184,92,56,.3));
 }
-.ab-tp-body {
-  font-size: clamp(.86rem,1.25vw,.96rem);
-  color: var(--palm); line-height: 2;
+.ab-journey-stages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(24px,4vw,48px);
+  border-top: 1px solid rgba(242,237,228,.08);
+  padding-top: clamp(48px,5vw,72px);
 }
-.ab-tp-connector {
-  width: 1px; height: 32px;
-  background: rgba(184,92,56,.22);
-  margin-left: clamp(20px,3vw,32px);
-  flex-shrink: 0;
+.ab-stage { display: flex; flex-direction: column; gap: 18px; }
+.ab-stage-name {
+  font-family: var(--ff-d); font-style: italic; font-weight: 300;
+  font-size: clamp(1.3rem,2.2vw,1.9rem);
+  color: var(--salt); line-height: 1.15;
+}
+.ab-stage-body {
+  font-size: clamp(.82rem,1.1vw,.92rem);
+  color: rgba(242,237,228,.45);
+  line-height: 2.15;
 }
 
 /* ── RESPONSIVE ── */
@@ -357,7 +370,9 @@ html, body { background: #F4EFE6; }
   .ab-contrast-divider { display: none; }
   .ab-contrast-col { border-bottom: 1px solid rgba(184,92,56,.1); padding: 0 0 40px; }
   .ab-contrast-col:last-child { border-bottom: none; }
-  .ab-journey { grid-template-columns: 1fr; }
+  .ab-journey-head { grid-template-columns: 1fr; }
+  .ab-journey-spiral { display: none; }
+  .ab-journey-stages { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
@@ -475,9 +490,9 @@ html, body { background: #F4EFE6; }
     <span class="ab-spiral-kicker">The Brand</span>
     <h2 class="ab-spiral-h">The spiral is<br>the <em>whole story.</em></h2>
     <div class="ab-spiral-body">
-      <p>Watch the ocean long enough and you'll see it everywhere. The way a wave curls before it breaks. The way the tide pulls back, then returns — not to the same place, but carrying something new. The sea doesn't repeat itself. It spirals.</p>
-      <p>That is Salt to Soul. Every session, you return to the mat. Not to the same version of yourself — but to a deeper one. You bring what the last session gave you, and you go further.</p>
-      <p>This is the practice. This is the brand. Each breath, each movement, each moment of stillness is one more turn of the spiral — inward, toward the truest version of you.</p>
+      <p>Watch the ocean long enough and you'll see it everywhere. The way a wave curls before it breaks. The way the tide pulls back, then returns, not to the same place but carrying something new. The sea doesn't repeat itself. It spirals.</p>
+      <p>That is Salt to Soul. Every session, you return to the mat. Not to the same version of yourself, but to a deeper one. You bring what the last session gave you, and you go further.</p>
+      <p>This is the practice. This is the brand. Each breath, each movement, each moment of stillness is one more turn of the spiral. Inward, toward the truest version of you.</p>
     </div>
     <p class="ab-spiral-pull">Salt — from the islands that shaped her.<br>Soul — what the practice gives back.</p>
   </div>
@@ -487,46 +502,45 @@ html, body { background: #F4EFE6; }
 <section class="ab-contrast">
   <div class="ab-contrast-col fade-up">
     <h3 class="ab-contrast-label dim">The Loop.</h3>
-    <p class="ab-contrast-body">Your ego wants to stay where it's safe. The same morning. The same heaviness. The same story about who you are and what you're capable of. The loop is familiar — it feels like home, even when it isn't. You circle and circle and never quite arrive anywhere new.</p>
+    <p class="ab-contrast-body">Your ego wants to stay where it's safe. The same morning. The same heaviness. The same story about who you are and what you're capable of. The loop is familiar. It feels like home, even when it isn't. You circle and circle and never quite arrive anywhere new.</p>
     <p class="ab-contrast-note">Repeating the same cycle. This is what the egoic mind finds comfortable — it's all it knows.</p>
   </div>
   <div class="ab-contrast-divider"></div>
   <div class="ab-contrast-col fade-up fade-up-delay-2">
     <h3 class="ab-contrast-label">The Spiral.</h3>
-    <p class="ab-contrast-body">Your intuition calls you somewhere different. Back — but changed. Each return is on a higher turn. You carry what you've learned, release what no longer serves you. Growth is not linear. It spirals — inward, deeper, toward the truest version of you.</p>
+    <p class="ab-contrast-body">Your intuition calls you somewhere different. Back, but changed. Each return is on a higher turn. You carry what you've learned, release what no longer serves you. Growth is not linear. It spirals. Inward, deeper, toward the truest version of you.</p>
     <p class="ab-contrast-note">Making gradual changes that lead toward ongoing evolution. Each turn brings you closer to who you are becoming.</p>
   </div>
 </section>
 
 <!-- THE JOURNEY INWARD -->
 <section class="ab-journey">
-  <div class="ab-journey-header fade-up">
-    <span class="ab-journey-kicker">Every session</span>
-    <h2 class="ab-journey-title">The spiral<br>turns <em>inward.</em></h2>
+  <div class="ab-journey-head">
+    <div class="ab-journey-lead fade-up">
+      <span class="ab-journey-kicker">Every session</span>
+      <h2 class="ab-journey-title">The spiral<br>turns <em>inward.</em></h2>
+      <p class="ab-journey-sub">Each time you arrive, you go a little deeper than before.</p>
+    </div>
+    <div class="ab-journey-spiral fade-up fade-up-delay-1" aria-hidden="true">
+      <img src="./brand/icon/icon-logo.png" alt="" class="ab-journey-logo" loading="lazy"/>
+    </div>
   </div>
-  <div class="ab-journey-path fade-up fade-up-delay-1">
-    <div class="ab-touchpoint">
-      <span class="ab-tp-marker">The first turn</span>
-      <span class="ab-tp-name">Arrive. Breathe.</span>
-      <p class="ab-tp-body">You step onto the mat carrying everything — the inbox, the worry, the noise. You don't leave it at the door. You bring it with you. And then you breathe.</p>
+  <div class="ab-journey-stages">
+    <div class="ab-stage fade-up">
+      <h3 class="ab-stage-name">Begin here.</h3>
+      <p class="ab-stage-body">You arrive carrying everything. The mat receives all of it. You breathe, and something begins to loosen.</p>
     </div>
-    <div class="ab-tp-connector"></div>
-    <div class="ab-touchpoint">
-      <span class="ab-tp-marker">The second turn</span>
-      <span class="ab-tp-name">Move. Remember.</span>
-      <p class="ab-tp-body">Your body knows things your mind has forgotten. Movement unlocks them. By the time you're in warrior two, something has already shifted.</p>
+    <div class="ab-stage fade-up fade-up-delay-1">
+      <h3 class="ab-stage-name">The body speaks.</h3>
+      <p class="ab-stage-body">Your body holds truths your mind has been too busy to hear. Movement is how you start to listen.</p>
     </div>
-    <div class="ab-tp-connector"></div>
-    <div class="ab-touchpoint">
-      <span class="ab-tp-marker">The third turn</span>
-      <span class="ab-tp-name">Still. Listen.</span>
-      <p class="ab-tp-body">Savasana is not an ending. It is the deepest point of the spiral. The noise has quieted. In that quiet — something true is waiting.</p>
+    <div class="ab-stage fade-up fade-up-delay-2">
+      <h3 class="ab-stage-name">The quiet.</h3>
+      <p class="ab-stage-body">Savasana is not an ending. It is the deepest point of the whole session. What you needed was in the stillness all along.</p>
     </div>
-    <div class="ab-tp-connector"></div>
-    <div class="ab-touchpoint">
-      <span class="ab-tp-marker">The centre</span>
-      <span class="ab-tp-name">You. Present. Whole.</span>
-      <p class="ab-tp-body">You are your own safe space. You were, all along. The practice simply clears the path back to that knowing. You leave carrying that centre — until next time, when the spiral turns again.</p>
+    <div class="ab-stage fade-up fade-up-delay-3">
+      <h3 class="ab-stage-name">Home.</h3>
+      <p class="ab-stage-body">You leave carrying your centre. You were never without it. The practice simply cleared the path back.</p>
     </div>
   </div>
 </section>
