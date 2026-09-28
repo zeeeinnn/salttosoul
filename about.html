@@ -379,28 +379,31 @@ html, body { background: #F4EFE6; }
 <body>
 
 <!-- NAV -->
-<nav>
+<nav class="site-nav" id="siteNav">
   <a href="./index.html" class="nav-brand">
     <div class="nav-mark"><img src="./brand/icon/icon-logo.png" alt="Salt to Soul"/></div>
-    <span class="nav-name">Salt · to · Soul</span>
+    <span class="nav-name">Salt to Soul</span>
   </a>
   <div class="nav-links">
     <a href="./index.html" class="nav-link">Home</a>
     <a href="./about.html" class="nav-link active">About</a>
-    <a href="./index.html#journal" class="nav-link">Journal</a>
+    <a href="./schedule.html" class="nav-link">Schedule</a>
+    <a href="./blog/" class="nav-link">Journal</a>
     <a href="./book.html" class="nav-link">Book</a>
   </div>
-  <a href="./book.html" class="nav-cta">Book a session</a>
-  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+  <a href="./book.html" class="nav-cta">Reserve an experience</a>
+  <button class="nav-hamburger" onclick="openNav()" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 <div class="nav-mobile" id="navMobile">
-  <a href="./index.html">Home</a>
-  <a href="./about.html">About</a>
-  <a href="./index.html#journal">Journal</a>
-  <a href="./book.html">Book a Session</a>
-  <a href="./book.html" class="nav-mobile-cta">Book a session →</a>
+  <button class="nav-close" onclick="closeNav()" aria-label="Close menu">✕</button>
+  <a href="./index.html" onclick="closeNav()">Home</a>
+  <a href="./about.html" onclick="closeNav()">About</a>
+  <a href="./schedule.html" onclick="closeNav()">Schedule</a>
+  <a href="./blog/" onclick="closeNav()">Journal</a>
+  <a href="./book.html" onclick="closeNav()">Book</a>
+  <a href="./book.html" class="nav-mobile-cta" onclick="closeNav()">Reserve an experience</a>
 </div>
 
 <!-- HERO -->
@@ -569,7 +572,20 @@ html, body { background: #F4EFE6; }
 </footer>
 
 <script>
-function toggleNav(){ document.getElementById('navMobile').classList.toggle('open'); }
+const nav = document.getElementById('siteNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+function openNav() {
+  document.getElementById('navMobile').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNav() {
+  document.getElementById('navMobile').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
 const heroImg = document.getElementById('pgHeroBg');
 window.addEventListener('scroll', () => {
   if (heroImg) heroImg.style.transform = `scale(1.05) translateY(${scrollY * .2}px)`;
