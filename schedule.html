@@ -115,45 +115,6 @@ html, body { background: var(--night); color: var(--salt); }
 .sc-row.special .sc-book-btn { background: var(--terra); color: var(--salt); }
 .sc-row.special .sc-book-btn:hover { background: var(--blush); }
 
-/* ── MONTHLY ── */
-.sc-monthly {
-  border-top: 1px solid rgba(242,237,228,.06);
-  padding: clamp(52px,7vw,96px) var(--pad);
-  max-width: 900px; margin: 0 auto;
-}
-.sc-monthly-label {
-  font-size: .48rem; letter-spacing: .45em; text-transform: uppercase;
-  color: var(--pandan); opacity: .55; margin-bottom: 40px;
-}
-.sc-monthly-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.sc-monthly-card {
-  padding: 28px 24px;
-  background: rgba(255,255,255,.05);
-  border: 1px solid rgba(255,255,255,.09);
-  border-radius: 4px;
-  display: flex; flex-direction: column; gap: 10px;
-  transition: background .3s, border-color .3s;
-}
-.sc-monthly-card:hover {
-  background: rgba(255,255,255,.09);
-  border-color: rgba(212,188,138,.2);
-}
-.sc-monthly-freq {
-  font-size: .42rem; letter-spacing: .3em; text-transform: uppercase;
-  color: var(--pandan); opacity: .6;
-}
-.sc-monthly-name {
-  font-family: var(--ff-d); font-size: 1.15rem; font-weight: 400;
-  color: var(--salt); line-height: 1.2;
-}
-.sc-monthly-desc {
-  font-size: .5rem; letter-spacing: .05em; line-height: 1.9;
-  color: rgba(212,188,138,.65);
-}
-
 /* ── BOOKING CTA ── */
 .sc-cta {
   border-top: 1px solid rgba(242,237,228,.06);
@@ -302,28 +263,6 @@ html, body { background: var(--night); color: var(--salt); }
     <div class="sc-right">
       <span class="sc-time">5:45 – 7:30 PM</span>
       <a href="./book.html" class="sc-book-btn">Book</a>
-    </div>
-  </div>
-</section>
-
-<!-- MONTHLY GATHERINGS -->
-<section class="sc-monthly">
-  <p class="sc-monthly-label">Monthly gatherings</p>
-  <div class="sc-monthly-grid">
-    <div class="sc-monthly-card fade-up">
-      <span class="sc-monthly-freq">Monthly</span>
-      <div class="sc-monthly-name">Salt to Soul × Element</div>
-      <p class="sc-monthly-desc">Movement and sound healing together. Breath, vibration, and intentional stillness.</p>
-    </div>
-    <div class="sc-monthly-card fade-up fade-up-delay-1">
-      <span class="sc-monthly-freq">Full Moon</span>
-      <div class="sc-monthly-name">Full Moon Gathering</div>
-      <p class="sc-monthly-desc">Open-air, expansive, held under the sky. A practice for letting go.</p>
-    </div>
-    <div class="sc-monthly-card fade-up fade-up-delay-2">
-      <span class="sc-monthly-freq">New Moon</span>
-      <div class="sc-monthly-name">New Moon Gathering</div>
-      <p class="sc-monthly-desc">A quieter, more inward practice. Rest, intention, and beginning again.</p>
     </div>
   </div>
 </section>
