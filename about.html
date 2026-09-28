@@ -15,6 +15,12 @@
 /* Single cream ground throughout — only one accent break + dark CTA */
 html, body { background: #F4EFE6; }
 
+/* Nav: dark gradient so light links read over the hero photo;
+   .scrolled overrides this with the solid cream bar */
+#siteNav:not(.scrolled) {
+  background: linear-gradient(to bottom, rgba(46,26,14,.38) 0%, transparent 100%);
+}
+
 /* ══ HERO ══ */
 .ab-hero {
   height: 100svh; min-height: 600px;
