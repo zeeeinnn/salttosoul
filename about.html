@@ -59,17 +59,10 @@ html, body { background: #F4EFE6; }
   grid-template-columns: 52% 1fr; /* fix #3: wider photo */
   min-height: 88vh;
 }
-.ab-split-photo { overflow: hidden; position: relative; }
-.ab-split-photo::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 180px;
-  background: linear-gradient(to bottom, transparent, #F4EFE6);
-  pointer-events: none;
-}
+.ab-split-photo { overflow: hidden; }
 .ab-split-photo img {
   width: 100%; height: 100%;
-  object-fit: cover; object-position: center top;
+  object-fit: cover; object-position: center center;
   display: block;
 }
 .ab-split-text {
@@ -429,7 +422,7 @@ html, body { background: #F4EFE6; }
 <!-- SPLIT — photo 52% left, text right -->
 <section class="ab-split">
   <div class="ab-split-photo">
-    <img src="./photos/zey_hands_sky.jpg" alt="Zey with hands raised to the sky"/>
+    <img src="./photos/zey_overhead_mat.jpg" alt="Overhead view of Zey on her cork mandala mat"/>
   </div>
   <div class="ab-split-text fade-up">
     <span class="ab-split-kicker">From doing to being</span>
