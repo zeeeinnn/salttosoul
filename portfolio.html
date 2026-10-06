@@ -39,19 +39,6 @@ img { display: block; max-width: 100%; }
 .fu-d2 { transition-delay: .24s; }
 .fu-d3 { transition-delay: .36s; }
 
-/* ━━━━━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━━━━━ */
-.nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 24px var(--pad);
-  pointer-events: none;
-}
-.nav-logo {
-  height: 28px; width: auto;
-  opacity: .85;
-  display: block;
-}
-
 /* ━━━━━━━━━━━━━━━━━━━━ HERO ━━━━━━━━━━━━━━━━━━━━ */
 .hero {
   min-height: 100svh;
@@ -425,24 +412,12 @@ img { display: block; max-width: 100%; }
 
 /* ━━━━━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━━━━━ */
 .foot {
-  padding: 40px var(--pad);
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 20px;
-  border-top: 1px solid rgba(242,237,228,.05);
+  padding: 48px var(--pad) 56px;
+  display: flex; justify-content: center;
 }
 .foot-logo {
-  height: 22px; width: auto; opacity: .45;
+  height: 24px; width: auto; opacity: .4;
 }
-.foot-copy {
-  font-size: .55rem; letter-spacing: .15em; text-transform: uppercase;
-  color: rgba(242,237,228,.2);
-}
-.foot-links { display: flex; gap: 24px; }
-.foot-link {
-  font-size: .55rem; letter-spacing: .15em; text-transform: uppercase;
-  color: rgba(242,237,228,.3); transition: color .2s;
-}
-.foot-link:hover { color: var(--pandan); }
 
 /* ━━━━━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━ */
 
@@ -510,17 +485,11 @@ img { display: block; max-width: 100%; }
   .contact-btn { text-align: center; padding: 16px 24px; }
 
   /* Footer */
-  .foot { flex-direction: column; align-items: center; text-align: center; gap: 12px; padding: 28px var(--pad); }
-  .foot-links { justify-content: center; }
+  .foot { padding: 40px var(--pad) 48px; }
 }
 </style>
 </head>
 <body>
-
-<!-- ━━━━ NAV ━━━━ -->
-<nav class="nav">
-  <img src="./brand/logo/logo-horizontal-light.svg" alt="Salt to Soul" class="nav-logo"/>
-</nav>
 
 <!-- ━━━━ HERO ━━━━ -->
 <section class="hero">
@@ -697,12 +666,6 @@ img { display: block; max-width: 100%; }
 <!-- ━━━━ FOOTER ━━━━ -->
 <footer class="foot">
   <img src="./brand/logo/logo-horizontal-light.svg" alt="Salt to Soul" class="foot-logo"/>
-  <div class="foot-links">
-    <a href="./index.html" class="foot-link">Website</a>
-    <a href="https://instagram.com/salttosoul.mv" target="_blank" rel="noopener" class="foot-link">Instagram</a>
-    <a href="mailto:hello@salttosoul.mv" class="foot-link">Email</a>
-  </div>
-  <span class="foot-copy">© 2026 Salt to Soul</span>
 </footer>
 
 <script>
