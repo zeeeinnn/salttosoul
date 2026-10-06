@@ -193,42 +193,40 @@ img { display: block; max-width: 100%; }
 
 /* ━━━━━━━━━━━━━━━━━━━━ IN PRACTICE ━━━━━━━━━━━━━━━━━━━━ */
 .inpractice {
-  padding: clamp(40px, 6vw, 72px) var(--pad);
+  padding: clamp(60px, 8vw, 100px) var(--pad);
 }
-.inpractice-inner { max-width: var(--max); margin: 0 auto; }
-.inpractice-intro {
-  margin-bottom: 28px;
-  font-family: var(--ff-d); font-style: italic; font-weight: 300;
-  font-size: clamp(1rem, 1.8vw, 1.3rem);
-  color: rgba(212,188,138,.45);
+.inpractice-inner {
+  max-width: var(--max); margin: 0 auto;
 }
 .inpractice-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: clamp(12px, 2vw, 24px);
+  display: grid;
+  grid-template-columns: 45fr 55fr;
+  gap: clamp(16px, 2.5vw, 32px);
+  align-items: start;
 }
-.inpractice-card {
-  display: flex; flex-direction: column; gap: 10px;
-}
+.inpractice-card { display: flex; flex-direction: column; gap: 14px; }
+.inpractice-card:last-child { margin-top: clamp(40px, 6vw, 80px); }
 .inpractice-photo {
-  width: 100%; aspect-ratio: 4/3; overflow: hidden;
+  width: 100%; overflow: hidden;
   border: 1px solid rgba(255,255,255,.05);
 }
 .inpractice-photo img {
-  width: 100%; height: 100%; object-fit: cover;
-  object-position: center 30%;
-  transition: transform .6s ease;
+  width: 100%; height: auto; display: block;
+  transition: transform .7s ease;
 }
-.inpractice-card:hover .inpractice-photo img { transform: scale(1.03); }
+.inpractice-card:hover .inpractice-photo img { transform: scale(1.02); }
 .inpractice-caption {
-  display: flex; flex-direction: column; gap: 3px;
+  display: flex; flex-direction: column; gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.06);
 }
 .inpractice-label {
-  font-size: .42rem; letter-spacing: .2em; text-transform: uppercase;
-  color: rgba(242,237,228,.4);
+  font-family: var(--ff-d); font-size: 1rem; font-weight: 300;
+  color: rgba(242,237,228,.55); font-style: italic;
 }
 .inpractice-detail {
-  font-size: .38rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(212,188,138,.22);
+  font-size: .38rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(212,188,138,.25);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━ DIVIDER ━━━━━━━━━━━━━━━━━━━━ */
@@ -437,6 +435,7 @@ img { display: block; max-width: 100%; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .service.feature { grid-template-columns: 1fr; grid-column: auto; }
   .inpractice-grid { grid-template-columns: 1fr 1fr; }
+  .inpractice-card:last-child { margin-top: 24px; }
 }
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -518,24 +517,23 @@ img { display: block; max-width: 100%; }
 <!-- ━━━━ IN PRACTICE ━━━━ -->
 <section class="inpractice">
   <div class="inpractice-inner">
-    <p class="inpractice-intro fu">A glimpse of what her classes look like.</p>
     <div class="inpractice-grid">
       <div class="inpractice-card fu">
         <div class="inpractice-photo">
-          <img src="./photos/zey_soneva_class.jpg" alt="Yoga class on the deck at Soneva Secret"/>
+          <img src="./photos/zey_soneva_class.jpg" alt="Morning yoga session on the deck at Soneva Secret, Maldives"/>
         </div>
         <div class="inpractice-caption">
-          <span class="inpractice-label">Soneva Secret</span>
-          <span class="inpractice-detail">Private island · Maldives · 2026</span>
+          <span class="inpractice-label">Soneva Secret, Maldives</span>
+          <span class="inpractice-detail">Private island · visiting teacher · 2026</span>
         </div>
       </div>
       <div class="inpractice-card fu fu-d1">
         <div class="inpractice-photo">
-          <img src="./photos/zey_rooftop_session.jpg" alt="Salt to Soul group session on the rooftop at sunset in Malé"/>
+          <img src="./photos/zey_rooftop_session.jpg" alt="Salt to Soul sunset session on the rooftop in Malé"/>
         </div>
         <div class="inpractice-caption">
-          <span class="inpractice-label">Salt to Soul</span>
-          <span class="inpractice-detail">Terrace sunset session · Malé, Maldives</span>
+          <span class="inpractice-label">Salt to Soul, Malé</span>
+          <span class="inpractice-detail">Rooftop sunset session · weekly classes</span>
         </div>
       </div>
     </div>
