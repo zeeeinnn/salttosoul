@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Zey — Maldivian yoga teacher. 200-hr certified. Resort & private wellness experiences in the Maldives."/>
+<title>Zey — Yoga & Wellness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Josefin+Sans:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --night: #2E1A0E;
+  --salt: #F2EDE4;
+  --cream: #EDE5D6;
+  --terra: #B85C38;
+  --gold: #C98840;
+  --pandan: #D4BC8A;
+  --palm: #7A6252;
+  --ff-d: 'Cormorant Garamond', Georgia, serif;
+  --ff-b: 'Josefin Sans', sans-serif;
+  --pad: clamp(28px, 7vw, 96px);
+  --max: 1140px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-b);
+  background: var(--night);
+  color: var(--salt);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+/* ── FADE-UP ── */
+.fu { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+.fu.in { opacity: 1; transform: none; }
+.fu-d1 { transition-delay: .12s; }
+.fu-d2 { transition-delay: .24s; }
+.fu-d3 { transition-delay: .36s; }
+
+/* ━━━━━━━━━━━━━━━━━━━━ HERO ━━━━━━━━━━━━━━━━━━━━ */
+.hero {
+  min-height: 100svh;
+  position: relative; overflow: hidden;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.hero-photo {
+  position: relative; overflow: hidden;
+  min-height: 100svh;
+}
+.hero-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+}
+.hero-photo-veil {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 55%, var(--night) 100%),
+              linear-gradient(to bottom, rgba(46,26,14,.3) 0%, transparent 40%);
+}
+.hero-copy {
+  display: flex; flex-direction: column;
+  justify-content: center;
+  padding: 80px var(--pad) 80px clamp(32px, 4vw, 60px);
+  position: relative; z-index: 1;
+}
+.hero-eyebrow {
+  font-size: .44rem; letter-spacing: .5em; text-transform: uppercase;
+  color: var(--pandan); opacity: .65; margin-bottom: 24px;
+}
+.hero-name {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  line-height: .88; color: var(--salt); margin-bottom: 28px;
+}
+.hero-name em { font-style: italic; color: var(--pandan); display: block; }
+.hero-title {
+  font-size: .52rem; letter-spacing: .32em; text-transform: uppercase;
+  color: rgba(242,237,228,.45); margin-bottom: 40px; line-height: 2;
+}
+.hero-tags {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 44px;
+}
+.hero-tag {
+  font-size: .42rem; letter-spacing: .2em; text-transform: uppercase;
+  border: 1px solid rgba(242,237,228,.18);
+  padding: 6px 16px; border-radius: 40px;
+  color: rgba(242,237,228,.55);
+}
+.hero-tag.accent {
+  border-color: rgba(201,136,64,.5);
+  color: var(--pandan);
+  background: rgba(201,136,64,.08);
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: .44rem; letter-spacing: .22em; text-transform: uppercase;
+  background: var(--terra); color: var(--salt);
+  padding: 14px 32px; border-radius: 2px;
+  transition: background .2s; width: fit-content;
+}
+.hero-cta:hover { background: #c8643e; }
+
+/* ━━━━━━━━━━━━━━━━━━━━ STATEMENT STRIP ━━━━━━━━━━━━━━━━━━━━ */
+.strip {
+  background: var(--terra);
+  padding: 28px var(--pad);
+  display: flex; align-items: center; gap: clamp(32px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+.strip-stat {
+  display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 120px;
+}
+.strip-num {
+  font-family: var(--ff-d); font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 300; color: var(--salt); line-height: 1;
+}
+.strip-label {
+  font-size: .4rem; letter-spacing: .28em; text-transform: uppercase;
+  color: rgba(242,237,228,.6);
+}
+.strip-divider {
+  width: 1px; height: 48px; background: rgba(242,237,228,.2);
+  flex-shrink: 0;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ ABOUT ━━━━━━━━━━━━━━━━━━━━ */
+.about {
+  padding: clamp(72px, 10vw, 140px) var(--pad);
+  max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(48px, 8vw, 100px); align-items: start;
+}
+.about-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--pandan); opacity: .6; margin-bottom: 20px;
+}
+.about-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.1; color: var(--salt); margin-bottom: 28px;
+}
+.about-h em { font-style: italic; color: var(--pandan); }
+.about-body {
+  font-size: .62rem; letter-spacing: .04em; line-height: 2.2;
+  color: rgba(212,188,138,.75);
+  display: flex; flex-direction: column; gap: 16px;
+}
+.about-creds {
+  margin-top: 36px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.cred {
+  display: flex; align-items: flex-start; gap: 16px;
+  padding: 20px 24px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.07);
+  border-left: 2px solid var(--terra);
+}
+.cred-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; opacity: .7; }
+.cred-text { display: flex; flex-direction: column; gap: 4px; }
+.cred-title {
+  font-family: var(--ff-d); font-size: 1rem; font-weight: 400;
+  color: var(--salt); line-height: 1.2;
+}
+.cred-sub {
+  font-size: .42rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(212,188,138,.45);
+}
+.about-photos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.about-photos .photo-tall {
+  grid-column: 1 / -1;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+.about-photos .photo-tall img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+}
+.about-photos .photo-half {
+  aspect-ratio: 3/4; overflow: hidden;
+}
+.about-photos .photo-half img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.photo-caption {
+  font-size: .38rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(212,188,138,.3); margin-top: 8px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ SERVICES ━━━━━━━━━━━━━━━━━━━━ */
+.services {
+  background: var(--cream);
+  padding: clamp(72px, 10vw, 140px) var(--pad);
+}
+.services-inner { max-width: var(--max); margin: 0 auto; }
+.services-head { margin-bottom: clamp(48px, 7vw, 80px); }
+.services-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--terra); opacity: .7; margin-bottom: 16px;
+}
+.services-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(2.4rem, 5.5vw, 4.4rem);
+  line-height: 1.05; color: var(--night);
+}
+.services-h em { font-style: italic; }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; background: rgba(90,48,32,.1);
+}
+.service {
+  background: var(--cream);
+  padding: 40px 36px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: background .25s;
+}
+.service:hover { background: #e5dcd0; }
+.service-num {
+  font-family: var(--ff-d); font-size: 2rem; font-weight: 300;
+  color: rgba(184,92,56,.18); line-height: 1;
+}
+.service-name {
+  font-family: var(--ff-d); font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  font-weight: 400; color: var(--night); line-height: 1.15;
+}
+.service-desc {
+  font-size: .58rem; letter-spacing: .03em; line-height: 2;
+  color: var(--palm); flex: 1;
+}
+.service-tag {
+  font-size: .38rem; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--terra); margin-top: 4px;
+}
+
+/* highlight row */
+.service.feature {
+  background: var(--night); grid-column: 1 / -1;
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px; align-items: center;
+}
+.service.feature .service-num { color: rgba(242,237,228,.08); }
+.service.feature .service-name { font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: var(--salt); }
+.service.feature .service-desc { color: rgba(212,188,138,.65); }
+.service.feature .service-tag { color: var(--pandan); }
+
+/* ━━━━━━━━━━━━━━━━━━━━ THE EXPERIENCE ━━━━━━━━━━━━━━━━━━━━ */
+.experience {
+  padding: clamp(72px, 10vw, 140px) var(--pad);
+  max-width: calc(var(--max) + 2 * var(--pad)); margin: 0 auto;
+}
+.experience-head {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 100px); align-items: end;
+  margin-bottom: clamp(52px, 7vw, 80px);
+}
+.exp-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--pandan); opacity: .6; margin-bottom: 16px;
+}
+.exp-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05; color: var(--salt);
+}
+.exp-h em { font-style: italic; color: var(--pandan); }
+.exp-sub {
+  font-size: .58rem; letter-spacing: .04em; line-height: 2;
+  color: rgba(212,188,138,.6); max-width: 42ch;
+}
+.ritual-list {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(242,237,228,.06);
+  border: 1px solid rgba(242,237,228,.06);
+}
+.ritual-item {
+  padding: 40px 32px;
+  background: rgba(255,255,255,.03);
+  display: flex; flex-direction: column; gap: 16px;
+  transition: background .3s;
+}
+.ritual-item:hover { background: rgba(255,255,255,.07); }
+.ritual-num-d {
+  font-family: var(--ff-d); font-size: 3rem; font-weight: 300;
+  color: rgba(201,136,64,.12); line-height: 1;
+}
+.ritual-name-d {
+  font-family: var(--ff-d); font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 400; color: var(--salt); line-height: 1.15;
+}
+.ritual-name-d em { font-style: italic; color: var(--pandan); }
+.ritual-desc-d {
+  font-size: .56rem; letter-spacing: .03em; line-height: 2;
+  color: rgba(212,188,138,.55);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ RESORT SECTION ━━━━━━━━━━━━━━━━━━━━ */
+.resort {
+  background: var(--cream); color: var(--night);
+  padding: clamp(72px, 10vw, 140px) var(--pad);
+}
+.resort-inner { max-width: var(--max); margin: 0 auto; }
+.resort-top {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 7vw, 96px); align-items: start;
+  margin-bottom: clamp(52px, 7vw, 80px);
+}
+.resort-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--terra); opacity: .7; margin-bottom: 16px;
+}
+.resort-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05; color: var(--night);
+}
+.resort-h em { font-style: italic; }
+.resort-body {
+  font-size: .6rem; letter-spacing: .04em; line-height: 2.2;
+  color: var(--palm); display: flex; flex-direction: column; gap: 16px;
+}
+.resort-point {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(90,48,32,.1);
+}
+.resort-point:first-child { border-top: 1px solid rgba(90,48,32,.1); }
+.resort-diamond { color: var(--terra); font-size: .6rem; flex-shrink: 0; margin-top: 2px; }
+.resort-point-text {
+  font-size: .58rem; letter-spacing: .03em; line-height: 1.9;
+  color: var(--palm);
+}
+.resort-point-text strong { color: var(--night); font-weight: 400; }
+.resort-photo {
+  width: 100%; aspect-ratio: 3/4; overflow: hidden;
+  position: sticky; top: 100px;
+}
+.resort-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 10%;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ TESTIMONIALS ━━━━━━━━━━━━━━━━━━━━ */
+.testimonials {
+  padding: clamp(72px, 10vw, 140px) var(--pad);
+}
+.test-inner { max-width: var(--max); margin: 0 auto; }
+.test-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--pandan); opacity: .6; margin-bottom: 16px;
+}
+.test-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  color: var(--salt); margin-bottom: clamp(44px, 6vw, 72px);
+}
+.test-h em { font-style: italic; color: var(--pandan); }
+.test-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 80px;
+}
+.test {
+  padding: 44px 0;
+  border-bottom: 1px solid rgba(242,237,228,.07);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.test:last-child, .test:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+.test-mark { color: var(--pandan); font-size: .8rem; letter-spacing: .3em; opacity: .55; }
+.test-quote {
+  font-family: var(--ff-d); font-style: italic; font-weight: 300;
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+  line-height: 1.75; color: rgba(242,237,228,.88);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ CONTACT ━━━━━━━━━━━━━━━━━━━━ */
+.contact {
+  background: var(--cream); color: var(--night);
+  padding: clamp(80px, 12vw, 160px) var(--pad);
+  position: relative; overflow: hidden;
+}
+.contact::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px; height: 500px;
+  background: radial-gradient(ellipse, rgba(184,92,56,.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.contact-inner {
+  max-width: 720px; margin: 0 auto;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center; gap: 20px; position: relative; z-index: 1;
+}
+.contact-eyebrow {
+  font-size: .44rem; letter-spacing: .45em; text-transform: uppercase;
+  color: var(--terra); opacity: .7;
+}
+.contact-h {
+  font-family: var(--ff-d); font-weight: 300;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1; color: var(--night);
+}
+.contact-h em { font-style: italic; color: var(--terra); }
+.contact-sub {
+  font-size: .6rem; letter-spacing: .06em; line-height: 2;
+  color: var(--palm); max-width: 48ch;
+}
+.contact-links {
+  display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
+  margin-top: 12px;
+}
+.contact-btn {
+  font-size: .44rem; letter-spacing: .22em; text-transform: uppercase;
+  padding: 14px 32px; border-radius: 2px; transition: all .2s;
+  cursor: pointer;
+}
+.contact-btn.primary {
+  background: var(--night); color: var(--salt);
+}
+.contact-btn.primary:hover { background: var(--terra); }
+.contact-btn.secondary {
+  border: 1px solid rgba(46,26,14,.2); color: var(--night);
+}
+.contact-btn.secondary:hover {
+  background: rgba(46,26,14,.06);
+  border-color: rgba(46,26,14,.4);
+}
+.contact-detail {
+  font-size: .52rem; letter-spacing: .12em;
+  color: rgba(90,48,32,.4); margin-top: 8px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━━━━━ */
+.foot {
+  background: var(--night);
+  padding: 32px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+  border-top: 1px solid rgba(242,237,228,.06);
+}
+.foot-brand {
+  font-family: var(--ff-d); font-size: 1rem; font-weight: 300;
+  color: rgba(242,237,228,.3); font-style: italic;
+}
+.foot-copy {
+  font-size: .4rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(242,237,228,.2);
+}
+.foot-links { display: flex; gap: 20px; }
+.foot-link {
+  font-size: .4rem; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(242,237,228,.3); transition: color .2s;
+}
+.foot-link:hover { color: var(--pandan); }
+
+/* ━━━━━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-photo {
+    position: absolute; inset: 0; min-height: unset;
+    z-index: 0;
+  }
+  .hero-photo-veil {
+    background: linear-gradient(to bottom, rgba(46,26,14,.35) 0%, rgba(46,26,14,.85) 70%),
+                linear-gradient(to right, transparent 0%, transparent 100%);
+  }
+  .hero-copy { padding: 120px var(--pad) 80px; position: relative; z-index: 1; min-height: 100svh; }
+  .about { grid-template-columns: 1fr; }
+  .about-photos { order: -1; grid-template-columns: 1fr 1fr; }
+  .about-photos .photo-tall { display: none; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .service.feature { grid-template-columns: 1fr; grid-column: auto; }
+  .experience-head { grid-template-columns: 1fr; }
+  .ritual-list { grid-template-columns: 1fr 1fr; }
+  .resort-top { grid-template-columns: 1fr; }
+  .resort-photo { position: static; aspect-ratio: 16/9; display: none; }
+  .test-grid { grid-template-columns: 1fr; gap: 0; }
+}
+@media (max-width: 600px) {
+  .strip { gap: 24px; }
+  .strip-divider { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .ritual-list { grid-template-columns: 1fr; }
+  .about-photos .photo-tall { display: block; aspect-ratio: 4/3; }
+  .about-photos .photo-half { display: none; }
+  .contact-h { font-size: 3rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━━ HERO ━━━━ -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="./photos/zey_rooftop_setup.jpg" alt="Zey teaching yoga on a Malé rooftop"/>
+    <div class="hero-photo-veil"></div>
+  </div>
+  <div class="hero-copy fu">
+    <p class="hero-eyebrow">Maldives · Yoga &amp; Wellness</p>
+    <h1 class="hero-name">Zey.<br><em>Move. Breathe. Be still.</em></h1>
+    <p class="hero-title">Certified Yoga Teacher &nbsp;·&nbsp; Maldivian &nbsp;·&nbsp; 200-Hour Yoga Union, Bali</p>
+    <div class="hero-tags">
+      <span class="hero-tag accent">200-hr certified</span>
+      <span class="hero-tag accent">Soneva Secret alumna</span>
+      <span class="hero-tag">Malé, Maldives</span>
+      <span class="hero-tag">Resort &amp; private wellness</span>
+      <span class="hero-tag">12 yrs hospitality</span>
+    </div>
+    <a href="mailto:hello@salttosoul.mv" class="hero-cta">Get in touch</a>
+  </div>
+</section>
+
+<!-- ━━━━ STATS STRIP ━━━━ -->
+<div class="strip fu">
+  <div class="strip-stat">
+    <span class="strip-num">200</span>
+    <span class="strip-label">Hours — Yoga Union, Bali</span>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-stat">
+    <span class="strip-num">12</span>
+    <span class="strip-label">Years in Maldivian hospitality</span>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-stat">
+    <span class="strip-num">6+</span>
+    <span class="strip-label">Offerings — resort to corporate</span>
+  </div>
+  <div class="strip-divider"></div>
+  <div class="strip-stat">
+    <span class="strip-num">1</span>
+    <span class="strip-label">Private island residency — Soneva Secret</span>
+  </div>
+</div>
+
+<!-- ━━━━ ABOUT ━━━━ -->
+<section class="about">
+  <div>
+    <p class="about-eyebrow fu">Who she is</p>
+    <h2 class="about-h fu fu-d1">Rooted in<br>these <em>islands.</em></h2>
+    <div class="about-body fu fu-d2">
+      <p>Zey is a Maldivian yoga teacher based in Malé. Before she taught, she spent 12 years in the hospitality industry — learning how to hold space, stay composed under pressure, and find meaning in the smallest gestures of care. That background shapes everything about the way she works.</p>
+      <p>She trained at Yoga Union in Bali in 2026, completing 200 hours of immersive residential teacher training. She returned to the Maldives and built Salt to Soul — a practice rooted in island life, shaped by the rhythm of the ocean.</p>
+      <p>In the same year, she completed a teaching residency at Soneva Secret, one of the Maldives' most exclusive private island resorts. Daily sessions overlooking the Indian Ocean, and the practised ability to meet guests exactly where they are.</p>
+    </div>
+    <div class="about-creds fu fu-d3">
+      <div class="cred">
+        <span class="cred-icon">🎓</span>
+        <div class="cred-text">
+          <span class="cred-title">200-Hour Teacher Training</span>
+          <span class="cred-sub">Yoga Union · Bali, 2026</span>
+        </div>
+      </div>
+      <div class="cred">
+        <span class="cred-icon">🌊</span>
+        <div class="cred-text">
+          <span class="cred-title">Resident Yoga Teacher</span>
+          <span class="cred-sub">Soneva Secret · Maldives, 2026</span>
+        </div>
+      </div>
+      <div class="cred">
+        <span class="cred-icon">🌿</span>
+        <div class="cred-text">
+          <span class="cred-title">Founder, Salt to Soul</span>
+          <span class="cred-sub">Malé, Maldives · 2026 —</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-photos fu fu-d1">
+    <div class="photo-tall">
+      <img src="./photos/resort_class.jpg" alt="Zey teaching at Soneva Secret"/>
+    </div>
+    <div class="photo-half">
+      <img src="./photos/zeyba-certified.jpg" alt="Yoga Union certification, Bali"/>
+    </div>
+    <div class="photo-half">
+      <img src="./photos/zey_overhead_mat.jpg" alt="Overhead view of Zey on her mat"/>
+    </div>
+    <p class="photo-caption">Soneva Secret · Bali 2026</p>
+  </div>
+</section>
+
+<!-- ━━━━ SERVICES ━━━━ -->
+<section class="services">
+  <div class="services-inner">
+    <div class="services-head">
+      <p class="services-eyebrow fu">What she offers</p>
+      <h2 class="services-h fu fu-d1">Every experience<br>is <em>shaped around you.</em></h2>
+    </div>
+    <div class="services-grid">
+
+      <!-- Feature row -->
+      <div class="service feature fu">
+        <div>
+          <div class="service-num">01</div>
+          <div class="service-name">Resort &amp; Island Wellness</div>
+          <div class="service-tag">For resorts &amp; properties</div>
+        </div>
+        <div>
+          <p class="service-desc">Zey comes to your property. Dawn on the beach, dusk on a private deck, or in your wellness space. Full programming for guests — daily sessions, retreats, and special events. She understands resorts from the inside out: 12 years in Maldivian hospitality, and a residency at Soneva Secret.</p>
+        </div>
+        <div>
+          <p class="service-desc" style="color:rgba(212,188,138,.4);font-size:.5rem;">Enquire about weekly residencies, seasonal programming, or one-off retreat facilitation.</p>
+        </div>
+      </div>
+
+      <div class="service fu">
+        <div class="service-num">02</div>
+        <div class="service-name">One to One</div>
+        <p class="service-desc">A complete hour paced entirely to the guest — their body, their pace, their intention. No prior experience needed. Deeply personal. Offered for in-house guests or private clients.</p>
+        <span class="service-tag">Private sessions</span>
+      </div>
+      <div class="service fu fu-d1">
+        <div class="service-num">03</div>
+        <div class="service-name">Private Circle</div>
+        <p class="service-desc">The space held exclusively for a group. Birthdays, retreats, team days, or a day that deserves something more. All levels. All welcome. Can be styled to match your property's aesthetic.</p>
+        <span class="service-tag">Groups &amp; events</span>
+      </div>
+      <div class="service fu fu-d2">
+        <div class="service-num">04</div>
+        <div class="service-name">Guesthouse Experience</div>
+        <p class="service-desc">Tailored mornings and evenings for guesthouse guests. A gentler beginning to the day, a more peaceful end. Available as add-ons or as part of a guest wellness package.</p>
+        <span class="service-tag">Guesthouses</span>
+      </div>
+      <div class="service fu">
+        <div class="service-num">05</div>
+        <div class="service-name">Corporate Wellbeing</div>
+        <p class="service-desc">Movement and stillness for teams. Single sessions or sustained programmes, in-office or offsite. Presence is a competitive advantage — this is where it's built.</p>
+        <span class="service-tag">Teams &amp; organisations</span>
+      </div>
+      <div class="service fu fu-d1">
+        <div class="service-num">06</div>
+        <div class="service-name">Sound Healing &amp; Yoga</div>
+        <p class="service-desc">In collaboration with Element: combined movement and sound healing. Breath, vibration, and intentional stillness. A monthly gathering, or available as a special event for your guests.</p>
+        <span class="service-tag">Special events</span>
+      </div>
+      <div class="service fu fu-d2">
+        <div class="service-num">07</div>
+        <div class="service-name">Dance Meditation</div>
+        <p class="service-desc">Begin gently. Open into full expression. Settle into silence. No experience required. No performance expected. A rare offering that guests remember long after they leave.</p>
+        <span class="service-tag">Immersive experiences</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ THE EXPERIENCE ━━━━ -->
+<section class="experience">
+  <div class="experience-head">
+    <div>
+      <p class="exp-eyebrow fu">The details</p>
+      <h2 class="exp-h fu fu-d1">What every session<br><em>includes.</em></h2>
+    </div>
+    <p class="exp-sub fu fu-d2">Small, intentional touches that turn a yoga session into something guests carry home. Zey's hospitality background means she thinks in experiences, not just classes.</p>
+  </div>
+  <div class="ritual-list">
+    <div class="ritual-item fu">
+      <div class="ritual-num-d">01</div>
+      <div class="ritual-name-d">Lavender<br><em>eye pillow</em></div>
+      <p class="ritual-desc-d">Placed gently during Savasana. Weighted, warm, lightly scented. An invitation to fully release what the guest came in holding.</p>
+    </div>
+    <div class="ritual-item fu fu-d1">
+      <div class="ritual-num-d">02</div>
+      <div class="ritual-name-d">Chilled<br><em>towel</em></div>
+      <p class="ritual-desc-d">Frozen, folded, and waiting after practice. Pressed cool against the skin at exactly the right moment. The kind of detail guests mention first.</p>
+    </div>
+    <div class="ritual-item fu fu-d2">
+      <div class="ritual-num-d">03</div>
+      <div class="ritual-name-d">Iced<br><em>tea</em></div>
+      <p class="ritual-desc-d">Poured and waiting after every session. Something to sit with, to breathe over, before returning to the day.</p>
+    </div>
+    <div class="ritual-item fu fu-d3">
+      <div class="ritual-num-d">04</div>
+      <div class="ritual-name-d">Affirmation<br><em>card</em></div>
+      <p class="ritual-desc-d">A single sentence, chosen and placed on the mat. Offered at the close. A tangible memory of the session for the guest to keep.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ WHY RESORTS CHOOSE HER ━━━━ -->
+<section class="resort">
+  <div class="resort-inner">
+    <div class="resort-top">
+      <div>
+        <p class="resort-eyebrow fu">Why it works for resorts</p>
+        <h2 class="resort-h fu fu-d1">She knows<br>your <em>world.</em></h2>
+        <div class="resort-body fu fu-d2">
+          <p>Twelve years in Maldivian hospitality before she ever taught a class. She has worked alongside the industry she now serves. That means no handholding: she arrives, she sets up, she delivers, and guests leave talking about it.</p>
+          <p>At Soneva Secret she ran daily sessions for international guests with no prior yoga experience. The result: guests who booked extra sessions, reviews that mentioned her by name, and a practice that adapted to every body in the room.</p>
+        </div>
+        <div style="margin-top:32px;">
+          <div class="resort-point fu">
+            <span class="resort-diamond">✦</span>
+            <p class="resort-point-text"><strong>Maldivian.</strong> Authentically local, not imported. Understands the islands, the culture, the pace. Guests feel this — it adds a layer of meaning that outside instructors can't replicate.</p>
+          </div>
+          <div class="resort-point fu">
+            <span class="resort-diamond">✦</span>
+            <p class="resort-point-text"><strong>Hospitality-trained.</strong> Punctual, professional, and fluent in service culture. Guest experience is not an afterthought — it is where she came from.</p>
+          </div>
+          <div class="resort-point fu">
+            <span class="resort-diamond">✦</span>
+            <p class="resort-point-text"><strong>Resort-tested.</strong> A proven residency at Soneva Secret — one of the most demanding wellness environments in the Maldives. Comfortable at the highest level of hospitality.</p>
+          </div>
+          <div class="resort-point fu">
+            <span class="resort-diamond">✦</span>
+            <p class="resort-point-text"><strong>Adaptable.</strong> Open to all levels. Comfortable with guests who have never touched a mat and with those who practice daily. Each session meets the room where it is.</p>
+          </div>
+          <div class="resort-point fu">
+            <span class="resort-diamond">✦</span>
+            <p class="resort-point-text"><strong>Turn-key.</strong> Arrives with everything needed. Mats, props, eye pillows, chilled towels, affirmation cards. Zero operational burden for your team.</p>
+          </div>
+        </div>
+      </div>
+      <div class="resort-photo">
+        <img src="./photos/zey_beach_dancer.jpg" alt="Zey in dancer pose on the beach"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ TESTIMONIALS ━━━━ -->
+<section class="testimonials">
+  <div class="test-inner">
+    <p class="test-eyebrow fu">What people say</p>
+    <h2 class="test-h fu fu-d1">What remains<br><em>after.</em></h2>
+    <div class="test-grid">
+      <div class="test fu">
+        <span class="test-mark">✦ ✦ ✦</span>
+        <blockquote class="test-quote">I came not knowing what I was looking for. Somehow I left knowing exactly what it was.</blockquote>
+      </div>
+      <div class="test fu fu-d1">
+        <span class="test-mark">✦ ✦ ✦</span>
+        <blockquote class="test-quote">The open-air terrace at sunset. There is nothing else like it in this city. It feels like the whole world slows down.</blockquote>
+      </div>
+      <div class="test fu">
+        <span class="test-mark">✦ ✦ ✦</span>
+        <blockquote class="test-quote">Zey holds the space with such quiet presence. I have tried many classes. This was the first time I actually felt something shift.</blockquote>
+      </div>
+      <div class="test fu fu-d1">
+        <span class="test-mark">✦ ✦ ✦</span>
+        <blockquote class="test-quote">We brought our whole team. Everyone left lighter. It has become something we return to, again and again.</blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━ CONTACT ━━━━ -->
+<section class="contact">
+  <div class="contact-inner fu">
+    <p class="contact-eyebrow">Let's talk</p>
+    <h2 class="contact-h">Bring Zey<br>to your <em>resort.</em></h2>
+    <p class="contact-sub">Whether you're looking for a seasonal resident, a one-off retreat facilitator, or a recurring wellness programme — reach out. All enquiries welcome.</p>
+    <div class="contact-links">
+      <a href="mailto:hello@salttosoul.mv" class="contact-btn primary">Email hello@salttosoul.mv</a>
+      <a href="https://instagram.com/salttosoul.mv" target="_blank" rel="noopener" class="contact-btn secondary">@salttosoul.mv on Instagram</a>
+      <a href="./index.html" class="contact-btn secondary">Visit the website</a>
+    </div>
+    <p class="contact-detail">Based in Malé, Maldives &nbsp;·&nbsp; Available for travel within the atolls</p>
+  </div>
+</section>
+
+<!-- ━━━━ FOOTER ━━━━ -->
+<footer class="foot">
+  <span class="foot-brand">Salt to Soul · Zey</span>
+  <div class="foot-links">
+    <a href="./index.html" class="foot-link">Website</a>
+    <a href="https://instagram.com/salttosoul.mv" target="_blank" rel="noopener" class="foot-link">Instagram</a>
+    <a href="mailto:hello@salttosoul.mv" class="foot-link">Email</a>
+  </div>
+  <span class="foot-copy">© 2026 Salt to Soul</span>
+</footer>
+
+<script>
+const io = new IntersectionObserver(e => {
+  e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+}, { threshold: .07 });
+document.querySelectorAll('.fu').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
