@@ -195,38 +195,63 @@ img { display: block; max-width: 100%; }
 .inpractice {
   padding: clamp(60px, 8vw, 100px) var(--pad);
 }
-.inpractice-inner {
-  max-width: var(--max); margin: 0 auto;
-}
+.inpractice-inner { max-width: var(--max); margin: 0 auto; }
 .inpractice-grid {
   display: grid;
   grid-template-columns: 45fr 55fr;
   gap: clamp(16px, 2.5vw, 32px);
   align-items: start;
 }
-.inpractice-card { display: flex; flex-direction: column; gap: 14px; }
-.inpractice-card:last-child { margin-top: clamp(40px, 6vw, 80px); }
-.inpractice-photo {
-  width: 100%; overflow: hidden;
-  border: 1px solid rgba(255,255,255,.05);
+
+/* slide-up animation for cards */
+.ip-slide {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
 }
+.ip-slide.in { opacity: 1; transform: none; }
+.ip-slide-d1 { transition-delay: .18s; }
+
+.inpractice-card {
+  display: flex; flex-direction: column;
+  background: rgba(255,255,255,.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+.inpractice-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(to right, transparent 10%, rgba(255,255,255,.12) 50%, transparent 90%);
+  z-index: 1;
+}
+.inpractice-card:last-child { margin-top: clamp(48px, 7vw, 96px); }
+.inpractice-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 64px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.1);
+}
+
+.inpractice-photo { width: 100%; }
 .inpractice-photo img {
   width: 100%; height: auto; display: block;
-  transition: transform .7s ease;
 }
-.inpractice-card:hover .inpractice-photo img { transform: scale(1.02); }
+
 .inpractice-caption {
-  display: flex; flex-direction: column; gap: 6px;
-  padding-top: 12px;
+  display: flex; flex-direction: column; gap: 5px;
+  padding: 18px 20px 20px;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .inpractice-label {
   font-family: var(--ff-d); font-size: 1rem; font-weight: 300;
-  color: rgba(242,237,228,.55); font-style: italic;
+  color: rgba(242,237,228,.6); font-style: italic;
 }
 .inpractice-detail {
   font-size: .38rem; letter-spacing: .2em; text-transform: uppercase;
-  color: rgba(212,188,138,.25);
+  color: rgba(212,188,138,.28);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━ DIVIDER ━━━━━━━━━━━━━━━━━━━━ */
@@ -435,7 +460,7 @@ img { display: block; max-width: 100%; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .service.feature { grid-template-columns: 1fr; grid-column: auto; }
   .inpractice-grid { grid-template-columns: 1fr 1fr; }
-  .inpractice-card:last-child { margin-top: 24px; }
+  .inpractice-card:last-child { margin-top: 20px; }
 }
 @media (max-width: 600px) {
   .services-grid { grid-template-columns: 1fr; }
@@ -518,7 +543,7 @@ img { display: block; max-width: 100%; }
 <section class="inpractice">
   <div class="inpractice-inner">
     <div class="inpractice-grid">
-      <div class="inpractice-card fu">
+      <div class="inpractice-card ip-slide">
         <div class="inpractice-photo">
           <img src="./photos/zey_soneva_class.jpg" alt="Morning yoga session on the deck at Soneva Secret, Maldives"/>
         </div>
@@ -527,7 +552,7 @@ img { display: block; max-width: 100%; }
           <span class="inpractice-detail">Private island · visiting teacher · 2026</span>
         </div>
       </div>
-      <div class="inpractice-card fu fu-d1">
+      <div class="inpractice-card ip-slide ip-slide-d1">
         <div class="inpractice-photo">
           <img src="./photos/zey_rooftop_session.jpg" alt="Salt to Soul sunset session on the rooftop in Malé"/>
         </div>
@@ -636,7 +661,7 @@ img { display: block; max-width: 100%; }
 const io = new IntersectionObserver(e => {
   e.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
 }, { threshold: .06 });
-document.querySelectorAll('.fu').forEach(el => io.observe(el));
+document.querySelectorAll('.fu, .ip-slide').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
