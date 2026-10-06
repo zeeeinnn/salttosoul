@@ -170,21 +170,27 @@ img { display: block; max-width: 100%; }
   color: rgba(212,188,138,.45);
 }
 .about-photos {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  grid-template-rows: 1fr 1fr auto;
+  gap: 12px;
 }
 .about-photos .photo-tall {
-  grid-column: 1 / -1;
-  aspect-ratio: 16/9;
+  grid-column: 1; grid-row: 1 / 3;
   overflow: hidden;
 }
 .about-photos .photo-tall img {
-  width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+  width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
 }
 .about-photos .photo-half {
+  grid-column: 2;
   aspect-ratio: 3/4; overflow: hidden;
 }
 .about-photos .photo-half img {
   width: 100%; height: 100%; object-fit: cover;
+}
+.about-photos .photo-caption {
+  grid-column: 1 / -1;
 }
 .photo-caption {
   font-size: .38rem; letter-spacing: .22em; text-transform: uppercase;
@@ -468,8 +474,8 @@ img { display: block; max-width: 100%; }
   }
   .hero-copy { padding: 120px var(--pad) 80px; position: relative; z-index: 1; min-height: 100svh; }
   .about { grid-template-columns: 1fr; }
-  .about-photos { order: -1; grid-template-columns: 1fr 1fr; }
-  .about-photos .photo-tall { display: none; }
+  .about-photos { order: -1; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; }
+  .about-photos .photo-tall { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 4/3; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .service.feature { grid-template-columns: 1fr; grid-column: auto; }
   .experience-head { grid-template-columns: 1fr; }
@@ -507,7 +513,10 @@ img { display: block; max-width: 100%; }
       <span class="hero-tag">Resorts · Corporates · Guesthouses</span>
       <span class="hero-tag">Private &amp; group sessions</span>
     </div>
-    <a href="mailto:hello@salttosoul.mv" class="hero-cta">Get in touch</a>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;">
+      <a href="https://wa.me/9609118110" target="_blank" rel="noopener" class="hero-cta">WhatsApp</a>
+      <a href="https://instagram.com/salttosoul.mv" target="_blank" rel="noopener" style="font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,237,228,.5);border:1px solid rgba(242,237,228,.18);padding:14px 28px;border-radius:2px;transition:all .2s;">@salttosoul.mv</a>
+    </div>
   </div>
 </section>
 
