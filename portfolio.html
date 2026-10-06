@@ -83,9 +83,7 @@ img { display: block; max-width: 100%; }
 .hero-tag {
   font-size: .42rem; letter-spacing: .18em; text-transform: uppercase;
   border: 1px solid rgba(242,237,228,.1);
-  background: rgba(255,255,255,.04);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.02);
   padding: 7px 18px; border-radius: 40px;
   color: rgba(242,237,228,.5);
 }
@@ -143,20 +141,16 @@ img { display: block; max-width: 100%; }
 }
 .cred {
   display: flex; align-items: flex-start;
-  padding: 20px 24px;
-  background: rgba(255,255,255,.04);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,.07);
-  border-left: 2px solid rgba(184,92,56,.6);
+  padding: 18px 24px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.06);
+  border-left: 1px solid var(--terra);
   border-radius: 2px;
-  transition: background .25s, border-color .25s, box-shadow .25s;
+  transition: background .2s, box-shadow .2s;
 }
 .cred:hover {
-  background: rgba(255,255,255,.07);
-  border-color: rgba(255,255,255,.12);
-  border-left-color: var(--terra);
-  box-shadow: 0 4px 20px rgba(0,0,0,.25);
+  background: rgba(255,255,255,.04);
+  box-shadow: 0 2px 16px rgba(0,0,0,.2);
 }
 .cred-text { display: flex; flex-direction: column; gap: 5px; }
 .cred-title {
@@ -214,10 +208,8 @@ img { display: block; max-width: 100%; }
 
 .inpractice-card {
   display: flex; flex-direction: column;
-  background: rgba(255,255,255,.04);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.07);
   border-radius: 3px;
   overflow: hidden;
   position: relative;
@@ -299,12 +291,10 @@ img { display: block; max-width: 100%; }
 }
 
 .service {
-  background: rgba(46,26,14,.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(46,26,14,.85);
   padding: 40px 36px;
   display: flex; flex-direction: column; gap: 14px;
-  transition: background .3s, box-shadow .3s;
+  transition: background .25s, box-shadow .25s;
   position: relative;
 }
 .service::after {
@@ -335,7 +325,7 @@ img { display: block; max-width: 100%; }
 
 /* feature row */
 .service.feature {
-  background: rgba(184,92,56,.07);
+  background: rgba(184,92,56,.05);
   grid-column: 1 / -1;
   display: grid; grid-template-columns: 1fr 1fr 1fr;
   gap: 48px; align-items: center;
@@ -366,10 +356,8 @@ img { display: block; max-width: 100%; }
 }
 .contact-glass {
   max-width: 680px; margin: 0 auto;
-  background: rgba(255,255,255,.04);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,.09);
+  background: rgba(255,255,255,.02);
+  border: 1px solid rgba(255,255,255,.07);
   border-radius: 3px;
   padding: clamp(48px, 7vw, 80px) clamp(40px, 6vw, 72px);
   display: flex; flex-direction: column; align-items: center;
@@ -408,9 +396,7 @@ img { display: block; max-width: 100%; }
 .contact-btn.primary:hover { background: #c8643e; box-shadow: 0 8px 28px rgba(184,92,56,.35); }
 .contact-btn.secondary {
   border: 1px solid rgba(242,237,228,.12);
-  background: rgba(255,255,255,.04);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
   color: rgba(242,237,228,.55);
 }
 .contact-btn.secondary:hover {
@@ -498,7 +484,7 @@ img { display: block; max-width: 100%; }
 <section class="about">
   <div>
     <p class="about-eyebrow fu">Who she is</p>
-    <h2 class="about-h fu fu-d1">Rooted in<br>these <em>islands.</em></h2>
+    <h2 class="about-h fu fu-d1"><em>Salt to Soul.</em></h2>
     <div class="about-body fu fu-d2">
       <p>Zey is a Maldivian yoga teacher based in Malé. Before she taught, she spent 12 years in the hospitality industry. Learning how to hold space, stay composed under pressure, and find meaning in the smallest gestures of care. That background shapes everything about the way she works.</p>
       <p>She trained at Yoga Union in Bali in 2026, completing 200 hours of immersive residential teacher training. She returned to the Maldives and built Salt to Soul, a practice rooted in island life, shaped by the rhythm of the ocean.</p>
